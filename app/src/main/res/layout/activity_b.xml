@@ -108,11 +108,9 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/crb02"
                             android:inputType="number"
-                            app:maxValue="9"
-                            app:minValue="0"
                             android:enabled="false"
-                            android:maxLength="1"
-                            app:type="range" />
+                            android:maxLength="9"
+                             />
 
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -138,7 +136,6 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/crb03"
                             android:inputType="number"
-
                             android:maxLength="9"
                             app:maxValue="99999999999999"
                             app:minValue="0"

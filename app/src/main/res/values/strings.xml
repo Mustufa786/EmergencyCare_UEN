@@ -1,4 +1,5 @@
 <resources>
+   <string name="app_name">Emergency Care</string>
     <string name="yes"> ھا </string>
     <string name="no"> نہ </string>
     <string name="no_answer"> ڪو به جواب نه ڏنو ويو </string>

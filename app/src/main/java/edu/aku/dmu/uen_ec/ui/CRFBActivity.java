@@ -101,12 +101,6 @@ public class CRFBActivity extends AppCompatActivity {
                     if (fc != null) {
                         JSONModelCRFA crfa = JSONUtils.getModelFromJSON(fc.getCRFA(), JSONModelCRFA.class);
 
-
-
-
-
-
-
                         try
                         {
                             if(!crfa.getCra12().equals("2"))
