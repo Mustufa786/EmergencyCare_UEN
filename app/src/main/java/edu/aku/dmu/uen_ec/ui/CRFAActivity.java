@@ -35,6 +35,7 @@ public class CRFAActivity extends AppCompatActivity {
     ActivityABinding bi;
 
     DatabaseHelper db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,18 +61,13 @@ public class CRFAActivity extends AppCompatActivity {
         setDesing();
 
 
-
         db = new DatabaseHelper(this);
-        int study_id=Integer.parseInt(db.getsFormcount());
-        study_id=study_id+1;
-        if(study_id<10)
-        {
-            bi.cra01.setText("0"+study_id+"");
-        }
-
-        else
-        {
-            bi.cra01.setText("00"+study_id+"");
+        int study_id = Integer.parseInt(db.getsFormcount());
+        study_id = study_id + 1;
+        if (study_id < 10) {
+            bi.cra01.setText("0" + study_id + "");
+        } else {
+            bi.cra01.setText("00" + study_id + "");
         }
         bi.cra01.setEnabled(false);
 
@@ -102,11 +98,10 @@ public class CRFAActivity extends AppCompatActivity {
 */
 
 
-
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             Date strDate = null;
             try {
-                strDate = sdf.parse(bi.cra03a.getText()+"/"+ bi.cra03b.getText()+"/" +bi.cra03c.getText());
+                strDate = sdf.parse(bi.cra03a.getText() + "/" + bi.cra03b.getText() + "/" + bi.cra03c.getText());
             } catch (ParseException e) {
                 e.printStackTrace();
             }
@@ -207,6 +202,7 @@ public class CRFAActivity extends AppCompatActivity {
                         : bi.cra12b.isChecked() ? "2"
                         : bi.cra12c.isChecked() ? "3"
                         : bi.cra12d.isChecked() ? "4"
+                        : bi.cra12e.isChecked() ? "5"
                         : "0");
         fc.setCRFA(String.valueOf(CRFA));
         fc.setFormType("CRFA");
@@ -224,12 +220,10 @@ public class CRFAActivity extends AppCompatActivity {
 
     }
 
-    private  void  setDesing()
-    {
+    private void setDesing() {
 
 
-        UIirfan.findViews( bi.GrpCRFA,this);
-
+        UIirfan.findViews(bi.GrpCRFA, this);
 
 
     }
