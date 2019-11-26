@@ -1,0 +1,160 @@
+<android.support.v7.widget.CardView style="@style/cardView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_marginBottom="0dp"
+    android:layout_marginRight="50dp"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+
+        android:id="@+id/GrpCRFC21"
+        style="@style/linearlayout_view_wt_bound">
+
+
+
+
+        <TextView
+
+
+            style="@style/i_q_textview"
+            android:layout_width="wrap_content"
+            android:layout_gravity="left"
+
+            android:layout_marginBottom="10dp"
+
+
+
+            android:text="28 Days Follow Up"/>
+
+        <!-- CRF28-->
+        <LinearLayout
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="10dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+        <TextView
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="0dp"
+
+            android:textSize="18dp"
+            style="@style/i_textview"
+            android:text="Disposition After Discharge from DHQ"
+            android:textStyle="normal"
+            />
+
+            <RadioGroup
+
+                android:id="@+id/crfc12"
+                style="@style/radiogroup">
+
+                <RadioButton
+                    android:id="@+id/crfc12a"
+                    style="@style/radiobutton"
+                    android:text="home" />
+                <RadioButton
+                    android:id="@+id/crfc12b"
+                    style="@style/radiobutton"
+                    android:text="Returned to THQ/DHQ Facility" />
+                <RadioButton
+                    android:id="@+id/crfc12c"
+                    style="@style/radiobutton"
+                    android:text="Presented to a Tertiary Care Hospital" />
+                <RadioButton
+                    android:id="@+id/crfc12d"
+                    style="@style/radiobutton"
+                    android:text="Still Admited" />
+                
+
+            </RadioGroup>
+        </LinearLayout>
+
+
+
+        <!-- CRF13-->
+
+        <LinearLayout
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="10dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+            <TextView
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="0dp"
+
+                android:textSize="18dp"
+                style="@style/i_textview"
+                android:text="Child Alive at 28 Days"
+                android:textStyle="normal"
+                />
+
+            <RadioGroup
+
+                android:id="@+id/crfc13"
+                style="@style/radiogroup">
+
+                <RadioButton
+                    android:id="@+id/crfc13a"
+                    style="@style/radiobutton"
+                    android:text="Yes" />
+                <RadioButton
+                    android:id="@+id/crfc13b"
+                    style="@style/radiobutton"
+                    android:text="No" />
+
+
+
+            </RadioGroup>
+        </LinearLayout>
+
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/btn_End"
+                style="@style/button"
+                android:layout_marginRight="10dp"
+                android:background="@color/brown"
+
+                android:text="Cancel" />
+
+            <Button
+                android:id="@+id/btn_Continue"
+                style="@style/button"
+                android:background="@color/colorPrimaryAlpha"
+
+                android:text="OK" />
+
+
+            <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</android.support.v7.widget.CardView>

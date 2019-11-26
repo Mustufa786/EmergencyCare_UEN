@@ -1,0 +1,284 @@
+<resources>
+    <string name="yes"> ھا </string>
+    <string name="no"> نہ </string>
+    <string name="no_answer"> ڪو به جواب نه ڏنو ويو </string>
+    <string name="none"> هنن جوابن مان ڪو به نه </string>
+    <string name="nothing"> ڪجهه به نه
+ </string>
+    <string name="dkn"> خبر نه آھي </string>
+    <string name="not_applicable">	غير موضوع</string>
+    <string name="sometimes">	ڪڏهن ڪڏهن   </string>
+
+    <string name="btnSync">Sync</string>
+    <string name="btnUpload">Upload</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+
+    <!--    End Activity-->
+
+    <string name="endHeading"> انٽرويو جو نتيجو </string>
+    <string name="end01"> پورو ٿيو </string>
+    <string name="end02"> اڌ ۾ ڇڏيو </string>
+    <string name="end03"> انڪار ڪيو </string>
+    <string name="end04"> ٻن دورن کان پوء به ڪير به موجوده نه هو </string>
+    <string name="end05"> لڏي وئي </string>
+
+
+    <string name="istatus">انٹروہو کا نتیجہ</string>
+    <string name="istatusa">مکمل</string>
+    <string name="istatusb">نا مکمل</string>
+    <string name="istatusc">انکار کردیا</string>
+    <string name="istatusd">گھر بند ہے</string>
+    <string name="nextSection">ايندڙ سيڪشن</string>
+    <string name="end_interview">ختم ڪيو</string>
+
+    <string name="correct"> صحيح </string>
+    <string name="number">تعداد</string>
+    <string name="incorrect"> غلط </string>
+    <string name="nores"> جواب نه ڏنو </string>
+    <string name="skp"> ڇڏي ڏنو </string>
+
+    <string name="almostN">ڪڏهن به نه</string>
+    <string name="some">ڪڏهن ڪڏهن</string>
+    <string name="often">اڪثر ڪري</string>
+    <string name="almostA">هميشه</string>
+
+    <string name="other"> ٻيو ڪجھ </string>
+    <string name="month"> مهينا </string>
+    <string name="year"> سال </string>
+    <string name="day"> دن </string>
+
+
+    <!-- KMC Info-->
+
+    <string name="infotak"> تعلقي جو ڪوڊ </string>
+    <string name="infouc"> يونين ڪائونسل جو ڪوڊ </string>
+    <string name="infovil"> ڳوٺ/ وارڊ جو ڪوڊ </string>
+
+    <!-- KMC F2-->
+
+    <string name="f2wgq1"> سيشن ۾ ڪهڙن موضوعن تي ڳالهه ٻولهه ٿي؟ ( هڪ کان وڌيڪ جواب ٿي سگھن ٿا) </string>
+    <string name="f2wgq1a"> اي اين سي </string>
+    <string name="f2wgq1b"> پي اين سي </string>
+    <string name="f2wgq1c"> دن/ ناڙي جي سار سنڀال </string>
+    <string name="f2wgq1d"> گھٽ وزن واري ٻار جي سارسنڀال </string>
+    <string name="f2wgq1e"> ڪي ايم سي ۽ ٻار جو وزن </string>
+    <string name="f2wgq1f"> ڪي ايم سي گرمائش ۽ ان جي اهميت </string>
+    <string name="f2wgq1g"> ڪي ايم سي ۽ جراسيمن کان بچاءُ </string>
+    <string name="f2wgq1h"> ڪي ايم سي ۽ ٻار ۽ ماءُ جي وچ ۾ محبت </string>
+    <string name="f2wgq1i"> ماءُ جو کير ۽ صرف ۽ صرف ماءُ جو کير </string>
+    <string name="f2wgq1j"> صحت مرڪز تي ويم جو ٿيڻ </string>
+    <string name="f2wgq1k"> اميونيزيشن </string>
+    <string name="f2wgq2"> سيشن ۾ شرڪت ڪندڙ جو تعداد ڪيترو آهي؟ تعداد </string>
+    <string name="f2wgq3"> سيشن ۾ گھڻا مرد حضرات موجود هئا؟ تعداد </string>
+    <string name="f2wgq4"> سيشن جو ڪل دورانيا / وقت ڪيترو رهيو؟ منٽ </string>
+    <string name="f2wgq5"> سيشن ۾ ڪهڙو ڪهڙو آ اي سي مٽيريل استعمال ڪيو ويو؟ (هڪ کان وڌيڪ جواب ٿي سگھن ٿا) </string>
+    <string name="f2wgq5a"> ڪي ايم سي وڊيو </string>
+    <string name="f2wgq5b"> ڪي ايم سي فلپ چارٽ </string>
+    <string name="f2wgq5c"> ڪي ايم سي تصويرون </string>
+    <string name="f2wgq596"> ٻيو ڪجھ </string>
+    <string name="f2wgq596x"> ٻيو ڪجھ </string>
+    <string name="f2wgq6"> هن سيشن جي خاص ڳالهه ڪهڙي هئي ؟ مختصر وضاحت لکو </string>
+    <string name="f2wgq7"> مهرباني ڪري سيشن جي تصوير وٺو </string>
+
+
+    <!-- KMC  F2-->
+
+
+    <string name="f1wgq1"> سيشن ۾ ڪهڙن موضوعن تي ڳالهه ٻولهه ٿي؟ ( هڪ کان وڌيڪ جواب ٿي سگھن ٿا) </string>
+    <string name="f1wgq1a"> اي اين سي </string>
+    <string name="f1wgq1b"> پي اين سي </string>
+    <string name="f1wgq1c"> دن/ ناڙي جي سار سنڀال </string>
+    <string name="f1wgq1d"> گھٽ وزن واري ٻار جي سارسنڀال </string>
+    <string name="f1wgq1e"> ڪي ايم سي ۽ ٻار جو وزن </string>
+    <string name="f1wgq1f"> ڪي ايم سي گرمائش ۽ ان جي اهميت </string>
+    <string name="f1wgq1g"> ڪي ايم سي ۽ جراسيمن کان بچاءُ </string>
+    <string name="f1wgq1h"> ڪي ايم سي ۽ ٻار ۽ ماءُ جي وچ ۾ محبت </string>
+    <string name="f1wgq1i"> ماءُ جو کير ۽ صرف ۽ صرف ماءُ جو کير </string>
+    <string name="f1wgq1j"> صحت مرڪز تي ويم جو ٿيڻ </string>
+    <string name="f1wgq1k"> اميونيزيشن </string>
+    <string name="f1wgq2"> سيشن ۾ شرڪت ڪندڙ جو تعداد ڪيترو آهي؟ تعداد </string>
+    <string name="f1wgq3"> ڳورهاري عورتن جو تعداد؟ تعداد </string>
+    <string name="f1wgq4"> شادي شده ۽ ٻار ڄڻڻ جي اهليت رکڻ واري عورتن جو تعداد؟ (ڳورهاري عورتن کان علاوه) </string>
+    <string name="f1wgq5"> سيشن جو ڪل دورانيا / وقت ڪيترو رهيو؟ منٽ </string>
+    <string name="f1wgq6"> سيشن ۾ ڪهڙو ڪهڙو آ اي سي مٽيريل استعمال ڪيو ويو؟ (هڪ کان وڌيڪ جواب ٿي سگھن ٿا) </string>
+    <string name="f1wgq6a"> ڪي ايم سي وڊيو </string>
+    <string name="f1wgq6b"> ڪي ايم سي فلپ چارٽ </string>
+    <string name="f1wgq6c"> ڪي ايم سي تصويرون </string>
+    <string name="f1wgq696"> ٻيو ڪجھ </string>
+    <string name="f1wgq696x"> ٻيو ڪجھ </string>
+    <string name="f1wgq7"> هن سيشن جي خاص ڳالهه ڪهڙي هئي ؟ مختصر وضاحت لکو </string>
+    <string name="f1wgq8"> مهرباني ڪري سيشن جي تصوير وٺو </string>
+
+
+
+    <!-- KMC Form 3 -->
+
+
+    <string name="crfh"> CRF A: Out Patient Department Registry </string>
+
+
+    <string name="cra01"> Study ID </string>
+
+
+    <string name="cra02"> OPD Number </string>
+
+
+
+    <string name="cra03"> Date of Visit/Registration </string>
+    <string name="cra03a"> day </string>
+    <string name="cra03b"> month </string>
+    <string name="cra03c"> year </string>
+
+    <string name="cra04"> Name </string>
+
+    <string name="cra05"> Father Name </string>
+
+    <string name="cra06"> Address </string>
+    <string name="cra06a"> District </string>
+    <string name="cra06b"> Union Council </string>
+    <string name="cra06c"> Village </string>
+    <string name="cra06d"> Address/Hint </string>
+    <string name="cra06e"> Tehsil/Taluka </string>
+
+    <string name="cra07"> Phone number </string>
+
+    <string name="cra08"> Age </string>
+    <string name="cra08a"> day </string>
+    <string name="cra08b"> month </string>
+    <string name="cra08c"> year </string>
+
+    <string name="cra09"> Sex </string>
+    <string name="cra09a"> Male </string>
+    <string name="cra09b"> Female </string>
+
+    <string name="cra10"> Referred from </string>
+
+    <string name="cra11"> Diagnosis </string>
+
+    <string name="cra12"> Disposition </string>
+    <string name="cra12a"> Sent Home </string>
+    <string name="cra12b"> Admitted </string>
+    <string name="cra12c"> Referred </string>
+    <string name="cra12d"> Died </string>
+    <string name="cra12e"> LWBS/LAMA </string>
+
+
+    <!-- Section  B -->
+
+
+    <string name="crb01"> Study ID </string>
+
+
+    <string name="crb02"> OPD Number </string>
+    <string name="crb03"> IPD Number </string>
+
+    <string name="crb04"> Visit/Registration/Admission </string>
+    <string name="crb04a"> day </string>
+    <string name="crb04b"> month </string>
+    <string name="crb04c"> year </string>
+
+    <string name="crb05"> Name </string>
+
+    <string name="crb06"> Father Name </string>
+
+    <string name="crb07"> Address </string>
+    <string name="crb07a"> District </string>
+    <string name="crb07e"> Tehsil/Taluka </string>
+    <string name="crb07b"> Union Council </string>
+    <string name="crb07c"> Village </string>
+    <string name="crb07d"> Address/Hint </string>
+
+    <string name="crb08"> Phone number </string>
+
+    <string name="crb09"> Age </string>
+    <string name="crb09a"> day </string>
+    <string name="crb09b"> month </string>
+    <string name="crb09c"> year </string>
+
+    <string name="crb10"> Sex </string>
+    <string name="crb10a"> Male </string>
+    <string name="crb10b"> Female </string>
+
+    <string name="crb11"> Referred from </string>
+
+    <string name="crb12"> Diagnosis </string>
+
+    <string name="crb13"> Disposition </string>
+    <string name="crb13a"> Sent Home </string>
+
+    <string name="crb13b"> Referred </string>
+    <string name="crb13c"> Died </string>
+    <string name="crb13d"> LAMA </string>
+
+    <string name="crb14"> Date of Discharge </string>
+
+    <string name="crb14a"> day </string>
+    <string name="crb14b"> month </string>
+    <string name="crb14c"> year </string>
+
+
+
+
+    <!-- Section  C -->
+
+    <string name="crc01"> Study ID </string>
+
+
+
+    <string name="crc02"> Date of presentation </string>
+    <string name="crc02a"> day </string>
+    <string name="crc02b"> month </string>
+    <string name="crc02c"> year </string>
+
+    <string name="crc03"> Name </string>
+
+    <string name="crc04"> Father Name </string>
+
+
+    <string name="crc05"> Address </string>
+    <string name="crc05a"> District </string>
+    <string name="crc05b"> Union Council </string>
+    <string name="crc05c"> Village </string>
+    <string name="crc05d"> Address/Hint </string>
+
+    <string name="crc06"> LHW assingend </string>
+
+    <string name="crc07">  Date due to notify LHS </string>
+    <string name="crc07a"> day </string>
+    <string name="crc07b"> month </string>
+    <string name="crc07c"> year </string>
+
+
+    <string name="crc08"> Date LHS informed </string>
+    <string name="crc08a"> day </string>
+    <string name="crc08b"> month </string>
+    <string name="crc08c"> year </string>
+
+
+    <string name="crc09"> Date 28-day follow-up due </string>
+    <string name="crc09a"> day </string>
+    <string name="crc09b"> month </string>
+    <string name="crc09c"> year </string>
+
+    <string name="crc10"> Disposition after discharge from DHQ </string>
+
+
+
+    <string name="crc11"> Child alive at 28 days </string>
+    <string name="crc11a"> Yes </string>
+    <string name="crc11b"> No </string>
+
+
+    <!-- Design  -->
+
+    <string name="register">REGISTER</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="signup_login_hint">Already have an account? Sign In</string>
+    <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
+
+
+</resources>

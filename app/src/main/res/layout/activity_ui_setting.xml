@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="edu.aku.dmu.uen_ec.ui.DesingActivity"/>
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.DesingActivity"
+
+
+        >
+
+        <LinearLayout
+            android:id="@+id/GrpCRFA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+
+            <android.support.v7.widget.CardView style="@style/cardView">
+
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
+
+                    <TextView
+                        style="@style/d_i_textview"
+                        android:text="DESIGN YOUR APP"
+
+
+                        />
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!--cra1-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+
+
+
+
+                <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
+            </LinearLayout>
+
+            <!--cra2-->
+            <android.support.v7.widget.CardView style="@style/cardView">
+
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
+
+
+                    <TextView
+
+                        style="@style/d_i_textview"
+                        android:text="Question Label Size"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+
+                        />
+
+
+                    <RadioGroup
+
+
+                        style="@style/radiogroup">
+
+
+                        <RadioButton
+                            style="@style/d_radiobutton"
+                            android:id="@+id/rb_small"
+                            android:textSize="16sp"
+                            android:text="small" />
+                        <RadioButton
+                            style="@style/d_radiobutton"
+                            android:id="@+id/rb_normal"
+                            android:checked="false"
+                            android:text="Normal" />
+
+                        <RadioButton
+                            style="@style/d_radiobutton"
+                            android:id="@+id/rb_larage"
+                            android:textSize="22sp"
+                            android:text="Large" />
+
+                        <RadioButton
+                            style="@style/d_radiobutton"
+                            android:id="@+id/rb_xlarage"
+                            android:textSize="26sp"
+                            android:text="Extra Large" />
+
+
+
+                    </RadioGroup>
+
+
+                    <TextView
+
+                        style="@style/d_i_textviev_exp"
+                        android:text="Question Label Size Normal"
+                        android:id="@+id/labqexp"
+
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+
+                        />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+            <android.support.v7.widget.CardView style="@style/cardView">
+
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
+
+
+                    <TextView
+
+                        style="@style/d_i_textview"
+                        android:text="RadioButton Label Size"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+
+                        />
+
+
+                    <RadioGroup
+
+
+                        style="@style/radiogroup">
+
+
+                        <RadioButton
+                            style="@style/d_radiobutton"
+                            android:id="@+id/rb_rb_small"
+                            android:textSize="16sp"
+                            android:text="small" />
+                        <RadioButton
+                            style="@style/d_radiobutton"
+                            android:id="@+id/rb_rb_normal"
+                            android:checked="false"
+                            android:text="Normal" />
+
+                        <RadioButton
+                            style="@style/d_radiobutton"
+                            android:id="@+id/rb_rb_larage"
+                            android:textSize="22sp"
+                            android:text="Large" />
+
+                        <RadioButton
+                            style="@style/d_radiobutton"
+                            android:id="@+id/rb_rb_xlarage"
+                            android:textSize="26sp"
+                            android:text="Extra Large" />
+
+
+
+                    </RadioGroup>
+
+
+                    <RadioButton
+                        style="@style/d_radiobutton"
+                        android:gravity="left"
+                        android:layout_marginLeft="20dp"
+
+
+                        android:text="Radiobutton Label Size Normal"
+                        android:id="@+id/rbexp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+
+                        />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+            <android.support.v7.widget.CardView style="@style/cardView">
+
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
+
+
+                    <TextView
+
+                        style="@style/d_i_textview"
+                        android:text="Checkbox Label Size"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+
+                        />
+
+
+                    <RadioGroup
+
+
+                        style="@style/radiogroup">
+
+
+                        <RadioButton
+                            style="@style/d_radiobutton"
+                            android:id="@+id/rb_cb_small"
+                            android:textSize="16sp"
+                            android:text="small" />
+                        <RadioButton
+                            style="@style/d_radiobutton"
+                            android:id="@+id/rb_cb_normal"
+                            android:checked="false"
+                            android:text="Normal" />
+
+                        <RadioButton
+                            style="@style/d_radiobutton"
+                            android:id="@+id/rb_cb_larage"
+                            android:textSize="22sp"
+                            android:text="Large" />
+
+                        <RadioButton
+                            style="@style/d_radiobutton"
+                            android:id="@+id/rb_cb_xlarage"
+                            android:textSize="26sp"
+                            android:text="Extra Large" />
+
+
+
+                    </RadioGroup>
+
+
+                    <CheckBox
+                        style="@style/checkbox"
+                        android:gravity="left"
+                        android:layout_marginLeft="20dp"
+
+
+                        android:text="Checkbox Label Size Normal"
+                        android:id="@+id/cbexp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+
+                        android:background="@color/white"
+                        />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+
+
+
+            <android.support.v7.widget.CardView style="@style/cardView">
+
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
+
+
+                    <TextView
+
+                        style="@style/d_i_textview"
+                        android:text="Input Text  Size"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+
+                        />
+
+
+                    <RadioGroup
+
+
+                        style="@style/radiogroup">
+
+
+                        <RadioButton
+                            style="@style/d_radiobutton"
+                            android:id="@+id/rb_ed_small"
+                            android:textSize="16sp"
+                            android:text="small" />
+                        <RadioButton
+                            style="@style/d_radiobutton"
+                            android:id="@+id/rb_ed_normal"
+                            android:checked="false"
+                            android:text="Normal" />
+
+                        <RadioButton
+                            style="@style/d_radiobutton"
+                            android:id="@+id/rb_ed_larage"
+                            android:textSize="22sp"
+                            android:text="Large" />
+
+                        <RadioButton
+                            style="@style/d_radiobutton"
+                            android:id="@+id/rb_ed_xlarage"
+                            android:textSize="26sp"
+                            android:text="Extra Large" />
+
+
+
+                    </RadioGroup>
+
+
+                    <EditText
+                        style="@style/textInputName"
+                        android:gravity="left"
+                        android:layout_marginLeft="20dp"
+
+
+                        android:text="Editext Size Size Normal"
+                        android:id="@+id/edexp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+
+                        android:background="@color/white"
+                        />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+
+            <android.support.v7.widget.CardView style="@style/cardView">
+
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
+
+
+                    <TextView
+
+                        style="@style/d_i_textview"
+                        android:text="Text Type "
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+
+                        />
+
+
+                    <RadioGroup
+
+
+                        style="@style/radiogroup">
+
+
+                        <RadioButton
+                            style="@style/d_radiobutton"
+                            android:id="@+id/rb_english"
+                            android:textSize="16sp"
+                            android:text="English" />
+                        <RadioButton
+                            style="@style/d_radiobutton"
+                            android:id="@+id/rb_urdu"
+                            android:checked="false"
+                            android:text="Urdu" />
+
+
+
+
+
+                    </RadioGroup>
+
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+
+            <android.support.v7.widget.CardView style="@style/cardView">
+
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
+
+
+                    <Button
+
+                        style="@style/d_i_textview"
+                        android:text="OK"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:onClick="@{() -> callback.btnclic()}"
+
+                        />
+
+
+
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>
+
