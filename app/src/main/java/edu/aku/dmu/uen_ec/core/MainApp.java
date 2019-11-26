@@ -68,15 +68,15 @@ public class MainApp extends Application {
     //    public static String _IP = "43.245.131.159"; // Test PHP server
     //public static String _IP = "43.245.131.159"; // Test PHP server
 
-//    public static String _IP = "f38158"; // Test PHP server
+        public static String _IP = "f38158"; // Test PHP server
 //    public static String _IP = "43.245.131.159"; // Test PHP server
-    public static String _IP = "vcoe1.aku.edu"; // Live PHP server
+//    public static String _IP = "vcoe1.aku.edu"; // Live PHP server
 
     public static boolean isAttitudeCheck = false;
     //todo: here irfan
     //public static String _HOST_URL = "http://" + MainApp._IP + ":" + 8080 + "/kmc/api/"; // change here irfan
 
-    public static String _HOST_URL = "https://" + MainApp._IP +"/uen_ec/api/"; // change here irfan
+    public static String _HOST_URL = "http://" + MainApp._IP + "/uen_ec/api/"; // change here irfan
 
     public static String _UPDATE_URL = "http://" + MainApp._IP + "/casi/app/";
     public static String deviceId;
