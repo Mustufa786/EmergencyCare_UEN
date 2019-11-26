@@ -81,15 +81,16 @@ public class SyncActivity extends AppCompatActivity {
 
                 Toast.makeText(SyncActivity.this, "Start Uploading Data", Toast.LENGTH_SHORT).show();
 
-                syncServerCRFA("CRFA",FormsContract.FormsTable._URL); // sycn A
-                syncServerCRFA("CRFB",FormsContract.FormsTable._URL2); // sycn B
-                syncServerCRFA("CRFC21",FormsContract.FormsTable._URL3); // sycn C
-                syncServerCRFA("CRFC28",FormsContract.FormsTable._URL4); // sycn D
+                syncServerCRFA("CRFA", FormsContract.FormsTable._URL, 0); // sycn A
+                syncServerCRFA("CRFB", FormsContract.FormsTable._URL2, 1); // sycn B
+                syncServerCRFA("CRFC21", FormsContract.FormsTable._URL3, 2); // sycn C
+                syncServerCRFA("CRFC28", FormsContract.FormsTable._URL4, 3); // sycn D
+                uploadlistActivityCreated = false;
 
                 //syncServerCRFB();
 
-               // syncServerCRFC21();
-               // syncServerCRFC28();
+                // syncServerCRFC21();
+                // syncServerCRFC28();
 
             }
         });
@@ -138,7 +139,7 @@ public class SyncActivity extends AppCompatActivity {
     }
 
 
-    public void syncServerCRFA(String CRF_type, String url ) {
+    public void syncServerCRFA(String CRF_type, String url, int type) {
 
         // Require permissions INTERNET & ACCESS_NETWORK_STATE
         ConnectivityManager connMgr = (ConnectivityManager)
@@ -155,27 +156,13 @@ public class SyncActivity extends AppCompatActivity {
             }
             new SyncAllData(
                     this,
-                    "Forms",
+                    "Forms-" + CRF_type,
                     "updateSyncedForms",
                     FormsContract.class,
                     //MainApp._HOST_URL + FormsContract.FormsTable._URL,
-                     MainApp._HOST_URL + url,
-                    db.getUnsyncedFormsCRF(CRF_type), 0, uploadListAdapter, uploadlist
+                    MainApp._HOST_URL + url,
+                    db.getUnsyncedFormsCRF(CRF_type), type, uploadListAdapter, uploadlist
             ).execute();
-//            if (uploadlistActivityCreated) {
-//                uploadmodel = new SyncModel();
-//                uploadmodel.setstatusID(0);
-//                uploadlist.add(uploadmodel);
-//            }
-//            new SyncAllData(
-//                    this,
-//                    "Family Members",
-//                    "updateSyncedFamilyMembers",
-//                    FormsContract.class,
-//                    MainApp._HOST_URL + FamilyMembersContract.familyMembers._URL,
-//                    db.getUnsyncedFamilyMember(), 1, uploadListAdapter, uploadlist
-//            ).execute();
-            uploadlistActivityCreated = false;
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();
@@ -466,7 +453,6 @@ public class SyncActivity extends AppCompatActivity {
 
                 @Override
                 public void run() {
-
 //                    populateSpinner(mContext);
 
                     editor.putBoolean("flag", true);

@@ -211,6 +211,8 @@ public class SyncAllData extends AsyncTask<Void, Integer, String> {
         int sDuplicate = 0;
         String sSyncedError = "";
         JSONArray json = null;
+
+        Log.d(TAG, "onPostExecute: "+result);
         try {
             json = new JSONArray(result);
 

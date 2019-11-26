@@ -93,11 +93,8 @@ public class CRFCActivity extends AppCompatActivity {
         } else {
             bi.btn48.setText("28 Days Follow-Up" + " (" + list.size() + ")");
         }
-
-
         if (list == null)
             return;
-
 
         Collections.sort(list);
         mRecyclerView = (RecyclerView) findViewById(R.id.list_survey_completed);
@@ -113,20 +110,16 @@ public class CRFCActivity extends AppCompatActivity {
         List<String> lst_string = new ArrayList<String>();
         List<FormsContract> lst = db.getsFormContractCRFC(crfstatus);
         if (lst != null) {
-
             for (FormsContract fc : lst) {
-
                 JSONModelCRFA crfa = JSONUtils.getModelFromJSON(fc.getCRFA(), JSONModelCRFA.class);
                 String stringg = "";
-                stringg = crfa.getCra01() + "-" + crfa.getCra02() + "-" + crfa.getCra04() + "-" + crfa.getCra05() + "-" +
-                        crfa.getCra03a() + "/" + crfa.getCra03b() + "/" + crfa.getCra03c();
-                lst_string.add(stringg);
-
+                if(crfa.getCra12().equals("1") || crfa.getCra12().equals("2") || crfa.getCra12().equals("3") ) {
+                    stringg = crfa.getCra01() + "-" + crfa.getCra02() + "-" + crfa.getCra04() + "-" + crfa.getCra05() + "-" +
+                            crfa.getCra03a() + "/" + crfa.getCra03b() + "/" + crfa.getCra03c();
+                    lst_string.add(stringg);
+                }
             }
-
-
         }
-
         return lst_string;
     }
 
