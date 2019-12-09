@@ -363,8 +363,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String groupBy = null;
         String having = null;
         String name="0";
-        String orderBy =
-                FormsTable.COLUMN_studyid + " ASC";
+        String orderBy =null;
+               // FormsTable.COLUMN_studyid + " ASC";
 
         FormsContract allFC = new FormsContract();
         try {
