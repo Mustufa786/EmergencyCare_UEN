@@ -97,6 +97,20 @@
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:padding="15dp" />
+                <CheckBox
+                    android:id="@+id/showpassowrd"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginBottom="40dp"
+
+                    android:drawableStart="@drawable/ic_password"
+                    android:drawablePadding="10dp"
+                    android:hint="ShowPassword"
+                    android:inputType="textPassword"
+                    android:padding="15dp" />
 
             </LinearLayout>
 

@@ -352,6 +352,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public String getsFormcount() {
         SQLiteDatabase db = this.getReadableDatabase();
+        int i=0;
         Cursor c = null;
         String[] columns = {
                 FormsTable.COLUMN_studyid,
@@ -359,7 +360,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
         String whereClause =null;
-        String[] whereArgs = null;
+        String[] whereArgs =  null;
         String groupBy = null;
         String having = null;
         String name="0";
@@ -383,6 +384,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                // FormsContract fc = new FormsContract();
                // allFC = fc.Hydrate(c);
                 name=c.getString(c.getColumnIndex(FormsTable.COLUMN_studyid));
+                i++;
 
             }
         } finally {
@@ -393,7 +395,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        return     name;
+        if (name.equals("") ||name.isEmpty())
+        {
+            name=i+"";
+        }
+        return      name;
     }
 
     public List<VillagesContract> getVillages(String id) {

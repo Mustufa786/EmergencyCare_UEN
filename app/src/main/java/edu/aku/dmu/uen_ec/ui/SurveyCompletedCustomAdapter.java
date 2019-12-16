@@ -279,6 +279,7 @@ class SurveyCompletedCustomAdapter extends RecyclerView.Adapter {
 
 
                     fc.setCRFA(String.valueOf(CRFC));
+                    fc.setstudyid(studyid);
 
                     if (UpdateDBCRF21(studyid)) {
 
@@ -472,6 +473,7 @@ class SurveyCompletedCustomAdapter extends RecyclerView.Adapter {
                     CRFC.put("crc11", date28days);
 
                     fc.setFormType("CRFC28");
+                    fc.setstudyid(studyid);
 
 
                     fc.setCRFA(String.valueOf(CRFC));

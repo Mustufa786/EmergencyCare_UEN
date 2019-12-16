@@ -149,6 +149,7 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/cra03a"
                         android:inputType="number"
+                        android:maxLength="2"
 
                         app:maxValue="31"
                         app:minValue="1"
@@ -162,6 +163,7 @@
                         android:hint="@string/cra03b"
                         android:inputType="number"
 
+                        android:maxLength="2"
                         app:maxValue="12"
                         app:minValue="1"
                         app:type="range" />
@@ -173,7 +175,7 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/cra03c"
                         android:inputType="number"
-
+                        android:maxLength="4"
                         app:maxValue="2020"
                         app:minValue="2018"
                         app:type="range" />
@@ -349,7 +351,7 @@
                         android:inputType="number"
                         android:maxLength="2"
 
-                        app:maxValue="14"
+                        app:maxValue="19"
                         app:minValue="0"
                         app:type="range" />
 

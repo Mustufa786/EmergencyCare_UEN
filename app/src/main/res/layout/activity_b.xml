@@ -167,6 +167,8 @@
                             android:hint="@string/crb04a"
                             android:inputType="number"
 
+                            android:maxLength="2"
+
                             app:maxValue="31"
                             app:minValue="1"
                             app:type="range" />
@@ -179,6 +181,8 @@
                             android:hint="@string/crb04b"
                             android:inputType="number"
 
+                            android:maxLength="2"
+
                             app:maxValue="12"
                             app:minValue="1"
                             app:type="range" />
@@ -190,6 +194,8 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/crb04c"
                             android:inputType="number"
+
+                            android:maxLength="4"
 
                             app:maxValue="2020"
                             app:minValue="2018"
@@ -360,7 +366,7 @@
                             android:inputType="number"
                             android:maxLength="2"
 
-                            app:maxValue="14"
+                            app:maxValue="19"
                             app:minValue="0"
                             app:type="range" />
 
@@ -595,7 +601,7 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/crb14a"
                             android:inputType="number"
-
+android:maxLength="2"
                             app:maxValue="31"
                             app:minValue="1"
                             app:type="range" />
@@ -607,7 +613,7 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/crb14b"
                             android:inputType="number"
-
+                            android:maxLength="2"
                             app:maxValue="12"
                             app:minValue="1"
                             app:type="range" />
@@ -619,7 +625,7 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/crb14c"
                             android:inputType="number"
-
+                            android:maxLength="4"
                             app:maxValue="2020"
                             app:minValue="2018"
                             app:type="range" />
