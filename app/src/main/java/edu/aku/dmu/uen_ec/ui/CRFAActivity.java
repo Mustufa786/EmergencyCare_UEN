@@ -181,9 +181,19 @@ public class CRFAActivity extends AppCompatActivity {
 
         CRFA.put("cra07", bi.cra07.getText().toString());
 
-        CRFA.put("cra08a", bi.cra08a.getText().toString());
-        CRFA.put("cra08b", bi.cra08b.getText().toString());
-        CRFA.put("cra08c", bi.cra08c.getText().toString());
+
+        CRFA.put("cra08b", "0");
+        CRFA.put("cra08c", "0");
+
+
+
+        CRFA.put("cra08a",
+                bi.cra08a.isChecked() ? "1"
+                        : bi.cra08b.isChecked() ? "2"
+                        : bi.cra08c.isChecked() ? "3"
+                        : bi.cra08d.isChecked() ? "4"
+                        : bi.cra08e.isChecked() ? "5"
+                        : "0");
 
         CRFA.put("cra09",
                 bi.cra09a.isChecked() ? "1"

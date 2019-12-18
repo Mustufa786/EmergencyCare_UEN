@@ -342,44 +342,41 @@
                         style="@style/i_textview"
                         android:text="@string/cra08" />
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/cra08c"
-                        style="@style/textInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/cra08c"
-                        android:inputType="number"
-                        android:maxLength="2"
 
-                        app:maxValue="19"
-                        app:minValue="0"
-                        app:type="range" />
+                    <RadioGroup
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/cra08b"
-                        style="@style/textInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/cra08b"
-                        android:inputType="number"
-                        android:maxLength="2"
+                        android:id="@+id/cra08"
+                        style="@style/radiogroup">
 
-                        app:maxValue="12"
-                        app:minValue="0"
-                        app:type="range" />
+                        <RadioButton
+                            android:id="@+id/cra08a"
+                            style="@style/radiobutton"
+                            android:text="@string/cra09a" />
+                        <RadioButton
+                            android:id="@+id/cra08b"
+                            style="@style/radiobutton"
+                            android:text="@string/cra09b" />
+                        <RadioButton
+                            android:id="@+id/cra08c"
+                            style="@style/radiobutton"
+                            android:text="@string/cra08c" />
+                        <RadioButton
+                            android:id="@+id/cra08d"
+                            style="@style/radiobutton"
+                            android:text="@string/cra08d" />
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/cra08a"
-                        style="@style/textInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/cra08a"
-                        android:inputType="number"
-                        android:maxLength="2"
+                        <RadioButton
+                            android:id="@+id/cra08e"
+                            style="@style/radiobutton"
+                            android:text="@string/cra08e" />
 
-                        app:maxValue="30"
-                        app:minValue="0"
-                        app:type="range" />
+
+                    </RadioGroup>
+
+
+
+
+
 
 
                 </LinearLayout>

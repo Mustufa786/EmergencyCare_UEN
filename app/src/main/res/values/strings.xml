@@ -147,9 +147,11 @@
     <string name="cra07"> Phone number </string>
 
     <string name="cra08"> Age </string>
-    <string name="cra08a"> day </string>
-    <string name="cra08b"> month </string>
-    <string name="cra08c"> year </string>
+    <string name="cra08a"> Less then 1 month </string>
+    <string name="cra08b">   1-11 months  </string>
+    <string name="cra08c">   1-4 years  </string>
+   <string name="cra08d">    5-14 years  </string>
+   <string name="cra08e">    15-49 years </string>
 
     <string name="cra09"> Sex </string>
     <string name="cra09a"> Male </string>
