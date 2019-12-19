@@ -122,9 +122,9 @@ public class CRFBActivity extends AppCompatActivity {
 
                             bi.crb08.setText(crfa.getCra07());
 
-                            bi.crb09a.setText(crfa.getCra08a());
-                            bi.crb09b.setText(crfa.getCra08b());
-                            bi.crb09c.setText(crfa.getCra08c());
+                           // bi.crb09a.setText(crfa.getCra08a());
+                           // bi.crb09b.setText(crfa.getCra08b());
+                           // bi.crb09c.setText(crfa.getCra08c());
 
                             if (crfa.getCra09().equals("1")) {
                                 bi.crb10a.setChecked(true);

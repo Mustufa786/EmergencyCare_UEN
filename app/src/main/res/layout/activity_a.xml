@@ -351,11 +351,11 @@
                         <RadioButton
                             android:id="@+id/cra08a"
                             style="@style/radiobutton"
-                            android:text="@string/cra09a" />
+                            android:text="@string/cra08a" />
                         <RadioButton
                             android:id="@+id/cra08b"
                             style="@style/radiobutton"
-                            android:text="@string/cra09b" />
+                            android:text="@string/cra08b" />
                         <RadioButton
                             android:id="@+id/cra08c"
                             style="@style/radiobutton"
