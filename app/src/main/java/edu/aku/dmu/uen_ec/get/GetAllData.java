@@ -17,6 +17,7 @@ import java.net.URL;
 import java.util.List;
 
 import edu.aku.dmu.uen_ec.adapter.SyncListAdapter;
+import edu.aku.dmu.uen_ec.contracts.OPDContract;
 import edu.aku.dmu.uen_ec.contracts.TalukasContract;
 import edu.aku.dmu.uen_ec.contracts.UCsContract;
 import edu.aku.dmu.uen_ec.contracts.UsersContract;
@@ -132,6 +133,10 @@ public class GetAllData extends AsyncTask<String, String, String> {
                 case "taluka":
                     url = new URL(MainApp._HOST_URL + TalukasContract.singleTaluka._URI);
                     position = 3;
+                    break;
+                case "opd":
+                    url = new URL(MainApp._HOST_URL + OPDContract.singleOPD._URI);
+                    position = 4;
                     break;
 
             }
