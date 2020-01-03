@@ -228,6 +228,10 @@ public class GetAllData extends AsyncTask<String, String, String> {
                             db.syncTaluka(jsonArray);
                             position = 3;
                             break;
+                        case "opd":
+                            db.syncOPD(jsonArray);
+                            position = 4;
+                            break;
 
                     }
 

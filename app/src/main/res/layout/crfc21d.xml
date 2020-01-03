@@ -1,44 +1,28 @@
 <android.support.v7.widget.CardView style="@style/cardView"
     xmlns:android="http://schemas.android.com/apk/res/android"
-
     android:layout_marginBottom="0dp"
     android:layout_marginRight="0dp"
-
-
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
-
         style="@style/linearlayout_view_wt_bound">
 
-
-
-
         <TextView
-
-
             style="@style/i_q_textview"
             android:layout_width="wrap_content"
             android:layout_gravity="left"
-
             android:layout_marginBottom="10dp"
-
-
-
             android:text="Notify LHS On Day 21 "/>
-
-
 
         <!-- LHS COde-->
         <LinearLayout
             android:layout_marginTop="0dp"
             android:layout_marginLeft="10dp"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="100"
-            >
+            android:weightSum="100">
+
             <TextView
                 android:layout_marginBottom="3dp"
                 android:layout_marginTop="0dp"
@@ -46,10 +30,8 @@
                 android:textSize="18dp"
                 style="@style/i_textview"
                 android:text="LHS Code"
-
                 android:layout_weight="70"
-                android:textStyle="normal"
-                />
+                android:textStyle="normal" />
 
             <com.edittextpicker.aliazaz.EditTextPicker
                 android:id="@+id/lhscode"
@@ -61,15 +43,11 @@
                 android:hint="LHSCode"
                 android:inputType="number"
                 android:textColor="@color/black_overlay"
-
                 android:textSize="18dp"
-
                 android:textStyle="normal"
                 app:maxValue="9999"
                 app:minValue="1"
                 app:type="range" />
-
-
 
         </LinearLayout>
 
@@ -77,12 +55,11 @@
         <LinearLayout
             android:layout_marginTop="0dp"
             android:layout_marginLeft="10dp"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="100"
-            >
+            android:weightSum="100">
+
         <TextView
             android:layout_marginBottom="3dp"
             android:layout_marginTop="0dp"
@@ -90,10 +67,8 @@
             android:textSize="18dp"
             style="@style/i_textview"
             android:text="Date"
-            
             android:layout_weight="70"
-            android:textStyle="normal"
-            />
+            android:textStyle="normal" />
 
             <com.edittextpicker.aliazaz.EditTextPicker
                 android:layout_marginBottom="3dp"
@@ -105,9 +80,7 @@
                 android:layout_weight="30"
                 android:textColor="@color/black_overlay"
                 android:hint="Date"
-
                 android:inputType="number"
-
                 android:maxLength="2"
                 app:maxValue="31"
                 app:minValue="1"
@@ -121,8 +94,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="100"
-            >
+            android:weightSum="100">
+
             <TextView
                 android:layout_marginBottom="3dp"
                 android:layout_marginTop="0dp"
@@ -130,10 +103,8 @@
                 android:textSize="18dp"
                 style="@style/i_textview"
                 android:text="Month"
-
                 android:layout_weight="70"
-                android:textStyle="normal"
-                />
+                android:textStyle="normal" />
 
             <com.edittextpicker.aliazaz.EditTextPicker
                 android:layout_marginBottom="3dp"
@@ -147,7 +118,6 @@
                 android:hint="Month"
                 android:maxLength="2"
                 android:inputType="number"
-
                 app:maxValue="12"
                 app:minValue="1"
                 app:type="range" />
@@ -160,8 +130,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="100"
-            >
+            android:weightSum="100">
+
             <TextView
                 android:layout_marginBottom="3dp"
                 android:layout_marginTop="0dp"
@@ -169,10 +139,8 @@
                 android:textSize="18dp"
                 style="@style/i_textview"
                 android:text="Year"
-
                 android:layout_weight="70"
-                android:textStyle="normal"
-                />
+                android:textStyle="normal" />
 
             <com.edittextpicker.aliazaz.EditTextPicker
                 android:layout_marginBottom="3dp"
@@ -184,7 +152,6 @@
                 android:layout_weight="30"
                 android:textColor="@color/black_overlay"
                 android:hint="Year"
-
                 android:inputType="number"
                 android:maxLength="4"
                 app:maxValue="2020"
@@ -192,12 +159,6 @@
                 app:type="range" />
 
         </LinearLayout>
-
-
-
-
-
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -207,32 +168,22 @@
             android:padding="10dp"
             android:orientation="horizontal">
 
-
             <Button
                 android:id="@+id/btn_End"
                 style="@style/button"
                 android:layout_marginRight="10dp"
                 android:background="@color/brown"
-
                 android:text="Cancel" />
 
             <Button
                 android:id="@+id/btn_Continue"
                 style="@style/button"
                 android:background="@color/colorPrimaryAlpha"
-
                 android:text="OK" />
-
 
             <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
         </LinearLayout>
 
-
-
     </LinearLayout>
-
-
-
-
 
 </android.support.v7.widget.CardView>

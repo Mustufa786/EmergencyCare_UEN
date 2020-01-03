@@ -22,6 +22,8 @@ import edu.aku.dmu.uen_ec.contracts.FamilyMembersContract;
 import edu.aku.dmu.uen_ec.contracts.FamilyMembersContract.familyMembers;
 import edu.aku.dmu.uen_ec.contracts.FormsContract;
 import edu.aku.dmu.uen_ec.contracts.FormsContract.FormsTable;
+import edu.aku.dmu.uen_ec.contracts.OPDContract;
+import edu.aku.dmu.uen_ec.contracts.OPDContract.singleOPD;
 import edu.aku.dmu.uen_ec.contracts.TalukasContract;
 import edu.aku.dmu.uen_ec.contracts.TalukasContract.singleTaluka;
 import edu.aku.dmu.uen_ec.contracts.UCsContract;
@@ -65,6 +67,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleTaluka._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + singleTaluka.COLUMN_TALUKA_NAME + " TEXT,"
             + singleTaluka.COLUMN_TALUKA_CODE + " TEXT"
+            + " ) ;";
+    public static final String SQL_CREATE_OPD = "CREATE TABLE " + singleOPD.TABLE_NAME + "("
+            + singleOPD._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + singleOPD.COLUMN_CRA01 + " TEXT,"
+            + singleOPD.COLUMN_CRA02 + " TEXT,"
+            + singleOPD.COLUMN_CRA04 + " TEXT,"
+            + singleOPD.COLUMN_CRA05 + " TEXT,"
+            + singleOPD.COLUMN_CRA06A + " TEXT,"
+            + singleOPD.COLUMN_CRA06B + " TEXT,"
+            + singleOPD.COLUMN_CRA06C + " TEXT,"
+            + singleOPD.COLUMN_CRA06D + " TEXT,"
+            + singleOPD.COLUMN_CRA06E + " TEXT,"
+            + singleOPD.COLUMN_CRA07 + " TEXT"
             + " ) ;";
 
 
@@ -126,6 +141,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_USER = "DROP TABLE IF EXISTS " + UsersTable.TABLE_NAME;
     private static final String SQL_DELETE_UCS = "DROP TABLE IF EXISTS " + UCsTable.TABLE_NAME;
     private static final String SQL_DELETE_VILLAGES = "DROP TABLE IF EXISTS " + singleVillage.TABLE_NAME;
+    private static final String SQL_DELETE_OPD = "DROP TABLE IF EXISTS " + singleOPD.TABLE_NAME;
 
     private final String TAG = "DatabaseHelper";
     public String spDateT = new SimpleDateFormat("dd-MM-yy").format(new Date().getTime());
@@ -143,6 +159,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_UCS);
         db.execSQL(SQL_CREATE_VILLAGES);
         db.execSQL(SQL_CREATE_TALUKAS);
+        db.execSQL(SQL_CREATE_OPD);
     }
 
     @Override
@@ -154,6 +171,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_UCS);
         db.execSQL(SQL_DELETE_VILLAGES);
         db.execSQL(SQL_DELETE_TALUKA);
+        db.execSQL(SQL_DELETE_OPD);
     }
 
     public List<UCsContract> getUCsList() {
@@ -190,6 +208,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (c.moveToFirst()) {
             do {
                 TalukasContract fc = new TalukasContract();
+                formList.add(fc.hydrate(c));
+            } while (c.moveToNext());
+        }
+
+        // return contact list
+        return formList;
+    }
+
+    public List<OPDContract> getOPDList() {
+        List<OPDContract> formList = new ArrayList<>();
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + singleOPD.TABLE_NAME;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (c.moveToFirst()) {
+            do {
+                OPDContract fc = new OPDContract();
                 formList.add(fc.hydrate(c));
             } while (c.moveToNext());
         }
@@ -1317,6 +1355,41 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(singleTaluka.COLUMN_TALUKA_NAME, user.getDistrictName());
                 values.put(singleTaluka.COLUMN_TALUKA_CODE, user.getDistrictCode());
                 db.insert(singleTaluka.TABLE_NAME, null, values);
+            }
+
+
+        } catch (Exception e) {
+            Log.d(TAG, "syncUser(e): " + e);
+        } finally {
+            db.close();
+        }
+    }
+
+    public void syncOPD(JSONArray villages) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(singleOPD.TABLE_NAME, null, null);
+        try {
+            JSONArray jsonArray = villages;
+            for (int i = 0; i < jsonArray.length(); i++) {
+
+                JSONObject jsonObjectUser = jsonArray.getJSONObject(i);
+
+                OPDContract user = new OPDContract();
+                user.sync(jsonObjectUser);
+                ContentValues values = new ContentValues();
+
+                values.put(singleOPD.COLUMN_CRA01, user.getcra01());
+                values.put(singleOPD.COLUMN_CRA02, user.getcra02());
+                values.put(singleOPD.COLUMN_CRA04, user.getcra04());
+                values.put(singleOPD.COLUMN_CRA05, user.getcra05());
+                values.put(singleOPD.COLUMN_CRA06A, user.getcra06a());
+                values.put(singleOPD.COLUMN_CRA06B, user.getcra06b());
+                values.put(singleOPD.COLUMN_CRA06C, user.getcra06c());
+                values.put(singleOPD.COLUMN_CRA06D, user.getcra06d());
+                values.put(singleOPD.COLUMN_CRA06E, user.getcra06e());
+                values.put(singleOPD.COLUMN_CRA07, user.getcra07());
+
+                db.insert(singleOPD.TABLE_NAME, null, values);
             }
 
 
