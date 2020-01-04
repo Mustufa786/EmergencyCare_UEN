@@ -420,6 +420,13 @@ public class SyncActivity extends AppCompatActivity {
                         list.add(model);
                     }
                     new GetAllData(mContext, "users", syncListAdapter, list).execute();
+
+                    if (listActivityCreated) {
+                        model = new SyncModel();
+                        model.setstatusID(0);
+                        list.add(model);
+                    }
+                    new GetAllData(mContext, "opd", syncListAdapter, list).execute();
 //                    if (listActivityCreated) {
 //                        model = new SyncModel();
 //                        model.setstatusID(0);

@@ -58,14 +58,17 @@ public class GetAllData extends AsyncTask<String, String, String> {
             case "users":
                 position = 0;
                 break;
-            case "villages":
+//            case "villages":
+//                position = 1;
+//                break;
+//            case "ucs":
+//                position = 2;
+//                break;
+//            case "taluka":
+//                position = 3;
+//                break;
+            case "opd":
                 position = 1;
-                break;
-            case "ucs":
-                position = 2;
-                break;
-            case "taluka":
-                position = 3;
                 break;
 
         }
@@ -93,14 +96,17 @@ public class GetAllData extends AsyncTask<String, String, String> {
             case "users":
                 position = 0;
                 break;
-            case "villages":
+//            case "villages":
+//                position = 1;
+//                break;
+//            case "ucs":
+//                position = 2;
+//                break;
+//            case "taluka":
+//                position = 3;
+//                break;
+            case "opd":
                 position = 1;
-                break;
-            case "ucs":
-                position = 2;
-                break;
-            case "taluka":
-                position = 3;
                 break;
 
         }
@@ -122,21 +128,21 @@ public class GetAllData extends AsyncTask<String, String, String> {
                     url = new URL(MainApp._HOST_URL + UsersContract.UsersTable._URI);
                     position = 0;
                     break;
-                case "villages":
-                    url = new URL(MainApp._HOST_URL + VillagesContract.singleVillage._URI);
-                    position = 1;
-                    break;
-                case "ucs":
-                    url = new URL(MainApp._HOST_URL + UCsContract.UCsTable._URI);
-                    position = 2;
-                    break;
-                case "taluka":
-                    url = new URL(MainApp._HOST_URL + TalukasContract.singleTaluka._URI);
-                    position = 3;
-                    break;
+//                case "villages":
+//                    url = new URL(MainApp._HOST_URL + VillagesContract.singleVillage._URI);
+//                    position = 1;
+//                    break;
+//                case "ucs":
+//                    url = new URL(MainApp._HOST_URL + UCsContract.UCsTable._URI);
+//                    position = 2;
+//                    break;
+//                case "taluka":
+//                    url = new URL(MainApp._HOST_URL + TalukasContract.singleTaluka._URI);
+//                    position = 3;
+//                    break;
                 case "opd":
                     url = new URL(MainApp._HOST_URL + OPDContract.singleOPD._URI);
-                    position = 4;
+                    position = 1;
                     break;
 
             }
@@ -221,21 +227,21 @@ public class GetAllData extends AsyncTask<String, String, String> {
                             db.syncUser(jsonArray);
                             position = 0;
                             break;
-                        case "villages":
-                            db.syncVillages(jsonArray);
-                            position = 1;
-                            break;
-                        case "ucs":
-                            db.syncUcs(jsonArray);
-                            position = 2;
-                            break;
-                        case "taluka":
-                            db.syncTaluka(jsonArray);
-                            position = 3;
-                            break;
+//                        case "villages":
+//                            db.syncVillages(jsonArray);
+//                            position = 1;
+//                            break;
+//                        case "ucs":
+//                            db.syncUcs(jsonArray);
+//                            position = 2;
+//                            break;
+//                        case "taluka":
+//                            db.syncTaluka(jsonArray);
+//                            position = 3;
+//                            break;
                         case "opd":
                             db.syncOPD(jsonArray);
-                            position = 4;
+                            position = 1;
                             break;
 
                     }

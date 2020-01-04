@@ -1,33 +1,13 @@
 package edu.aku.dmu.uen_ec.ui;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.format.DateFormat;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
 import edu.aku.dmu.uen_ec.JSONModels.JSONModelCRFA;
@@ -35,13 +15,7 @@ import edu.aku.dmu.uen_ec.JsonUtils.JSONUtils;
 import edu.aku.dmu.uen_ec.R;
 import edu.aku.dmu.uen_ec.contracts.FormsContract;
 import edu.aku.dmu.uen_ec.core.DatabaseHelper;
-import edu.aku.dmu.uen_ec.core.MainApp;
-import edu.aku.dmu.uen_ec.databinding.ActivityBBinding;
 import edu.aku.dmu.uen_ec.databinding.ActivityCBinding;
-import edu.aku.dmu.uen_ec.util.Util;
-
-import static android.content.Context.MODE_PRIVATE;
-import static edu.aku.dmu.uen_ec.core.MainApp.fc;
 
 public class CRFCActivity extends AppCompatActivity {
 
@@ -113,7 +87,7 @@ public class CRFCActivity extends AppCompatActivity {
             for (FormsContract fc : lst) {
                 JSONModelCRFA crfa = JSONUtils.getModelFromJSON(fc.getCRFA(), JSONModelCRFA.class);
                 String stringg = "";
-                if(crfa.getCra12().equals("1") || crfa.getCra12().equals("2") || crfa.getCra12().equals("3") ) {
+                if (crfa.getCra12().equals("1") || crfa.getCra12().equals("2") || crfa.getCra12().equals("3")) {
                     stringg = crfa.getCra01() + "-" + crfa.getCra02() + "-" + crfa.getCra04() + "-" + crfa.getCra05() + "-" +
                             crfa.getCra03a() + "/" + crfa.getCra03b() + "/" + crfa.getCra03c();
                     lst_string.add(stringg);

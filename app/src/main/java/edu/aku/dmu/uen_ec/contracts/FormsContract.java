@@ -264,9 +264,9 @@ public class FormsContract {
 
         this.CRFA = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_CRFA));
         this.studyid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_studyid));
-        this.crfcstatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_crfcstatus));
-        this.crfc21 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_crfc21));
-        this.crfc28 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_crfc28));
+//        this.crfcstatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_crfcstatus));
+//        this.crfc21 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_crfc21));
+//        this.crfc28 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_crfc28));
 
       //  this.f2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F2));
        // this.f3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F3));

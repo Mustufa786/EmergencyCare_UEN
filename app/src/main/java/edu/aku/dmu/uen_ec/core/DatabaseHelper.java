@@ -68,6 +68,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleTaluka.COLUMN_TALUKA_NAME + " TEXT,"
             + singleTaluka.COLUMN_TALUKA_CODE + " TEXT"
             + " ) ;";
+
     public static final String SQL_CREATE_OPD = "CREATE TABLE " + singleOPD.TABLE_NAME + "("
             + singleOPD._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + singleOPD.COLUMN_CRA01 + " TEXT,"
@@ -255,7 +256,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_crfcstatus,
                 FormsTable.COLUMN_crfc21,
                 FormsTable.COLUMN_crfc28,
-
                 FormsTable.COLUMN_F2,
                 FormsTable.COLUMN_F3,
                 FormsTable.COLUMN_FORMTYPE,
@@ -296,6 +296,59 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             while (c.moveToNext()) {
                 FormsContract fc = new FormsContract();
                 allFC = fc.Hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
+    public OPDContract getFroms(String studyID) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                singleOPD._ID,
+                singleOPD.COLUMN_CRA01,
+                singleOPD.COLUMN_CRA02,
+                singleOPD.COLUMN_CRA04,
+                singleOPD.COLUMN_CRA05,
+                singleOPD.COLUMN_CRA06A,
+                singleOPD.COLUMN_CRA06B,
+                singleOPD.COLUMN_CRA06C,
+                singleOPD.COLUMN_CRA06D,
+                singleOPD.COLUMN_CRA06E,
+                singleOPD.COLUMN_CRA07,
+
+        };
+
+
+        String whereClause = singleOPD.COLUMN_CRA01 + "=?";
+        String[] whereArgs = new String[]{studyID};
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                singleOPD._ID + " ASC";
+
+        OPDContract allFC = new OPDContract();
+        try {
+            c = db.query(
+                    singleOPD.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                OPDContract fc = new OPDContract();
+                allFC = fc.hydrate(c);
             }
         } finally {
             if (c != null) {
@@ -350,8 +403,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         };
 
 
-
-        String whereClause =" f_Type='CRFA' and "+ FormsTable.COLUMN_crfcstatus + "=?";
+        String whereClause = " f_Type='CRFA' and " + FormsTable.COLUMN_crfcstatus + "=?";
         String[] whereArgs = new String[]{crfstatus};
         String groupBy = null;
         String having = null;
@@ -386,24 +438,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-
-
     public String getsFormcount() {
         SQLiteDatabase db = this.getReadableDatabase();
-        int i=0;
+        int i = 0;
         Cursor c = null;
         String[] columns = {
                 FormsTable.COLUMN_studyid,
         };
 
 
-        String whereClause =null;
-        String[] whereArgs =  null;
+        String whereClause = null;
+        String[] whereArgs = null;
         String groupBy = null;
         String having = null;
-        String name="0";
-        String orderBy =null;
-               // FormsTable.COLUMN_studyid + " ASC";
+        String name = "0";
+        String orderBy = null;
+        // FormsTable.COLUMN_studyid + " ASC";
 
         FormsContract allFC = new FormsContract();
         try {
@@ -419,9 +469,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
             while (c.moveToNext()) {
-               // FormsContract fc = new FormsContract();
-               // allFC = fc.Hydrate(c);
-                name=c.getString(c.getColumnIndex(FormsTable.COLUMN_studyid));
+                // FormsContract fc = new FormsContract();
+                // allFC = fc.Hydrate(c);
+                name = c.getString(c.getColumnIndex(FormsTable.COLUMN_studyid));
                 i++;
 
             }
@@ -433,11 +483,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.close();
             }
         }
-        if (name.equals("") ||name.isEmpty())
-        {
-            name=i+"";
+        if (name.equals("") || name.isEmpty()) {
+            name = i + "";
         }
-        return      name;
+        return name;
     }
 
     public List<VillagesContract> getVillages(String id) {
@@ -600,11 +649,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_ISTATUS88x,
                 FormsTable.COLUMN_END_TIME,
-                FormsTable.COLUMN_F1,
                 FormsTable.COLUMN_CRFA,
                 FormsTable.COLUMN_studyid,
-                FormsTable.COLUMN_F2,
-                FormsTable.COLUMN_F3,
                 FormsTable.COLUMN_FORMTYPE,
                 FormsTable.COLUMN_TALUKA_CODE,
                 FormsTable.COLUMN_GPSLAT,
@@ -741,12 +787,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_ISTATUS88x,
                 FormsTable.COLUMN_END_TIME,
-              //  FormsTable.COLUMN_F1,
+                //  FormsTable.COLUMN_F1,
                 FormsTable.COLUMN_CRFA,
                 FormsTable.COLUMN_studyid,
                 FormsTable.COLUMN_crfcstatus,
-             //   FormsTable.COLUMN_crfc21,
-             //   FormsTable.COLUMN_crfc28,
+                //   FormsTable.COLUMN_crfc21,
+                //   FormsTable.COLUMN_crfc28,
 
                 FormsTable.COLUMN_FORMTYPE,
                 FormsTable.COLUMN_TALUKA_CODE,
@@ -815,12 +861,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_ISTATUS88x,
                 FormsTable.COLUMN_END_TIME,
-            //    FormsTable.COLUMN_F1,
+                //    FormsTable.COLUMN_F1,
                 FormsTable.COLUMN_CRFA,
                 FormsTable.COLUMN_studyid,
-             //   FormsTable.COLUMN_crfcstatus,
-              //  FormsTable.COLUMN_crfc21,
-              //  FormsTable.COLUMN_crfc28,
+                //   FormsTable.COLUMN_crfcstatus,
+                //  FormsTable.COLUMN_crfc21,
+                //  FormsTable.COLUMN_crfc28,
 
                 FormsTable.COLUMN_FORMTYPE,
                 FormsTable.COLUMN_TALUKA_CODE,
@@ -889,7 +935,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_ISTATUS88x,
                 FormsTable.COLUMN_END_TIME,
-              //  FormsTable.COLUMN_F1,
+                //  FormsTable.COLUMN_F1,
                 //  FormsTable.COLUMN_CRFA,
                 FormsTable.COLUMN_studyid,
                 //   FormsTable.COLUMN_crfcstatus,
@@ -1122,11 +1168,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-     //   values.put(FormsTable.COLUMN_crfc21, MainApp.fc.getcrfc21());
+        //   values.put(FormsTable.COLUMN_crfc21, MainApp.fc.getcrfc21());
         values.put(FormsTable.COLUMN_crfcstatus, "1");
 
 // Which row to update, based on the ID
-        String selection ="f_type='CRFA' and "+ FormsTable.COLUMN_studyid + " =? ";
+        String selection = "f_type='CRFA' and " + FormsTable.COLUMN_studyid + " =? ";
         String[] selectionArgs = {studyid};
 
         int count = db.update(FormsTable.TABLE_NAME,
@@ -1142,11 +1188,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // New value for one column
         ContentValues values = new ContentValues();
-       // values.put(FormsTable.COLUMN_crfc28, MainApp.fc.getcrfc28());
+        // values.put(FormsTable.COLUMN_crfc28, MainApp.fc.getcrfc28());
         values.put(FormsTable.COLUMN_crfcstatus, "2");
 
 // Which row to update, based on the ID
-        String selection = "f_type='CRFA' and "+ FormsTable.COLUMN_studyid + " =? ";
+        String selection = "f_type='CRFA' and " + FormsTable.COLUMN_studyid + " =? ";
         String[] selectionArgs = {studyid};
 
         int count = db.update(FormsTable.TABLE_NAME,

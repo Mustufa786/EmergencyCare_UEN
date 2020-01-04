@@ -154,7 +154,7 @@ public class OPDContract {
         public static final String COLUMN_CRA06E = "cra06e";
         public static final String COLUMN_CRA07 = "cra07";
 
-        public static final String _URI = "opd.php";
+        public static final String _URI = "getforms.php";
     }
 
 }

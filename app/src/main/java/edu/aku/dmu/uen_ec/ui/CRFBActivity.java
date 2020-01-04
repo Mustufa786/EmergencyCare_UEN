@@ -25,6 +25,7 @@ import edu.aku.dmu.uen_ec.JSONModels.JSONModelCRFA;
 import edu.aku.dmu.uen_ec.JsonUtils.JSONUtils;
 import edu.aku.dmu.uen_ec.R;
 import edu.aku.dmu.uen_ec.contracts.FormsContract;
+import edu.aku.dmu.uen_ec.contracts.OPDContract;
 import edu.aku.dmu.uen_ec.core.DatabaseHelper;
 import edu.aku.dmu.uen_ec.core.MainApp;
 import edu.aku.dmu.uen_ec.databinding.ActivityBBinding;
@@ -65,7 +66,7 @@ public class CRFBActivity extends AppCompatActivity {
 
         setupViews();
 
-        UIirfan.findViews(bi.GrpCRFB,this);
+        UIirfan.findViews(bi.GrpCRFB, this);
     }
 
     private void setupViews() {
@@ -96,83 +97,65 @@ public class CRFBActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                JSONModelCRFA crfa;
                 if (!bi.crb01.getText().toString().equals("")) {
-                     FormsContract fc = db.getsFormContract(bi.crb01.getText().toString());
-                    if (fc != null) {
-                        JSONModelCRFA crfa = JSONUtils.getModelFromJSON(fc.getCRFA(), JSONModelCRFA.class);
-
-                        try
-                        {
-                            if(!crfa.getCra12().equals("2"))
-                            {
-
-                                Toast.makeText(CRFBActivity.this,"No record found",Toast.LENGTH_LONG).show();
+                    FormsContract fc = db.getsFormContract(bi.crb01.getText().toString());
+                    if (!fc.getCRFA().isEmpty()) {
+                        crfa = JSONUtils.getModelFromJSON(fc.getCRFA(), JSONModelCRFA.class);
+                        try {
+                            if (!crfa.getCra12().equals("2")) {
+                                Toast.makeText(CRFBActivity.this, "No record found", Toast.LENGTH_LONG).show();
                                 return;
                             }
-
-                            bi.crb02.setText(crfa.getCra02());
-                            bi.crb05.setText(crfa.getCra04());
-                            bi.crb06.setText(crfa.getCra05());
-
-                            bi.crb07a.setText(crfa.getCra06a());
-                            bi.crb07b.setText(crfa.getCra06b());
-                            bi.crb07c.setText(crfa.getCra06c());
-                            bi.crb07d.setText(crfa.getCra06d());
-                            bi.crb07e.setText(crfa.getCra06e());
-
-                            bi.crb08.setText(crfa.getCra07());
-
-                           // bi.crb09a.setText(crfa.getCra08a());
-                           // bi.crb09b.setText(crfa.getCra08b());
-                           // bi.crb09c.setText(crfa.getCra08c());
-
-                            if (crfa.getCra09().equals("1")) {
-                                bi.crb10a.setChecked(true);
-                            } else {
-                                bi.crb10b.setChecked(true);
-                            }
-
-                            bi.checkDataLayout.setVisibility(View.VISIBLE);
-
-                        }
-                        catch (Exception e)
-                        {
+                        } catch (Exception e) {
                             bi.crb01.setError("No record Avilable for this Study ID");
                             bi.crb01.requestFocus();
-
                             bi.checkDataLayout.setVisibility(View.GONE);
-
                         }
 
+                    } else {
+                        OPDContract opd = db.getFroms(bi.crb01.getText().toString());
+                        crfa = new JSONModelCRFA(opd);
+                    }
+                    bi.crb02.setText(crfa.getCra02());
+                    bi.crb05.setText(crfa.getCra04());
+                    bi.crb06.setText(crfa.getCra05());
 
+                    bi.crb07a.setText(crfa.getCra06a());
+                    bi.crb07b.setText(crfa.getCra06b());
+                    bi.crb07c.setText(crfa.getCra06c());
+                    bi.crb07d.setText(crfa.getCra06d());
+                    bi.crb07e.setText(crfa.getCra06e());
+
+                    bi.crb08.setText(crfa.getCra07());
+
+                    if (crfa.getCra09() != null && !crfa.getCra09().isEmpty()) {
+                        if (crfa.getCra09().equals("1")) {
+                            bi.crb10a.setChecked(true);
+                        } else {
+                            bi.crb10b.setChecked(true);
+                        }
 
                     }
-                    else {
-                        bi.crb01.setError("No record Avilable for this Study ID");
-                        bi.crb01.requestFocus();
-
-
-
-                    }
+                    bi.checkDataLayout.setVisibility(View.VISIBLE);
 
                 }
+
 
             }
         });
     }
 
 
-
     public void BtnContinue() {
         if (formValidation()) {
-
 
 
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             Date PresentationDate = null;
             Date DischargeDate = null;
             try {
-                PresentationDate = sdf.parse(bi.crb04a.getText()+"/"+ bi.crb04b.getText()+"/" +bi.crb04c.getText());
+                PresentationDate = sdf.parse(bi.crb04a.getText() + "/" + bi.crb04b.getText() + "/" + bi.crb04c.getText());
             } catch (ParseException e) {
                 e.printStackTrace();
             }
@@ -184,10 +167,8 @@ public class CRFBActivity extends AppCompatActivity {
             }
 
 
-
-
             try {
-                DischargeDate = sdf.parse(bi.crb14a.getText()+"/"+ bi.crb14b.getText()+"/" +bi.crb14c.getText());
+                DischargeDate = sdf.parse(bi.crb14a.getText() + "/" + bi.crb14b.getText() + "/" + bi.crb14c.getText());
             } catch (ParseException e) {
                 e.printStackTrace();
             }
@@ -197,8 +178,6 @@ public class CRFBActivity extends AppCompatActivity {
                 bi.crb14a.requestFocus();
                 return;
             }
-
-
 
 
             try {
@@ -320,7 +299,7 @@ public class CRFBActivity extends AppCompatActivity {
 
     public void BtnEnd() {
 
-       this.finish();
+        this.finish();
 
         // MainApp.endActivity(this, this);
     }

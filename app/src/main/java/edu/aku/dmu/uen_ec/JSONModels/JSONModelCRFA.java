@@ -1,5 +1,7 @@
 package edu.aku.dmu.uen_ec.JSONModels;
 
+import edu.aku.dmu.uen_ec.contracts.OPDContract;
+
 public class JSONModelCRFA {
 
     private String cra01;
@@ -23,6 +25,22 @@ public class JSONModelCRFA {
     private String cra10;
     private String cra11;
     private String cra12;
+
+    public JSONModelCRFA(OPDContract opd) {
+        this.cra01 = opd.getcra01();
+        this.cra02 = opd.getcra02();
+        this.cra04 = opd.getcra04();
+        this.cra05 = opd.getcra05();
+        this.cra06a = opd.getcra06a();
+        this.cra06b = opd.getcra06b();
+        this.cra06c = opd.getcra06c();
+        this.cra06d = opd.getcra06d();
+        this.cra06e = opd.getcra06e();
+        this.cra07 = opd.getcra07();
+    }
+
+    public JSONModelCRFA() {
+    }
 
     public String getCra01() {
         return cra01;
@@ -115,6 +133,7 @@ public class JSONModelCRFA {
     public void setCra06d(String cra06d) {
         this.cra06d = cra06d;
     }
+
     public void setCra06e(String cra06e) {
         this.cra06e = cra06e;
     }
