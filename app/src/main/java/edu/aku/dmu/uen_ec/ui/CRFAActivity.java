@@ -186,7 +186,6 @@ public class CRFAActivity extends AppCompatActivity {
         CRFA.put("cra08c", "0");
 
 
-
         CRFA.put("cra08a",
                 bi.cra08a.isChecked() ? "1"
                         : bi.cra08b.isChecked() ? "2"
