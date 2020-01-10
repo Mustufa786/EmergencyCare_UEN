@@ -115,6 +115,10 @@ public class CRFBActivity extends AppCompatActivity {
 
                     } else {
                         OPDContract opd = db.getFroms(bi.crb01.getText().toString());
+                        if (opd == null) {
+                            Toast.makeText(CRFBActivity.this, "No record found", Toast.LENGTH_LONG).show();
+                            return;
+                        }
                         crfa = new JSONModelCRFA(opd);
                     }
                     bi.crb02.setText(crfa.getCra02());

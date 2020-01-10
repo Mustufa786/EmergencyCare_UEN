@@ -342,7 +342,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy =
                 singleOPD._ID + " ASC";
 
-        OPDContract allFC = new OPDContract();
+        OPDContract allFC = null;
         try {
             c = db.query(
                     singleOPD.TABLE_NAME,  // The table to query
