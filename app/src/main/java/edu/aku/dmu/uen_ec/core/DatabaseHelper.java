@@ -42,7 +42,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "CRF.db";
     public static final String PROJECT_NAME = "CRF";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     public static final String DB_NAME = DATABASE_NAME.replace(".", "_" + MainApp.versionName + "_" + DATABASE_VERSION + "_copy.");
 
 
@@ -166,13 +166,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
 
-        db.execSQL(SQL_DELETE_FORMS);
+        /*db.execSQL(SQL_DELETE_FORMS);
         db.execSQL(SQL_DELETE_FAMILYMEMBERS);
         db.execSQL(SQL_DELETE_USER);
         db.execSQL(SQL_DELETE_UCS);
         db.execSQL(SQL_DELETE_VILLAGES);
         db.execSQL(SQL_DELETE_TALUKA);
-        db.execSQL(SQL_DELETE_OPD);
+        db.execSQL(SQL_DELETE_OPD);*/
+
+        switch (i) {
+            case 1:
+                db.execSQL(SQL_CREATE_OPD);
+
+        }
+
     }
 
     public List<UCsContract> getUCsList() {
