@@ -30,6 +30,7 @@ import edu.aku.dmu.uen_ec.contracts.UCsContract;
 import edu.aku.dmu.uen_ec.contracts.UCsContract.UCsTable;
 import edu.aku.dmu.uen_ec.contracts.UsersContract;
 import edu.aku.dmu.uen_ec.contracts.UsersContract.UsersTable;
+import edu.aku.dmu.uen_ec.contracts.VersionAppContract;
 import edu.aku.dmu.uen_ec.contracts.VillagesContract;
 import edu.aku.dmu.uen_ec.contracts.VillagesContract.singleVillage;
 
@@ -42,7 +43,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "CRF.db";
     public static final String PROJECT_NAME = "CRF";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     public static final String DB_NAME = DATABASE_NAME.replace(".", "_" + MainApp.versionName + "_" + DATABASE_VERSION + "_copy.");
 
 
@@ -135,6 +136,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             familyMembers.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
 
+    private final String SQL_CREATE_VERSIONAPP = "CREATE TABLE " + VersionAppContract.VersionAppTable.TABLE_NAME + " (" +
+            VersionAppContract.VersionAppTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            VersionAppContract.VersionAppTable.COLUMN_VERSION_CODE + " TEXT, " +
+            VersionAppContract.VersionAppTable.COLUMN_VERSION_NAME + " TEXT, " +
+            VersionAppContract.VersionAppTable.COLUMN_PATH_NAME + " TEXT " +
+            ");";
+
 
     private static final String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + FormsTable.TABLE_NAME;
     private static final String SQL_DELETE_TALUKA = "DROP TABLE IF EXISTS " + singleTaluka.TABLE_NAME;
@@ -161,6 +169,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_VILLAGES);
         db.execSQL(SQL_CREATE_TALUKAS);
         db.execSQL(SQL_CREATE_OPD);
+        db.execSQL(SQL_CREATE_VERSIONAPP);
     }
 
     @Override
@@ -177,6 +186,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         switch (i) {
             case 1:
                 db.execSQL(SQL_CREATE_OPD);
+            case 2:
+                db.execSQL(SQL_CREATE_VERSIONAPP);
 
         }
 
@@ -202,6 +213,49 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // return contact list
         return formList;
+    }
+
+    public VersionAppContract getVersionApp() {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                VersionAppContract.VersionAppTable._ID,
+                VersionAppContract.VersionAppTable.COLUMN_VERSION_CODE,
+                VersionAppContract.VersionAppTable.COLUMN_VERSION_NAME,
+                VersionAppContract.VersionAppTable.COLUMN_PATH_NAME
+        };
+
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = null;
+
+        VersionAppContract allVC = new VersionAppContract();
+        try {
+            c = db.query(
+                    VersionAppContract.VersionAppTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allVC.hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allVC;
     }
 
     public List<TalukasContract> getTalukaList() {
@@ -1413,6 +1467,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         } catch (Exception e) {
             Log.d(TAG, "syncUser(e): " + e);
+        } finally {
+            db.close();
+        }
+    }
+
+    public void syncVersionApp(JSONArray Versionlist) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(VersionAppContract.VersionAppTable.TABLE_NAME, null, null);
+        try {
+            JSONArray jsonArray = Versionlist;
+            JSONObject jsonObjectCC = jsonArray.getJSONObject(0);
+
+            VersionAppContract Vc = new VersionAppContract();
+            Vc.Sync(jsonObjectCC);
+
+            ContentValues values = new ContentValues();
+
+            values.put(VersionAppContract.VersionAppTable.COLUMN_PATH_NAME, Vc.getPathname());
+            values.put(VersionAppContract.VersionAppTable.COLUMN_VERSION_CODE, Vc.getVersioncode());
+            values.put(VersionAppContract.VersionAppTable.COLUMN_VERSION_NAME, Vc.getVersionname());
+
+            db.insert(VersionAppContract.VersionAppTable.TABLE_NAME, null, values);
+        } catch (Exception e) {
         } finally {
             db.close();
         }
