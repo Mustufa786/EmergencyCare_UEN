@@ -1,16 +1,35 @@
 package edu.aku.dmu.uen_ec;
 
+import android.app.ActivityManager;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.DownloadManager;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.databinding.DataBindingUtil;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
+import java.io.File;
 import java.util.Collection;
+import java.util.List;
 
 import edu.aku.dmu.uen_ec.contracts.FormsContract;
+import edu.aku.dmu.uen_ec.contracts.VersionAppContract;
 import edu.aku.dmu.uen_ec.core.AndroidDatabaseManager;
 import edu.aku.dmu.uen_ec.core.DatabaseHelper;
 import edu.aku.dmu.uen_ec.core.MainApp;
@@ -30,6 +49,13 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences sharedPref;
     DatabaseHelper db;
     private String rSumText = "";
+    VersionAppContract versionAppContract;
+    SharedPreferences sharedPrefDownload;
+    SharedPreferences.Editor editorDownload;
+    DownloadManager downloadManager;
+    String preVer = "", newVer = "";
+    Long refID;
+    static File file;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +139,55 @@ public class MainActivity extends AppCompatActivity {
 
         }
         bi.recordSummary.setText(rSumText);
+
+        sharedPrefDownload = getSharedPreferences("appDownload", MODE_PRIVATE);
+        editorDownload = sharedPrefDownload.edit();
+
+        versionAppContract = db.getVersionApp();
+        if (versionAppContract.getVersioncode() != null) {
+
+            preVer = MainApp.versionName + "." + MainApp.versionCode;
+            newVer = versionAppContract.getVersionname() + "." + versionAppContract.getVersioncode();
+
+            if (MainApp.versionCode < Integer.valueOf(versionAppContract.getVersioncode())) {
+                bi.lblAppVersion.setVisibility(View.VISIBLE);
+
+                String fileName = DatabaseHelper.DATABASE_NAME.replace(".db", "-New-Apps");
+                file = new File(Environment.getExternalStorageDirectory() + File.separator + fileName, versionAppContract.getPathname());
+
+                if (file.exists()) {
+                    bi.lblAppVersion.setText("Emergency Care App New Version " + newVer + "  Downloaded.");
+//                    InstallNewApp(newVer, preVer);
+                    showDialog(newVer, preVer);
+                } else {
+                    NetworkInfo networkInfo = ((ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+                    if (networkInfo != null && networkInfo.isConnected()) {
+
+                        bi.lblAppVersion.setText("Emergency Care APP New Version " + newVer + " Downloading..");
+                        downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+                        Uri uri = Uri.parse(MainApp._UPDATE_URL + versionAppContract.getPathname());
+                        DownloadManager.Request request = new DownloadManager.Request(uri);
+                        request.setDestinationInExternalPublicDir(fileName, versionAppContract.getPathname())
+                                .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+                                .setTitle("Downloading Emergency Care App new App ver." + newVer);
+                        refID = downloadManager.enqueue(request);
+
+                        editorDownload.putLong("refID", refID);
+                        editorDownload.putBoolean("flag", false);
+                        editorDownload.commit();
+
+                    } else {
+                        bi.lblAppVersion.setText("Emergency Care App New Version " + newVer + "  Available..\n(Can't download.. Internet connectivity issue!!)");
+                    }
+                }
+
+            } else {
+                bi.lblAppVersion.setVisibility(View.GONE);
+                bi.lblAppVersion.setText(null);
+            }
+        }
+        registerReceiver(broadcastReceiver, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+
 
     }
 
@@ -314,6 +389,8 @@ public class MainActivity extends AppCompatActivity {
 //        }
     }
 
+
+
     public void openForm(int type) {
 
         Class cc;
@@ -341,6 +418,52 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (DownloadManager.ACTION_DOWNLOAD_COMPLETE.equals(intent.getAction())) {
+
+                DownloadManager.Query query = new DownloadManager.Query();
+                query.setFilterById(sharedPrefDownload.getLong("refID", 0));
+
+                downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+                Cursor cursor = downloadManager.query(query);
+                if (cursor.moveToFirst()) {
+                    int colIndex = cursor.getColumnIndex(DownloadManager.COLUMN_STATUS);
+                    if (DownloadManager.STATUS_SUCCESSFUL == cursor.getInt(colIndex)) {
+
+                        editorDownload.putBoolean("flag", true);
+                        editorDownload.commit();
+
+                        Toast.makeText(context, "New App downloaded!!", Toast.LENGTH_SHORT).show();
+                        bi.lblAppVersion.setText("TMK APP New Version " + newVer + "  Downloaded.");
+
+                        ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+                        List<ActivityManager.RunningTaskInfo> taskInfo = am.getRunningTasks(1);
+
+                        if (taskInfo.get(0).topActivity.getClassName().equals(MainActivity.class.getName())) {
+//                                InstallNewApp(newVer, preVer);
+                            showDialog(newVer, preVer);
+                        }
+                    }
+                }
+            }
+        }
+    };
+
+    void showDialog(String newVer, String preVer) {
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        Fragment prev = getFragmentManager().findFragmentByTag("dialog");
+        if (prev != null) {
+            ft.remove(prev);
+        }
+        ft.addToBackStack(null);
+
+        DialogFragment newFragment = MyDialogFragment.newInstance(newVer, preVer);
+        newFragment.show(ft, "dialog");
+
+    }
+
 
     private String selectFormType(int type) {
         switch (type) {
@@ -358,5 +481,50 @@ public class MainActivity extends AppCompatActivity {
 
     public void openDatabaseManager() {
         startActivity(new Intent(this, AndroidDatabaseManager.class));
+    }
+
+    public static class MyDialogFragment extends DialogFragment {
+
+        String newVer, preVer;
+
+        static MyDialogFragment newInstance(String newVer, String preVer) {
+            MyDialogFragment f = new MyDialogFragment();
+
+            Bundle args = new Bundle();
+            args.putString("newVer", newVer);
+            args.putString("preVer", preVer);
+            f.setArguments(args);
+
+            return f;
+        }
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            newVer = getArguments().getString("newVer");
+            preVer = getArguments().getString("preVer");
+
+            return new AlertDialog.Builder(getActivity())
+                    .setIcon(R.drawable.exclamation)
+                    .setTitle("Emergency Care APP is available!")
+                    .setMessage("Emergency Care App " + newVer + " is now available. Your are currently using older version " + preVer + ".\nInstall new version to use this app.")
+                    .setPositiveButton("INSTALL!!",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+                                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                                    intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                }
+                            }
+                    )
+                    .create();
+        }
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(broadcastReceiver);
     }
 }
