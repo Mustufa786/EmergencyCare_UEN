@@ -3,16 +3,17 @@ package edu.aku.dmu.uen_ec.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
-import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
+
+import com.edittextpicker.aliazaz.EditTextPicker;
 
 import edu.aku.dmu.uen_ec.R;
 import edu.aku.dmu.uen_ec.core.MainApp;
+import edu.aku.dmu.uen_ec.validation.ValidatorClass;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -22,7 +23,7 @@ public class Util {
         return password.length() >= 7;
     }
 
-    public static void showTagDialog(Context context) {
+    public static void showTagDialog(final Context context) {
 
         SharedPreferences sharedPref;
         final SharedPreferences.Editor editor;
@@ -33,7 +34,7 @@ public class Util {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setCancelable(false);
         View view = LayoutInflater.from(context).inflate(R.layout.tagid_dialog, null);
-        final EditText tagID = view.findViewById(R.id.tagIDet);
+        final EditTextPicker tagID = view.findViewById(R.id.tagIDet);
         Button submitBtn = view.findViewById(R.id.submitTag);
         Button cancel = view.findViewById(R.id.cancel);
         builder.setView(view);
@@ -43,13 +44,22 @@ public class Util {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!TextUtils.isEmpty(tagID.getText().toString())) {
-                    editor.putString("tagName", tagID.getText().toString());
-                    editor.apply();
-                    dialog.dismiss();
-                } else {
-                    tagID.setError("This field is required");
+
+                if (!ValidatorClass.EmptyEditTextPicker(context, tagID, "Tag ID")) {
+                    return;
                 }
+
+                editor.putString("tagName", tagID.getText().toString());
+                editor.apply();
+                dialog.dismiss();
+
+                    /*if (!TextUtils.isEmpty(tagID.getText().toString())) {
+                        editor.putString("tagName", tagID.getText().toString());
+                        editor.apply();
+                        dialog.dismiss();
+                    } else {
+                        tagID.setError("This field is required");
+                    }*/
 
             }
         });

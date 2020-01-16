@@ -315,7 +315,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
-    public OPDContract getFroms(String studyID) {
+    public OPDContract getForms(String studyID) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {

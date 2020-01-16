@@ -1,7 +1,6 @@
 package edu.aku.dmu.uen_ec.ui;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +22,7 @@ import edu.aku.dmu.uen_ec.contracts.FormsContract;
 import edu.aku.dmu.uen_ec.core.DatabaseHelper;
 import edu.aku.dmu.uen_ec.core.MainApp;
 import edu.aku.dmu.uen_ec.databinding.ActivityABinding;
+import edu.aku.dmu.uen_ec.other.CheckingIDCC;
 import edu.aku.dmu.uen_ec.other.DiseaseCode;
 import edu.aku.dmu.uen_ec.util.Util;
 import edu.aku.dmu.uen_ec.validation.UIirfan;
@@ -35,6 +35,7 @@ public class CRFAActivity extends AppCompatActivity {
     ActivityABinding bi;
 
     DatabaseHelper db;
+    String tagID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,20 +62,25 @@ public class CRFAActivity extends AppCompatActivity {
         setDesing();
 
 
-        db = new DatabaseHelper(this);
-        int study_id = Integer.parseInt(db.getsFormcount());
+        /*int study_id = Integer.parseInt(db.getsFormcount());
         study_id = study_id + 1;
         if (study_id < 10) {
             bi.cra01.setText("0" + study_id + "");
         } else {
             bi.cra01.setText("00" + study_id + "");
         }
-        bi.cra01.setEnabled(false);
+        bi.cra01.setEnabled(false);*/
+
 
     }
 
     private void setupViews() {
+        db = new DatabaseHelper(this);
 
+        tagID = getSharedPreferences("tagName", MODE_PRIVATE).getString("tagName", null);
+
+        String study_id = CheckingIDCC.accessingFile(this, tagID, false);
+        bi.cra01.setText(study_id);
     }
 
     public void BtnContinue() {
@@ -105,6 +111,7 @@ public class CRFAActivity extends AppCompatActivity {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
+            assert strDate != null;
             if (System.currentTimeMillis() < strDate.getTime()) {
 
                 bi.cra03a.setError("Can not be greater then current date");
@@ -116,6 +123,9 @@ public class CRFAActivity extends AppCompatActivity {
             try {
                 SaveDraft();
                 if (UpdateDB()) {
+
+                    CheckingIDCC.accessingFile(this, tagID, true);
+
                     finish();
                     startActivity(new Intent(getApplicationContext(), EndingActivity.class).putExtra("complete", true));
                 } else {
@@ -149,8 +159,7 @@ public class CRFAActivity extends AppCompatActivity {
     private void SaveDraft() throws JSONException {
 
         fc = new FormsContract();
-        SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
-        fc.setTagID(sharedPref.getString("tagName", null));
+        fc.setTagID(tagID);
         fc.setFormDate((DateFormat.format("dd-MM-yyyy HH:mm", new Date())).toString());
         fc.setDeviceID(MainApp.deviceId);
         fc.setUser(MainApp.userName);

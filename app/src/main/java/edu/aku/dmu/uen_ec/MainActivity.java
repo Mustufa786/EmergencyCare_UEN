@@ -82,8 +82,6 @@ public class MainActivity extends AppCompatActivity {
                             iStatus = "\tIncomplete";
                             break;
                         case "3":
-                            iStatus = "\tRefused";
-                            break;
                         case "4":
                             iStatus = "\tRefused";
                             break;

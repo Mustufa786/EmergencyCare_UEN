@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <import type="android.view.View" />
 
         <variable
@@ -22,11 +23,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <android.support.v7.widget.CardView
-                style="@style/cardView">
+            <android.support.v7.widget.CardView style="@style/cardView">
 
-                <LinearLayout
-                    style="@style/linearlayout_view_wt_bound">
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                     <TextView
                         style="@style/i_textview"
@@ -48,11 +47,9 @@
             </LinearLayout>
 
             <!--cra2-->
-            <android.support.v7.widget.CardView
-                style="@style/cardView">
+            <android.support.v7.widget.CardView style="@style/cardView">
 
-                <LinearLayout
-                    style="@style/linearlayout_view_wt_bound">
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                     <TextView
                         style="@style/i_q_textview"
@@ -68,6 +65,7 @@
                         style="@style/textInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:enabled="false"
                         android:hint="@string/cra01"
                         android:inputType="number"
                         android:textSize="27sp"
@@ -80,11 +78,9 @@
             </android.support.v7.widget.CardView>
 
             <!--cra2-->
-            <android.support.v7.widget.CardView
-                style="@style/cardView">
+            <android.support.v7.widget.CardView style="@style/cardView">
 
-                <LinearLayout
-                    style="@style/linearlayout_view_wt_bound">
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                     <TextView
                         style="@style/i_q_textview"
@@ -112,11 +108,9 @@
             </android.support.v7.widget.CardView>
 
             <!--cra3-->
-            <android.support.v7.widget.CardView
-                style="@style/cardView">
+            <android.support.v7.widget.CardView style="@style/cardView">
 
-                <LinearLayout
-                    style="@style/linearlayout_view_wt_bound">
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                     <TextView
                         style="@style/i_q_textview"
@@ -167,11 +161,9 @@
             </android.support.v7.widget.CardView>
 
             <!--cra4-->
-            <android.support.v7.widget.CardView
-                style="@style/cardView">
+            <android.support.v7.widget.CardView style="@style/cardView">
 
-                <LinearLayout
-                    style="@style/linearlayout_view_wt_bound">
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                     <TextView
                         style="@style/i_q_textview"
@@ -192,11 +184,9 @@
             </android.support.v7.widget.CardView>
 
             <!--cra5-->
-            <android.support.v7.widget.CardView
-                style="@style/cardView">
+            <android.support.v7.widget.CardView style="@style/cardView">
 
-                <LinearLayout
-                    style="@style/linearlayout_view_wt_bound">
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                     <TextView
                         style="@style/i_q_textview"
@@ -218,11 +208,9 @@
             </android.support.v7.widget.CardView>
 
             <!--cra6-->
-            <android.support.v7.widget.CardView
-                style="@style/cardView">
+            <android.support.v7.widget.CardView style="@style/cardView">
 
-                <LinearLayout
-                    style="@style/linearlayout_view_wt_bound">
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                     <TextView
                         style="@style/i_q_textview"
@@ -272,11 +260,9 @@
             </android.support.v7.widget.CardView>
 
             <!--cra7-->
-            <android.support.v7.widget.CardView
-                style="@style/cardView">
+            <android.support.v7.widget.CardView style="@style/cardView">
 
-                <LinearLayout
-                    style="@style/linearlayout_view_wt_bound">
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                     <TextView
                         style="@style/i_q_textview"
@@ -298,11 +284,9 @@
             </android.support.v7.widget.CardView>
 
             <!--cra8-->
-            <android.support.v7.widget.CardView
-                style="@style/cardView">
+            <android.support.v7.widget.CardView style="@style/cardView">
 
-                <LinearLayout
-                    style="@style/linearlayout_view_wt_bound">
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                     <TextView
                         style="@style/i_q_textview"
@@ -348,11 +332,9 @@
             </android.support.v7.widget.CardView>
 
             <!--cra9-->
-            <android.support.v7.widget.CardView
-                style="@style/cardView">
+            <android.support.v7.widget.CardView style="@style/cardView">
 
-                <LinearLayout
-                    style="@style/linearlayout_view_wt_bound">
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                     <TextView
                         style="@style/i_q_textview"
@@ -383,11 +365,9 @@
             </android.support.v7.widget.CardView>
 
             <!--cra10-->
-            <android.support.v7.widget.CardView
-                style="@style/cardView">
+            <android.support.v7.widget.CardView style="@style/cardView">
 
-                <LinearLayout
-                    style="@style/linearlayout_view_wt_bound">
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                     <TextView
                         style="@style/i_q_textview"
@@ -409,11 +389,9 @@
             </android.support.v7.widget.CardView>
 
             <!--cra11-->
-            <android.support.v7.widget.CardView
-                style="@style/cardView">
+            <android.support.v7.widget.CardView style="@style/cardView">
 
-                <LinearLayout
-                    style="@style/linearlayout_view_wt_bound">
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                     <TextView
                         style="@style/i_q_textview"
@@ -434,8 +412,7 @@
             </android.support.v7.widget.CardView>
 
             <!--cra11b-->
-            <android.support.v7.widget.CardView
-                style="@style/cardView">
+            <android.support.v7.widget.CardView style="@style/cardView">
 
                 <LinearLayout
                     style="@style/linearlayout_view_wt_bound"
@@ -460,11 +437,9 @@
             </android.support.v7.widget.CardView>
 
             <!--cra12-->
-            <android.support.v7.widget.CardView
-                style="@style/cardView">
+            <android.support.v7.widget.CardView style="@style/cardView">
 
-                <LinearLayout
-                    style="@style/linearlayout_view_wt_bound">
+                <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                     <TextView
                         style="@style/i_q_textview"
@@ -508,6 +483,7 @@
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
+            i_
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
             <LinearLayout

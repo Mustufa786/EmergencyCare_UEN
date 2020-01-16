@@ -78,7 +78,7 @@ public class MainApp extends Application {
 
     public static String _HOST_URL = "http://" + MainApp._IP + "/uen_ec/api/"; // change here irfan
 
-    public static String _UPDATE_URL = "http://" + MainApp._IP + "/uen_ec/app/";
+    public static String _UPDATE_URL = "https://" + MainApp._IP + "/uen_ec/app/";
     public static String deviceId;
 
     public static Boolean admin = false;

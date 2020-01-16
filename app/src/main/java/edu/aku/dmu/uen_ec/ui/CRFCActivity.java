@@ -62,16 +62,14 @@ public class CRFCActivity extends AppCompatActivity {
         // list here
         List<String> list = getdata(crfstatus);
 
-        if (crfstatus == "0") {
+        if (crfstatus.equals("0")) {
             bi.btn21.setText("21 Days Follow-Up" + " (" + list.size() + ")");
         } else {
             bi.btn48.setText("28 Days Follow-Up" + " (" + list.size() + ")");
         }
-        if (list == null)
-            return;
 
         Collections.sort(list);
-        mRecyclerView = (RecyclerView) findViewById(R.id.list_survey_completed);
+        mRecyclerView = findViewById(R.id.list_survey_completed);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mAdapter = new SurveyCompletedCustomAdapter(this, list);
@@ -86,7 +84,7 @@ public class CRFCActivity extends AppCompatActivity {
         if (lst != null) {
             for (FormsContract fc : lst) {
                 JSONModelCRFA crfa = JSONUtils.getModelFromJSON(fc.getCRFA(), JSONModelCRFA.class);
-                String stringg = "";
+                String stringg;
                 if (crfa.getCra12().equals("1") || crfa.getCra12().equals("2") || crfa.getCra12().equals("3")) {
                     stringg = crfa.getCra01() + "-" + crfa.getCra02() + "-" + crfa.getCra04() + "-" + crfa.getCra05() + "-" +
                             crfa.getCra03a() + "/" + crfa.getCra03b() + "/" + crfa.getCra03c();
