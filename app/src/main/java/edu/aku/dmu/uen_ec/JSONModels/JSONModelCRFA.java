@@ -37,6 +37,10 @@ public class JSONModelCRFA {
         this.cra06d = opd.getcra06d();
         this.cra06e = opd.getcra06e();
         this.cra07 = opd.getcra07();
+        this.cra03a = opd.getcra03a();
+        this.cra03b = opd.getcra03b();
+        this.cra03c = opd.getcra03c();
+        this.cra12 = opd.getcra12();
     }
 
     public JSONModelCRFA() {

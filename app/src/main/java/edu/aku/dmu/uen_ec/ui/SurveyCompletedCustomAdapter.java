@@ -24,6 +24,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import edu.aku.dmu.uen_ec.JSONModels.JSONModelCRFA;
 import edu.aku.dmu.uen_ec.R;
 import edu.aku.dmu.uen_ec.contracts.FormsContract;
 import edu.aku.dmu.uen_ec.core.DatabaseHelper;
@@ -36,9 +37,9 @@ import static edu.aku.dmu.uen_ec.core.MainApp.fc;
 class SurveyCompletedCustomAdapter extends RecyclerView.Adapter {
 
     Context mContext;
-    List<String> mList;
+    List<JSONModelCRFA> mList;
 
-    public SurveyCompletedCustomAdapter(Context context, List<String> list) {
+    public SurveyCompletedCustomAdapter(Context context, List<JSONModelCRFA> list) {
         mContext = context;
         mList = list;
     }
@@ -61,17 +62,18 @@ class SurveyCompletedCustomAdapter extends RecyclerView.Adapter {
         //   vh.itemView.setBackgroundColor(Color.parseColor("#FFB7BC"));
         // }
 
+        JSONModelCRFA crf = mList.get(position);
 
-        vh.studyid.setText(mList.get(position).split("-")[0]);
+        vh.studyid.setText(crf.getCra01());
 
-        vh.opdnum.setText(mList.get(position).split("-")[1]);
+        vh.opdnum.setText(crf.getCra02());
 
-        vh.name.setText(mList.get(position).split("-")[2]);
-        vh.fname.setText(mList.get(position).split("-")[3]);
+        vh.name.setText(crf.getCra04());
+        vh.fname.setText(crf.getCra05());
 
-        vh.serial.setText(position + 1 + "");
+        vh.serial.setText(String.valueOf(position + 1));
 
-        String Pdate = mList.get(position).split("-")[4];
+        String Pdate = crf.getCra03a() + "/" + crf.getCra03b() + "/" + crf.getCra03c();
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Date strDate = null;
@@ -89,7 +91,7 @@ class SurveyCompletedCustomAdapter extends RecyclerView.Adapter {
         c.setTime(strDate);
 
 
-        if (CRFCActivity.days_21 == true) {
+        if (CRFCActivity.days_21) {
             vh.txtdate.setText("Date Dute to Notify LHS");
 
 
@@ -98,7 +100,7 @@ class SurveyCompletedCustomAdapter extends RecyclerView.Adapter {
 
             Pdate = sdf.format(c.getTime());
 
-            vh.date.setText(Pdate.toString());
+            vh.date.setText(Pdate);
 
         } else {
             vh.txtdate.setText("Date 28-Days Follow up Due");
@@ -106,7 +108,7 @@ class SurveyCompletedCustomAdapter extends RecyclerView.Adapter {
             c.add(Calendar.DATE, 31);
 
             Pdate = sdf.format(c.getTime());
-            vh.date.setText(Pdate.toString());
+            vh.date.setText(Pdate);
 
         }
 
@@ -173,7 +175,7 @@ class SurveyCompletedCustomAdapter extends RecyclerView.Adapter {
                     Toast.makeText(mContext, "Please enter the data", Toast.LENGTH_LONG).show();
                     return;
                 }
-                Date date_master=null;
+                Date date_master = null;
 
                 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                 Date datetonotify = null;
@@ -188,7 +190,7 @@ class SurveyCompletedCustomAdapter extends RecyclerView.Adapter {
 
                 try {
 
-                    date_master= sdf.parse(datetotnotify);
+                    date_master = sdf.parse(datetotnotify);
                     datetonotify = sdf.parse(datetotnotify);
 
                 } catch (ParseException e) {
@@ -511,14 +513,14 @@ class SurveyCompletedCustomAdapter extends RecyclerView.Adapter {
         public ViewHolder(View v) {
             super(v);
 
-            studyid = (TextView) v.findViewById(R.id.studyid);
-            serial = (TextView) v.findViewById(R.id.serial);
-            name = (TextView) v.findViewById(R.id.name);
-            fname = (TextView) v.findViewById(R.id.fname);
-            txtdate = (TextView) v.findViewById(R.id.txtdate);
-            date = (TextView) v.findViewById(R.id.date);
+            studyid = v.findViewById(R.id.studyid);
+            serial = v.findViewById(R.id.serial);
+            name = v.findViewById(R.id.name);
+            fname = v.findViewById(R.id.fname);
+            txtdate = v.findViewById(R.id.txtdate);
+            date = v.findViewById(R.id.date);
 
-            opdnum = (TextView) v.findViewById(R.id.opdn);
+            opdnum = v.findViewById(R.id.opdn);
 
         }
     }

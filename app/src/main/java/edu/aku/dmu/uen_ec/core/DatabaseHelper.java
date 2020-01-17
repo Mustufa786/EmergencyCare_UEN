@@ -81,7 +81,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleOPD.COLUMN_CRA06C + " TEXT,"
             + singleOPD.COLUMN_CRA06D + " TEXT,"
             + singleOPD.COLUMN_CRA06E + " TEXT,"
-            + singleOPD.COLUMN_CRA07 + " TEXT"
+            + singleOPD.COLUMN_CRA07 + " TEXT,"
+            + singleOPD.COLUMN_CRA03a + " TEXT,"
+            + singleOPD.COLUMN_CRA03b + " TEXT,"
+            + singleOPD.COLUMN_CRA03c + " TEXT,"
+            + singleOPD.COLUMN_CRA12 + " TEXT"
             + " ) ;";
 
 
@@ -384,12 +388,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 singleOPD.COLUMN_CRA06D,
                 singleOPD.COLUMN_CRA06E,
                 singleOPD.COLUMN_CRA07,
-
+                singleOPD.COLUMN_CRA03a,
+                singleOPD.COLUMN_CRA03b,
+                singleOPD.COLUMN_CRA03c,
+                singleOPD.COLUMN_CRA12,
         };
-
 
         String whereClause = singleOPD.COLUMN_CRA01 + "=?";
         String[] whereArgs = new String[]{studyID};
+
+
         String groupBy = null;
         String having = null;
 
@@ -422,8 +430,60 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
+    public Collection<OPDContract> getAllForms() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                singleOPD._ID,
+                singleOPD.COLUMN_CRA01,
+                singleOPD.COLUMN_CRA02,
+                singleOPD.COLUMN_CRA04,
+                singleOPD.COLUMN_CRA05,
+                singleOPD.COLUMN_CRA06A,
+                singleOPD.COLUMN_CRA06B,
+                singleOPD.COLUMN_CRA06C,
+                singleOPD.COLUMN_CRA06D,
+                singleOPD.COLUMN_CRA06E,
+                singleOPD.COLUMN_CRA07,
+                singleOPD.COLUMN_CRA03a,
+                singleOPD.COLUMN_CRA03b,
+                singleOPD.COLUMN_CRA03c,
+                singleOPD.COLUMN_CRA12,
+        };
 
-    public List<FormsContract> getsFormContractCRFC(String crfstatus) {
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = singleOPD._ID + " ASC";
+
+        Collection<OPDContract> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    singleOPD.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allFC.add(new OPDContract().hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
+    }
+
+
+    public Collection<FormsContract> getsFormContractCRFC(String crfstatus) {
 
 
         List<FormsContract> list_form = new ArrayList<>();
@@ -472,7 +532,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String orderBy =
                 FormsTable._ID + " ASC";
 
-        FormsContract allFC = new FormsContract();
         try {
             c = db.query(
                     FormsTable.TABLE_NAME,  // The table to query
@@ -1489,7 +1548,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(VersionAppContract.VersionAppTable.COLUMN_VERSION_NAME, Vc.getVersionname());
 
             db.insert(VersionAppContract.VersionAppTable.TABLE_NAME, null, values);
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         } finally {
             db.close();
         }
@@ -1518,6 +1577,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(singleOPD.COLUMN_CRA06D, user.getcra06d());
                 values.put(singleOPD.COLUMN_CRA06E, user.getcra06e());
                 values.put(singleOPD.COLUMN_CRA07, user.getcra07());
+                values.put(singleOPD.COLUMN_CRA03a, user.getcra03a());
+                values.put(singleOPD.COLUMN_CRA03b, user.getcra03b());
+                values.put(singleOPD.COLUMN_CRA03c, user.getcra03c());
+                values.put(singleOPD.COLUMN_CRA12, user.getcra12());
 
                 db.insert(singleOPD.TABLE_NAME, null, values);
             }

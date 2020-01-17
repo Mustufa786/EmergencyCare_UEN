@@ -22,6 +22,7 @@
     <color name="redforborder">#EF9A9A</color>
     <color name="colorPrimaryLight">#448aff</color>
     <color name="colorPrimaryAlpha">#607d8b</color>
+    <color name="colorPrimaryAlpha2">#adbfc7</color>
     <color name="pink_100">#9BD8FF</color>
     <color name="colorHeading">#99FFCC</color>
     <color name="colorRedsub">#d6ff8a80</color>

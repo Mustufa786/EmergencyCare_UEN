@@ -20,6 +20,10 @@ public class OPDContract {
     private String cra06d;
     private String cra06e;
     private String cra07;
+    private String cra03a;
+    private String cra03b;
+    private String cra03c;
+    private String cra12;
 
 
     public OPDContract() {
@@ -37,6 +41,10 @@ public class OPDContract {
         this.cra06d = jsonObject.getString(singleOPD.COLUMN_CRA06D);
         this.cra06e = jsonObject.getString(singleOPD.COLUMN_CRA06E);
         this.cra07 = jsonObject.getString(singleOPD.COLUMN_CRA07);
+        this.cra03a = jsonObject.getString(singleOPD.COLUMN_CRA03a);
+        this.cra03b = jsonObject.getString(singleOPD.COLUMN_CRA03b);
+        this.cra03c = jsonObject.getString(singleOPD.COLUMN_CRA03c);
+        this.cra12 = jsonObject.getString(singleOPD.COLUMN_CRA12);
 
         return this;
     }
@@ -53,6 +61,10 @@ public class OPDContract {
         this.cra06d = cursor.getString(cursor.getColumnIndex(singleOPD.COLUMN_CRA06D));
         this.cra06e = cursor.getString(cursor.getColumnIndex(singleOPD.COLUMN_CRA06E));
         this.cra07 = cursor.getString(cursor.getColumnIndex(singleOPD.COLUMN_CRA07));
+        this.cra03a = cursor.getString(cursor.getColumnIndex(singleOPD.COLUMN_CRA03a));
+        this.cra03b = cursor.getString(cursor.getColumnIndex(singleOPD.COLUMN_CRA03b));
+        this.cra03c = cursor.getString(cursor.getColumnIndex(singleOPD.COLUMN_CRA03c));
+        this.cra12 = cursor.getString(cursor.getColumnIndex(singleOPD.COLUMN_CRA12));
 
 
         return this;
@@ -138,6 +150,38 @@ public class OPDContract {
         this.cra07 = cra07;
     }
 
+    public String getcra03a() {
+        return cra03a;
+    }
+
+    public void setcra03a(String cra03a) {
+        this.cra03a = cra03a;
+    }
+
+    public String getcra03b() {
+        return cra03b;
+    }
+
+    public void setcra03b(String cra03b) {
+        this.cra03b = cra03b;
+    }
+
+    public String getcra03c() {
+        return cra03c;
+    }
+
+    public void setcra03c(String cra03c) {
+        this.cra03c = cra03c;
+    }
+
+    public String getcra12() {
+        return cra12;
+    }
+
+    public void setcra12(String cra12) {
+        this.cra12 = cra12;
+    }
+
     public static abstract class singleOPD implements BaseColumns {
 
         public static final String TABLE_NAME = "OPD_table";
@@ -153,6 +197,10 @@ public class OPDContract {
         public static final String COLUMN_CRA06D = "cra06d";
         public static final String COLUMN_CRA06E = "cra06e";
         public static final String COLUMN_CRA07 = "cra07";
+        public static final String COLUMN_CRA03a = "cra03a";
+        public static final String COLUMN_CRA03b = "cra03b";
+        public static final String COLUMN_CRA03c = "cra03c";
+        public static final String COLUMN_CRA12 = "cra12";
 
         public static final String _URI = "getforms.php";
     }
