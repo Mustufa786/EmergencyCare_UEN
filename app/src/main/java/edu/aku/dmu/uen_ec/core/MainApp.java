@@ -68,9 +68,9 @@ public class MainApp extends Application {
     //    public static String _IP = "43.245.131.159"; // Test PHP server
     //public static String _IP = "43.245.131.159"; // Test PHP server
 
-    public static String _IP = "http://f38158"; // Test PHP server
+    //    public static String _IP = "http://f38158"; // Test PHP server
 //    public static String _IP = "43.245.131.159"; // Test PHP server
-//    public static String _IP = "https://vcoe1.aku.edu"; // Live PHP server
+    public static String _IP = "https://vcoe1.aku.edu"; // Live PHP server
 
     public static boolean isAttitudeCheck = false;
     //todo: here irfan
