@@ -23,7 +23,7 @@ public final class CheckingIDCC {
         try {
             String fName = "DONTDELETE";
 
-            if (!creatingFile(mContext, fName)) return "";
+            if (!creatingFile(mContext, fName, tagID)) return "";
 
             String fileName = DirectoryName
                     + File.separator
@@ -57,7 +57,7 @@ public final class CheckingIDCC {
         }
     }
 
-    private static boolean creatingFile(Context mContext, String fName) {
+    private static boolean creatingFile(Context mContext, String fName, String tagID) {
 
         File folder = new File(DirectoryName);
         boolean success = true;
@@ -69,7 +69,7 @@ public final class CheckingIDCC {
             File idFile = new File(folder, fName);
             if (!idFile.exists()) {
                 try {
-                    writeInFile(idFile, "");
+                    writeInFile(idFile, tagID + "-501\n");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

@@ -61,7 +61,7 @@ public class CRFCActivity extends AppCompatActivity {
         List<JSONModelCRFA> list = getdata(crfstatus);
 
         if (crfstatus.equals("0")) {
-            bi.btn21.setText("21 Days Follow-Up" + " (" + list.size() + ")");
+            bi.btn21.setText("21 Days Notification" + " (" + list.size() + ")");
             bi.btn21.setBackgroundColor(getResources().getColor(R.color.colorPrimaryAlpha));
             bi.btn48.setBackgroundColor(getResources().getColor(R.color.colorPrimaryAlpha2));
         } else {
@@ -96,8 +96,10 @@ public class CRFCActivity extends AppCompatActivity {
 
         Collection<OPDContract> opd = db.getAllForms();
         try {
-            if (lst.size() > 0) lst_string.addAll(new AsyncCS(this, lst, true).execute().get());
-            if (opd.size() > 0) lst_string.addAll(new AsyncCS(this, opd, false).execute().get());
+            if (lst.size() > 0)
+                lst_string.addAll(new AsyncCS(this, lst, true, crfstatus.equals("0") ? 25 : 30).execute().get());
+            if (opd.size() > 0)
+                lst_string.addAll(new AsyncCS(this, opd, false, crfstatus.equals("0") ? 25 : 30).execute().get());
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }

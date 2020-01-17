@@ -92,7 +92,7 @@ class SurveyCompletedCustomAdapter extends RecyclerView.Adapter {
 
 
         if (CRFCActivity.days_21) {
-            vh.txtdate.setText("Date Dute to Notify LHS");
+            vh.txtdate.setText("Due-Date to Notify LHS");
 
 
             c.add(Calendar.DATE, 23);
@@ -103,7 +103,7 @@ class SurveyCompletedCustomAdapter extends RecyclerView.Adapter {
             vh.date.setText(Pdate);
 
         } else {
-            vh.txtdate.setText("Date 28-Days Follow up Due");
+            vh.txtdate.setText("Due-Date for 28-Days Follow up");
 
             c.add(Calendar.DATE, 31);
 
