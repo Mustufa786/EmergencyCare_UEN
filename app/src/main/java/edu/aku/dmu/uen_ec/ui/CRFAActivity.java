@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -25,6 +26,7 @@ import edu.aku.dmu.uen_ec.databinding.ActivityABinding;
 import edu.aku.dmu.uen_ec.other.CheckingIDCC;
 import edu.aku.dmu.uen_ec.other.DiseaseCode;
 import edu.aku.dmu.uen_ec.util.Util;
+import edu.aku.dmu.uen_ec.validation.ClearClass;
 import edu.aku.dmu.uen_ec.validation.UIirfan;
 import edu.aku.dmu.uen_ec.validation.ValidatorClass;
 
@@ -87,36 +89,23 @@ public class CRFAActivity extends AppCompatActivity {
         if (formValidation()) {
 
 
+            if (!bi.cra13.isChecked()) {
 
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                Date strDate = null;
+                try {
+                    strDate = sdf.parse(bi.cra03a.getText() + "/" + bi.cra03b.getText() + "/" + bi.cra03c.getText());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                assert strDate != null;
+                if (System.currentTimeMillis() < strDate.getTime()) {
 
-
-            /*
-            if(bi.cra08c.getText().equals("14"))
-            {
-                if(!bi.cra08a.getText().equals("0") || !bi.cra08b.getText().equals("0"))
-                {
-                    bi.cra08c.setError("Age can't be more then 14 years");
-                    bi.cra08c.requestFocus();
+                    bi.cra03a.setError("Can not be greater then current date");
+                    bi.cra03a.requestFocus();
                     return;
                 }
 
-            }
-*/
-
-
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            Date strDate = null;
-            try {
-                strDate = sdf.parse(bi.cra03a.getText() + "/" + bi.cra03b.getText() + "/" + bi.cra03c.getText());
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-            assert strDate != null;
-            if (System.currentTimeMillis() < strDate.getTime()) {
-
-                bi.cra03a.setError("Can not be greater then current date");
-                bi.cra03a.requestFocus();
-                return;
             }
 
 
@@ -166,7 +155,6 @@ public class CRFAActivity extends AppCompatActivity {
 
         fc.setAppversion(MainApp.versionName + "." + MainApp.versionCode);
 
-        JSONObject f1 = new JSONObject();
         Util.setGPS(this);
         JSONObject CRFA = new JSONObject();
 
@@ -214,14 +202,20 @@ public class CRFAActivity extends AppCompatActivity {
 
         CRFA.put("cra11b", DiseaseCode.HmDiseaseCode.get(bi.cra11b.getText().toString()));
 
+        if (bi.cra13.isChecked()) {
+            CRFA.put("cra12", "2");
+        } else {
+            CRFA.put("cra12",
+                    bi.cra12a.isChecked() ? "1"
+                            : bi.cra12b.isChecked() ? "2"
+                            : bi.cra12c.isChecked() ? "3"
+                            : bi.cra12d.isChecked() ? "4"
+                            : bi.cra12e.isChecked() ? "5"
+                            : "0");
+        }
 
-        CRFA.put("cra12",
-                bi.cra12a.isChecked() ? "1"
-                        : bi.cra12b.isChecked() ? "2"
-                        : bi.cra12c.isChecked() ? "3"
-                        : bi.cra12d.isChecked() ? "4"
-                        : bi.cra12e.isChecked() ? "5"
-                        : "0");
+        CRFA.put("cra13", bi.cra13.isChecked() ? "1" : "0");
+
         fc.setCRFA(String.valueOf(CRFA));
         fc.setFormType("CRFA");
         fc.setstudyid(bi.cra01.getText().toString());
@@ -240,10 +234,15 @@ public class CRFAActivity extends AppCompatActivity {
 
     private void setDesing() {
 
-
         UIirfan.findViews(bi.GrpCRFA, this);
 
-
+        bi.cra13.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b)
+                    ClearClass.ClearAllFields(bi.fldGrpCra12, null);
+            }
+        });
     }
 
 

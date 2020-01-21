@@ -84,24 +84,14 @@
 
                     <TextView
                         style="@style/i_q_textview"
-                        android:text="cra02" />
+                        android:text="cra13" />
 
-                    <TextView
+                    <CheckBox
+                        android:id="@+id/cra13"
                         style="@style/i_textview"
-                        android:fontFamily="serif"
-                        android:text="@string/cra02" />
-
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/cra02"
-                        style="@style/textInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/cra02"
-                        android:inputType="number"
-                        android:maxLength="9"
-                        app:maxValue="99999999999999"
-                        app:minValue="0"
-                        app:type="range" />
+                        android:text="@string/direct_ipd" />
 
                 </LinearLayout>
 
@@ -160,330 +150,368 @@
 
             </android.support.v7.widget.CardView>
 
-            <!--cra4-->
-            <android.support.v7.widget.CardView style="@style/cardView">
+            <LinearLayout
+                android:id="@+id/fldGrpCra12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="@{cra13.checked ? View.GONE : View.VISIBLE}">
 
-                <LinearLayout style="@style/linearlayout_view_wt_bound">
+                <!--cra2-->
+                <android.support.v7.widget.CardView style="@style/cardView">
+
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                    <TextView
-                        style="@style/i_q_textview"
-                        android:text="cra04" />
+                        <TextView
+                            style="@style/i_q_textview"
+                            android:text="cra02" />
+
+                        <TextView
+                            style="@style/i_textview"
+                            android:fontFamily="serif"
+                            android:text="@string/cra02" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/cra02"
+                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/cra02"
+                            android:inputType="number"
+                            android:maxLength="9"
+                            app:maxValue="99999999999999"
+                            app:minValue="0"
+                            app:type="range" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <!--cra4-->
+                <android.support.v7.widget.CardView style="@style/cardView">
+
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
+
+                        <TextView
+                            style="@style/i_q_textview"
+                            android:text="cra04" />
+
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/cra04" />
+
+                        <EditText
+                            android:id="@+id/cra04"
+                            style="@style/textInput"
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:hint="@string/cra04" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <!--cra5-->
+                <android.support.v7.widget.CardView style="@style/cardView">
+
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/cra04" />
+                        <TextView
+                            style="@style/i_q_textview"
+                            android:text="cra05" />
 
-                    <EditText
-                        android:id="@+id/cra04"
-                        style="@style/textInput"
-                        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                        android:hint="@string/cra04" />
-
-                </LinearLayout>
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/cra05" />
 
-            </android.support.v7.widget.CardView>
+                        <EditText
+                            android:id="@+id/cra05"
+                            style="@style/textInput"
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:hint="@string/cra05"
+                            android:inputType="textPersonName" />
 
-            <!--cra5-->
-            <android.support.v7.widget.CardView style="@style/cardView">
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
 
-                <LinearLayout style="@style/linearlayout_view_wt_bound">
+                <!--cra6-->
+                <android.support.v7.widget.CardView style="@style/cardView">
+
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                    <TextView
-                        style="@style/i_q_textview"
-                        android:text="cra05" />
+                        <TextView
+                            style="@style/i_q_textview"
+                            android:text="cra06" />
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/cra05" />
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/cra06" />
+
+                        <EditText
+                            android:id="@+id/cra06a"
+                            style="@style/textInput"
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:hint="@string/cra06a"
+                            android:inputType="textPersonName" />
+
+                        <EditText
+                            android:id="@+id/cra06e"
+                            style="@style/textInput"
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:hint="@string/cra06e"
+                            android:inputType="textPersonName" />
+
+                        <EditText
+                            android:id="@+id/cra06b"
+                            style="@style/textInput"
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,/-,1234567890"
+                            android:hint="@string/cra06b"
+                            android:inputType="textPersonName" />
 
-                    <EditText
-                        android:id="@+id/cra05"
-                        style="@style/textInput"
-                        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                        android:hint="@string/cra05"
-                        android:inputType="textPersonName" />
+                        <EditText
+                            android:id="@+id/cra06c"
+                            style="@style/textInput"
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,/-"
+                            android:hint="@string/cra06c"
+                            android:inputType="textPersonName" />
 
-                </LinearLayout>
+                        <EditText
+                            android:id="@+id/cra06d"
+                            style="@style/textInput"
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,/-,,1234567890"
+                            android:hint="@string/cra06d"
+                            android:inputType="textPersonName" />
 
-            </android.support.v7.widget.CardView>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
 
-            <!--cra6-->
-            <android.support.v7.widget.CardView style="@style/cardView">
+                <!--cra7-->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-                <LinearLayout style="@style/linearlayout_view_wt_bound">
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                    <TextView
-                        style="@style/i_q_textview"
-                        android:text="cra06" />
+                        <TextView
+                            style="@style/i_q_textview"
+                            android:text="cra07" />
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/cra06" />
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/cra07" />
 
-                    <EditText
-                        android:id="@+id/cra06a"
-                        style="@style/textInput"
-                        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                        android:hint="@string/cra06a"
-                        android:inputType="textPersonName" />
+                        <EditText
+                            android:id="@+id/cra07"
+                            style="@style/textInput"
+                            android:hint="@string/cra07"
+                            android:inputType="number"
+                            android:maxLength="11" />
 
-                    <EditText
-                        android:id="@+id/cra06e"
-                        style="@style/textInput"
-                        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                        android:hint="@string/cra06e"
-                        android:inputType="textPersonName" />
+                    </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/cra06b"
-                        style="@style/textInput"
-                        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,/-,1234567890"
-                        android:hint="@string/cra06b"
-                        android:inputType="textPersonName" />
+                </android.support.v7.widget.CardView>
 
-                    <EditText
-                        android:id="@+id/cra06c"
-                        style="@style/textInput"
-                        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,/-"
-                        android:hint="@string/cra06c"
-                        android:inputType="textPersonName" />
+                <!--cra8-->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-                    <EditText
-                        android:id="@+id/cra06d"
-                        style="@style/textInput"
-                        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,/-,,1234567890"
-                        android:hint="@string/cra06d"
-                        android:inputType="textPersonName" />
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                </LinearLayout>
+                        <TextView
+                            style="@style/i_q_textview"
+                            android:text="cra08" />
 
-            </android.support.v7.widget.CardView>
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/cra08" />
 
-            <!--cra7-->
-            <android.support.v7.widget.CardView style="@style/cardView">
+                        <RadioGroup
+                            android:id="@+id/cra08"
+                            style="@style/radiogroup">
 
-                <LinearLayout style="@style/linearlayout_view_wt_bound">
+                            <RadioButton
+                                android:id="@+id/cra08a"
+                                style="@style/radiobutton"
+                                android:text="@string/cra08a" />
 
-                    <TextView
-                        style="@style/i_q_textview"
-                        android:text="cra07" />
+                            <RadioButton
+                                android:id="@+id/cra08b"
+                                style="@style/radiobutton"
+                                android:text="@string/cra08b" />
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/cra07" />
+                            <RadioButton
+                                android:id="@+id/cra08c"
+                                style="@style/radiobutton"
+                                android:text="@string/cra08c" />
 
-                    <EditText
-                        android:id="@+id/cra07"
-                        style="@style/textInput"
-                        android:hint="@string/cra07"
-                        android:inputType="number"
-                        android:maxLength="11" />
+                            <RadioButton
+                                android:id="@+id/cra08d"
+                                style="@style/radiobutton"
+                                android:text="@string/cra08d" />
 
-                </LinearLayout>
+                            <RadioButton
+                                android:id="@+id/cra08e"
+                                style="@style/radiobutton"
+                                android:text="@string/cra08e" />
 
-            </android.support.v7.widget.CardView>
+                        </RadioGroup>
 
-            <!--cra8-->
-            <android.support.v7.widget.CardView style="@style/cardView">
+                    </LinearLayout>
 
-                <LinearLayout style="@style/linearlayout_view_wt_bound">
+                </android.support.v7.widget.CardView>
 
-                    <TextView
-                        style="@style/i_q_textview"
-                        android:text="cra08" />
+                <!--cra9-->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/cra08" />
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                    <RadioGroup
-                        android:id="@+id/cra08"
-                        style="@style/radiogroup">
+                        <TextView
+                            style="@style/i_q_textview"
+                            android:text="cra09" />
 
-                        <RadioButton
-                            android:id="@+id/cra08a"
-                            style="@style/radiobutton"
-                            android:text="@string/cra08a" />
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/cra09" />
 
-                        <RadioButton
-                            android:id="@+id/cra08b"
-                            style="@style/radiobutton"
-                            android:text="@string/cra08b" />
+                        <RadioGroup
+                            android:id="@+id/cra9"
+                            style="@style/radiogroup">
 
-                        <RadioButton
-                            android:id="@+id/cra08c"
-                            style="@style/radiobutton"
-                            android:text="@string/cra08c" />
+                            <RadioButton
+                                android:id="@+id/cra09a"
+                                style="@style/radiobutton"
+                                android:text="@string/cra09a" />
 
-                        <RadioButton
-                            android:id="@+id/cra08d"
-                            style="@style/radiobutton"
-                            android:text="@string/cra08d" />
+                            <RadioButton
+                                android:id="@+id/cra09b"
+                                style="@style/radiobutton"
+                                android:text="@string/cra09b" />
 
-                        <RadioButton
-                            android:id="@+id/cra08e"
-                            style="@style/radiobutton"
-                            android:text="@string/cra08e" />
+                        </RadioGroup>
 
-                    </RadioGroup>
+                    </LinearLayout>
 
-                </LinearLayout>
+                </android.support.v7.widget.CardView>
 
-            </android.support.v7.widget.CardView>
+                <!--cra10-->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-            <!--cra9-->
-            <android.support.v7.widget.CardView style="@style/cardView">
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                <LinearLayout style="@style/linearlayout_view_wt_bound">
+                        <TextView
+                            style="@style/i_q_textview"
+                            android:text="cra10" />
 
-                    <TextView
-                        style="@style/i_q_textview"
-                        android:text="cra09" />
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/cra10" />
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/cra09" />
+                        <EditText
+                            android:id="@+id/cra10"
+                            style="@style/textInput"
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:hint="@string/cra10"
+                            android:inputType="textPersonName" />
 
-                    <RadioGroup
-                        android:id="@+id/cra9"
-                        style="@style/radiogroup">
+                    </LinearLayout>
 
-                        <RadioButton
-                            android:id="@+id/cra09a"
-                            style="@style/radiobutton"
-                            android:text="@string/cra09a" />
+                </android.support.v7.widget.CardView>
 
-                        <RadioButton
-                            android:id="@+id/cra09b"
-                            style="@style/radiobutton"
-                            android:text="@string/cra09b" />
+                <!--cra11-->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-                    </RadioGroup>
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                </LinearLayout>
+                        <TextView
+                            style="@style/i_q_textview"
+                            android:text="cra11" />
 
-            </android.support.v7.widget.CardView>
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/cra11" />
 
-            <!--cra10-->
-            <android.support.v7.widget.CardView style="@style/cardView">
+                        <android.support.v7.widget.AppCompatAutoCompleteTextView
+                            android:id="@+id/cra11"
+                            style="@style/textInput"
+                            android:hint="@string/cra11"
+                            android:inputType="textPersonName" />
 
-                <LinearLayout style="@style/linearlayout_view_wt_bound">
+                    </LinearLayout>
 
-                    <TextView
-                        style="@style/i_q_textview"
-                        android:text="cra10" />
+                </android.support.v7.widget.CardView>
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/cra10" />
+                <!--cra11b-->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-                    <EditText
-                        android:id="@+id/cra10"
-                        style="@style/textInput"
-                        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                        android:hint="@string/cra10"
-                        android:inputType="textPersonName" />
+                    <LinearLayout
+                        style="@style/linearlayout_view_wt_bound"
+                        android:tag="-1">
 
-                </LinearLayout>
+                        <TextView
+                            style="@style/i_q_textview"
+                            android:text="cra11b" />
 
-            </android.support.v7.widget.CardView>
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/cra11" />
 
-            <!--cra11-->
-            <android.support.v7.widget.CardView style="@style/cardView">
+                        <android.support.v7.widget.AppCompatAutoCompleteTextView
+                            android:id="@+id/cra11b"
+                            style="@style/textInput"
+                            android:hint="@string/cra11"
+                            android:inputType="textPersonName" />
 
-                <LinearLayout style="@style/linearlayout_view_wt_bound">
+                    </LinearLayout>
 
-                    <TextView
-                        style="@style/i_q_textview"
-                        android:text="cra11" />
+                </android.support.v7.widget.CardView>
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/cra11" />
+                <!--cra12-->
+                <android.support.v7.widget.CardView style="@style/cardView">
 
-                    <android.support.v7.widget.AppCompatAutoCompleteTextView
-                        android:id="@+id/cra11"
-                        style="@style/textInput"
-                        android:hint="@string/cra11"
-                        android:inputType="textPersonName" />
+                    <LinearLayout style="@style/linearlayout_view_wt_bound">
 
-                </LinearLayout>
+                        <TextView
+                            style="@style/i_q_textview"
+                            android:text="cra12" />
 
-            </android.support.v7.widget.CardView>
+                        <TextView
+                            style="@style/i_textview"
+                            android:text="@string/cra12" />
 
-            <!--cra11b-->
-            <android.support.v7.widget.CardView style="@style/cardView">
+                        <RadioGroup
+                            android:id="@+id/cra12"
+                            style="@style/radiogroup">
 
-                <LinearLayout
-                    style="@style/linearlayout_view_wt_bound"
-                    android:tag="-1">
+                            <RadioButton
+                                android:id="@+id/cra12a"
+                                style="@style/radiobutton"
+                                android:text="@string/cra12a" />
 
-                    <TextView
-                        style="@style/i_q_textview"
-                        android:text="cra11b" />
+                            <RadioButton
+                                android:id="@+id/cra12b"
+                                style="@style/radiobutton"
+                                android:text="@string/cra12b" />
 
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/cra11" />
+                            <RadioButton
+                                android:id="@+id/cra12c"
+                                style="@style/radiobutton"
+                                android:text="@string/cra12c" />
 
-                    <android.support.v7.widget.AppCompatAutoCompleteTextView
-                        android:id="@+id/cra11b"
-                        style="@style/textInput"
-                        android:hint="@string/cra11"
-                        android:inputType="textPersonName" />
+                            <RadioButton
+                                android:id="@+id/cra12d"
+                                style="@style/radiobutton"
+                                android:text="@string/cra12d" />
 
-                </LinearLayout>
+                            <RadioButton
+                                android:id="@+id/cra12e"
+                                style="@style/radiobutton"
+                                android:text="@string/cra12e" />
 
-            </android.support.v7.widget.CardView>
+                        </RadioGroup>
 
-            <!--cra12-->
-            <android.support.v7.widget.CardView style="@style/cardView">
+                    </LinearLayout>
 
-                <LinearLayout style="@style/linearlayout_view_wt_bound">
+                </android.support.v7.widget.CardView>
 
-                    <TextView
-                        style="@style/i_q_textview"
-                        android:text="cra12" />
-
-                    <TextView
-                        style="@style/i_textview"
-                        android:text="@string/cra12" />
-
-                    <RadioGroup
-                        android:id="@+id/cra12"
-                        style="@style/radiogroup">
-
-                        <RadioButton
-                            android:id="@+id/cra12a"
-                            style="@style/radiobutton"
-                            android:text="@string/cra12a" />
-
-                        <RadioButton
-                            android:id="@+id/cra12b"
-                            style="@style/radiobutton"
-                            android:text="@string/cra12b" />
-
-                        <RadioButton
-                            android:id="@+id/cra12c"
-                            style="@style/radiobutton"
-                            android:text="@string/cra12c" />
-
-                        <RadioButton
-                            android:id="@+id/cra12d"
-                            style="@style/radiobutton"
-                            android:text="@string/cra12d" />
-
-                        <RadioButton
-                            android:id="@+id/cra12e"
-                            style="@style/radiobutton"
-                            android:text="@string/cra12e" />
-
-                    </RadioGroup>
-
-                </LinearLayout>
-
-            </android.support.v7.widget.CardView>
-            i_
+            </LinearLayout>
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
             <LinearLayout
