@@ -91,6 +91,7 @@
                         style="@style/i_textview"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:tag="-1"
                         android:text="@string/direct_ipd" />
 
                 </LinearLayout>
