@@ -8,7 +8,9 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
@@ -42,6 +44,7 @@ public class CRFAActivity extends AppCompatActivity {
     DatabaseHelper db;
     String tagID;
     boolean hasText = false;
+    List<String> Dieascodelist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,14 +55,11 @@ public class CRFAActivity extends AppCompatActivity {
         bi.setCallback(this);
 
 //        setTitle(R.string.f9aHeading);
-        List<String> Dieascodelist = new ArrayList<>(DiseaseCode.HmDiseaseCode.keySet());
+       Dieascodelist = new ArrayList<>(DiseaseCode.HmDiseaseCode.keySet());
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>
                 (this, android.R.layout.select_dialog_item, Dieascodelist);
-        bi.cra11.setThreshold(1); //will start working from first character
         bi.cra11.setAdapter(adapter);
-
-        bi.cra11b.setThreshold(1); //will start working from first character
         bi.cra11b.setAdapter(adapter);
 
 
@@ -83,53 +83,13 @@ public class CRFAActivity extends AppCompatActivity {
     private void setupViews() {
         db = new DatabaseHelper(this);
 
+        bi.cra11.setThreshold(3);
+        bi.cra11b.setThreshold(3);
         tagID = getSharedPreferences("tagName", MODE_PRIVATE).getString("tagName", null);
 
         String study_id = CheckingIDCC.accessingFile(this, tagID, false);
         bi.cra01.setText(study_id);
 
-
-        bi.cra11.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-              /*  if (hasText) {
-                    bi.cra11.setText(null);
-                    hasText = false;
-                }
-
-*/
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-        bi.cra11.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-
-                if (hasFocus) {
-                    bi.cra11.getText().clear();
-                }
-            }
-        });
-        bi.cra11b.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-
-                if (hasFocus) {
-                    bi.cra11b.getText().clear();
-                }
-            }
-        });
 
     }
 
