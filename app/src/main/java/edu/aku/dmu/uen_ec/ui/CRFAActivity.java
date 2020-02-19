@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -45,6 +46,7 @@ public class CRFAActivity extends AppCompatActivity {
     String tagID;
     boolean hasText = false;
     List<String> Dieascodelist;
+    boolean cra11Flag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +68,35 @@ public class CRFAActivity extends AppCompatActivity {
         setupViews();
 
         setDesing();
+        bi.cra11.addTextChangedListener(new TextWatcher() {
+            CharSequence s = "";
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                if (cra11Flag){
+                    this.s = s;
+                    cra11Flag = false;
+                    bi.cra11.setText(null);
+                }
+            }
 
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+        bi.cra11.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+                cra11Flag = true;
+            }
+        });
 
         /*int study_id = Integer.parseInt(db.getsFormcount());
         study_id = study_id + 1;
