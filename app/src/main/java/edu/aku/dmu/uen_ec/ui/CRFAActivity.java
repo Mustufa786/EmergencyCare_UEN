@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.Toast;
@@ -38,6 +41,7 @@ public class CRFAActivity extends AppCompatActivity {
 
     DatabaseHelper db;
     String tagID;
+    boolean hasText = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +87,50 @@ public class CRFAActivity extends AppCompatActivity {
 
         String study_id = CheckingIDCC.accessingFile(this, tagID, false);
         bi.cra01.setText(study_id);
+
+
+        bi.cra11.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+              /*  if (hasText) {
+                    bi.cra11.setText(null);
+                    hasText = false;
+                }
+
+*/
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        bi.cra11.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+
+                if (hasFocus) {
+                    bi.cra11.getText().clear();
+                }
+            }
+        });
+        bi.cra11b.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+
+                if (hasFocus) {
+                    bi.cra11b.getText().clear();
+                }
+            }
+        });
+
     }
 
     public void BtnContinue() {
@@ -198,9 +246,11 @@ public class CRFAActivity extends AppCompatActivity {
 
         CRFA.put("cra10", bi.cra10.getText().toString());
 
-        CRFA.put("cra11", DiseaseCode.HmDiseaseCode.get(bi.cra11.getText().toString()));
+//        CRFA.put("cra11", DiseaseCode.HmDiseaseCode.get(bi.cra11.getText().toString()));
+        CRFA.put("cra11", bi.cra11.getText().toString());
 
-        CRFA.put("cra11b", DiseaseCode.HmDiseaseCode.get(bi.cra11b.getText().toString()));
+//        CRFA.put("cra11b", DiseaseCode.HmDiseaseCode.get(bi.cra11b.getText().toString()));
+        CRFA.put("cra11b", bi.cra11b.getText().toString());
 
         if (bi.cra13.isChecked()) {
             CRFA.put("cra12", "2");
