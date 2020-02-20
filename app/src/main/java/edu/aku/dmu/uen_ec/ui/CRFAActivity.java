@@ -47,6 +47,7 @@ public class CRFAActivity extends AppCompatActivity {
     boolean hasText = false;
     List<String> Dieascodelist;
     boolean cra11Flag = false;
+    boolean cra11bFlag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +58,7 @@ public class CRFAActivity extends AppCompatActivity {
         bi.setCallback(this);
 
 //        setTitle(R.string.f9aHeading);
-       Dieascodelist = new ArrayList<>(DiseaseCode.HmDiseaseCode.keySet());
+        Dieascodelist = new ArrayList<>(DiseaseCode.HmDiseaseCode.keySet());
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>
                 (this, android.R.layout.select_dialog_item, Dieascodelist);
@@ -70,9 +71,10 @@ public class CRFAActivity extends AppCompatActivity {
         setDesing();
         bi.cra11.addTextChangedListener(new TextWatcher() {
             CharSequence s = "";
+
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                if (cra11Flag){
+                if (cra11Flag) {
                     this.s = s;
                     cra11Flag = false;
                     bi.cra11.setText(null);
@@ -95,6 +97,37 @@ public class CRFAActivity extends AppCompatActivity {
 
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
                 cra11Flag = true;
+            }
+        });
+
+        bi.cra11b.addTextChangedListener(new TextWatcher() {
+            CharSequence s = "";
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                if (cra11bFlag) {
+                    this.s = s;
+                    cra11bFlag = false;
+                    bi.cra11b.setText(null);
+                }
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+        bi.cra11b.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+                cra11bFlag = true;
             }
         });
 
