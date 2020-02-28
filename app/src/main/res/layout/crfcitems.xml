@@ -1,8 +1,8 @@
-<android.support.v7.widget.CardView style="@style/cardView"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/cardView"
 
-    android:layout_marginBottom="0dp"
     android:layout_marginRight="50dp"
+    android:layout_marginBottom="0dp"
 
     >
 
@@ -11,190 +11,347 @@
         style="@style/linearlayout_view_wt_bound">
 
 
-
-
         <TextView
 
-
-            style="@style/i_q_textview"
             android:id="@+id/serial"
+            style="@style/i_q_textview"
 
             android:layout_marginBottom="0dp"
 
 
-            android:text="Num"/>
+            android:text="Num" />
 
         <!-- studyid-->
         <LinearLayout
-            android:layout_marginTop="0dp"
-            android:layout_marginLeft="10dp"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
             android:orientation="horizontal"
-            android:weightSum="100"
-            >
-        <TextView
-            android:layout_marginBottom="3dp"
-            android:layout_marginTop="0dp"
-            android:gravity="right"
-            android:textSize="18dp"
-            style="@style/i_textview"
-            android:text="study ID"
-            
-            android:layout_weight="70"
-            android:textStyle="normal"
-            />
-             <TextView
-            android:layout_marginBottom="3dp"
-            android:layout_marginTop="0dp"
-            android:textSize="18dp"
-                android:id="@+id/studyid"
-                android:textStyle="normal"
+            android:weightSum="100">
+
+            <TextView
                 style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="70"
+                android:gravity="right"
+                android:text="study ID"
+
+                android:textSize="18dp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/studyid"
+                style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
                 android:layout_weight="30"
+                android:text="study ID"
                 android:textColor="@color/black_overlay"
-                android:text="study ID" />
+                android:textSize="18dp"
+                android:textStyle="normal" />
 
         </LinearLayout>
 
         <!-- OPD Number-->
         <LinearLayout
-            android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:orientation="horizontal"
-            android:weightSum="100"
-            >
+            android:weightSum="100">
+
             <TextView
-            android:layout_marginBottom="3dp"
-            android:layout_marginTop="0dp"
-            android:gravity="right"
-            android:textSize="18dp"
                 style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="70"
+                android:gravity="right"
                 android:text="OPD Number"
-                
-            android:layout_weight="70"
-                android:textStyle="normal"
-                />
+
+                android:textSize="18dp"
+                android:textStyle="normal" />
 
 
-
-             <TextView
-            android:layout_marginBottom="3dp"
-            android:layout_marginTop="0dp"
-            android:textSize="18dp"
+            <TextView
                 android:id="@+id/opdn"
-
                 style="@style/i_textview"
-                android:textStyle="normal"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
+
                 android:layout_weight="30"
+                android:text="OPD Number"
                 android:textColor="@color/black_overlay"
-                android:text="OPD Number" />
+                android:textSize="18dp"
+                android:textStyle="normal" />
 
         </LinearLayout>
 
         <!--Name -->
         <LinearLayout
-            android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:orientation="horizontal"
-            android:weightSum="100"
-            >
+            android:weightSum="100">
+
             <TextView
-            android:layout_marginBottom="3dp"
-            android:layout_marginTop="0dp"
-            android:gravity="right"
-            android:textSize="18dp"
                 style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="70"
+                android:gravity="right"
                 android:text="Name"
-                
-            android:layout_weight="70"
-                android:textStyle="normal"
-                />
-             <TextView
-            android:layout_marginBottom="3dp"
-            android:layout_marginTop="0dp"
-            android:textSize="18dp"
+
+                android:textSize="18dp"
+                android:textStyle="normal" />
+
+            <TextView
                 android:id="@+id/name"
-                android:textStyle="normal"
                 style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
                 android:layout_weight="30"
+                android:text="Name"
                 android:textColor="@color/black_overlay"
-                android:text="Name" />
+                android:textSize="18dp"
+                android:textStyle="normal" />
 
         </LinearLayout>
 
 
         <!--F.Name -->
         <LinearLayout
-            android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:orientation="horizontal"
-            android:weightSum="100"
-            >
+            android:weightSum="100">
+
             <TextView
-            android:layout_marginBottom="3dp"
-            android:layout_marginTop="0dp"
-            android:gravity="right"
-            android:textSize="18dp"
                 style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="70"
+                android:gravity="right"
                 android:text="F.Name"
-                
-            android:layout_weight="70"
-                android:textStyle="normal"
-                />
-             <TextView
-            android:layout_marginBottom="3dp"
-            android:layout_marginTop="0dp"
-            android:textSize="18dp"
+
+                android:textSize="18dp"
+                android:textStyle="normal" />
+
+            <TextView
                 android:id="@+id/fname"
-                android:textStyle="normal"
                 style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
                 android:layout_weight="30"
+                android:text="F.Name"
                 android:textColor="@color/black_overlay"
-                android:text="F.Name" />
+                android:textSize="18dp"
+                android:textStyle="normal" />
 
         </LinearLayout>
 
         <!--Date -->
         <LinearLayout
-            android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100"
+            android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp"
-            >
+            android:orientation="horizontal"
+            android:weightSum="100">
+
             <TextView
-            android:layout_marginBottom="3dp"
-            android:layout_marginTop="0dp"
-            android:gravity="right"
-            android:textSize="18dp"
-                style="@style/i_textview"
-                android:text="Date"
-                
-            android:layout_weight="70"
-                android:textStyle="normal"
                 android:id="@+id/txtdate"
-                />
-             <TextView
-            android:layout_marginBottom="3dp"
-            android:layout_marginTop="0dp"
-            android:textSize="18dp"
-                android:id="@+id/date"
-                android:textStyle="normal"
                 style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="70"
+                android:gravity="right"
+
+                android:text="Date"
+                android:textSize="18dp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/date"
+                style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
                 android:layout_weight="30"
+                android:text="Date"
                 android:textColor="@color/black_overlay"
-                android:text="Date" />
+                android:textSize="18dp"
+                android:textStyle="normal" />
 
         </LinearLayout>
 
 
+        <!--Date -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
 
+            <TextView
+                android:id="@+id/txtdistrict"
+                style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="70"
+                android:gravity="right"
+                android:text="District"
+                android:textSize="18dp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/district"
+                style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="30"
+                android:text="District"
+                android:textColor="@color/black_overlay"
+                android:textSize="18dp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+        <!--Date -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:id="@+id/txttehsil"
+                style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="70"
+                android:gravity="right"
+
+                android:text="Tehsil"
+                android:textSize="18dp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/tehsil"
+                style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="30"
+                android:text="Tehsil"
+                android:textColor="@color/black_overlay"
+                android:textSize="18dp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+        <!--Date -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:id="@+id/txtuc"
+                style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="70"
+                android:gravity="right"
+
+                android:text="Union Council"
+                android:textSize="18dp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/uc"
+                style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="30"
+                android:text="Union Council"
+                android:textColor="@color/black_overlay"
+                android:textSize="18dp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+        <!--Date -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:id="@+id/txtvillage"
+                style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="70"
+                android:gravity="right"
+
+                android:text="Village"
+                android:textSize="18dp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/village"
+                style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="30"
+                android:text="Village"
+                android:textColor="@color/black_overlay"
+                android:textSize="18dp"
+                android:textStyle="normal" />
+
+        </LinearLayout> <!--Date -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:id="@+id/txtaddress"
+                style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="70"
+                android:gravity="right"
+
+                android:text="Address"
+                android:textSize="18dp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/address"
+                style="@style/i_textview"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="30"
+                android:text="Address"
+                android:textColor="@color/black_overlay"
+                android:textSize="18dp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
 
 
     </LinearLayout>

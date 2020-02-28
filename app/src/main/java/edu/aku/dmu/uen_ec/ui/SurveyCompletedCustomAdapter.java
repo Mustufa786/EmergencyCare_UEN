@@ -70,6 +70,11 @@ class SurveyCompletedCustomAdapter extends RecyclerView.Adapter {
 
         vh.name.setText(crf.getCra04());
         vh.fname.setText(crf.getCra05());
+        vh.district.setText(crf.getCra06a());
+        vh.tehsil.setText(crf.getCra06e());
+        vh.uc.setText(crf.getCra06b());
+        vh.village.setText(crf.getCra06c());
+        vh.address.setText(crf.getCra06d());
 
         vh.serial.setText(String.valueOf(position + 1));
 
@@ -508,7 +513,8 @@ class SurveyCompletedCustomAdapter extends RecyclerView.Adapter {
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView studyid, serial, name, fname, date, txtdate, opdnum;
+        public TextView studyid, serial, name,
+                fname, date, txtdate, district, uc, tehsil, address, village, opdnum;
 
         public ViewHolder(View v) {
             super(v);
@@ -519,6 +525,11 @@ class SurveyCompletedCustomAdapter extends RecyclerView.Adapter {
             fname = v.findViewById(R.id.fname);
             txtdate = v.findViewById(R.id.txtdate);
             date = v.findViewById(R.id.date);
+            uc = v.findViewById(R.id.uc);
+            district = v.findViewById(R.id.district);
+            tehsil = v.findViewById(R.id.tehsil);
+            address = v.findViewById(R.id.address);
+            village = v.findViewById(R.id.village);
 
             opdnum = v.findViewById(R.id.opdn);
 
