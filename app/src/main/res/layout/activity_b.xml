@@ -341,7 +341,7 @@
                             android:hint="@string/crb09b"
                             android:inputType="number"
                             android:maxLength="2"
-                            app:maxValue="12"
+                            app:maxValue="11"
                             app:minValue="0"
                             app:type="range" />
 
@@ -353,7 +353,7 @@
                             android:hint="@string/crb09a"
                             android:inputType="number"
                             android:maxLength="2"
-                            app:maxValue="30"
+                            app:maxValue="29"
                             app:minValue="0"
                             app:type="range" />
 

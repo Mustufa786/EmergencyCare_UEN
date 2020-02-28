@@ -33,7 +33,9 @@
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
                 android:background="@color/red"
-                android:elevation="4dp"></FrameLayout>
+                android:elevation="4dp">
+
+            </FrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -67,6 +69,7 @@
                         style="@android:style/Widget.ProgressBar.Small"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
+
                 </LinearLayout>
 
 
@@ -75,7 +78,9 @@
                     android:layout_height="1dp"
                     android:layout_margin="5dp"
                     android:background="@color/black"
-                    android:orientation="horizontal"></LinearLayout>
+                    android:orientation="horizontal">
+
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/utv_msg"
@@ -85,7 +90,9 @@
                     android:layout_marginEnd="7dp"
                     android:layout_marginBottom="7dp"
                     tools:text="Results:    " />
+
             </LinearLayout>
+
         </LinearLayout>
     </android.support.v7.widget.CardView>
 </layout>
