@@ -8,7 +8,7 @@
  </string>
     <string name="dkn"> خبر نه آھي </string>
     <string name="not_applicable">	غير موضوع</string>
-    <string name="sometimes">	ڪڏهن ڪڏهن   </string>
+    <string name="sometimes">	ڪڏهن ڪڏهن </string>
 
     <string name="btnSync">Sync</string>
     <string name="btnUpload">Upload</string>
@@ -148,10 +148,10 @@
 
     <string name="cra08"> Age </string>
     <string name="cra08a"> Less then 1 month </string>
-    <string name="cra08b">   1-11 months  </string>
-    <string name="cra08c">   1-4 years  </string>
-   <string name="cra08d">    5-14 years  </string>
-   <string name="cra08e">    15-49 years </string>
+    <string name="cra08b"> 1–11 months </string>
+    <string name="cra08c"> 1–4 years </string>
+    <string name="cra08d"> 5–14 years </string>
+    <string name="cra08e"> 15–49 years </string>
 
     <string name="cra09"> Sex </string>
     <string name="cra09a"> Male </string>
@@ -249,7 +249,7 @@
 
     <string name="crc06"> LHW assingend </string>
 
-    <string name="crc07">  Date due to notify LHS </string>
+    <string name="crc07"> Date due to notify LHS </string>
     <string name="crc07a"> day </string>
     <string name="crc07b"> month </string>
     <string name="crc07c"> year </string>

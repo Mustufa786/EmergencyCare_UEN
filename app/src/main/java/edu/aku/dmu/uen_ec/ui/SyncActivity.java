@@ -42,7 +42,6 @@ public class SyncActivity extends AppCompatActivity {
     SharedPreferences.Editor editor;
     SharedPreferences sharedPref;
     String DirectoryName;
-    DatabaseHelper db;
     SyncListAdapter syncListAdapter;
     Upload_list_adapter uploadListAdapter;
     ActivitySyncBinding bi;
@@ -65,7 +64,6 @@ public class SyncActivity extends AppCompatActivity {
         bi.noDataItem.setVisibility(View.VISIBLE);
         listActivityCreated = true;
         uploadlistActivityCreated = true;
-        db = new DatabaseHelper(this);
         dbBackup();
         bi.btnSync.setOnClickListener(new View.OnClickListener() {
             @Override
