@@ -63,6 +63,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleOPD.COLUMN_F3 + " TEXT,"
             + singleOPD.COLUMN_F4 + " TEXT"
             + " ) ;";
+
+    private static final int DATABASE_VERSION = 4;
     public static final String DB_NAME = DATABASE_NAME.replace(".", "_" + MainApp.versionName + "_" + DATABASE_VERSION + "_copy.");
 
 
@@ -88,7 +90,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleTaluka.COLUMN_TALUKA_NAME + " TEXT,"
             + singleTaluka.COLUMN_TALUKA_CODE + " TEXT"
             + " ) ;";
-    private static final int DATABASE_VERSION = 4;
 
 
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
@@ -350,8 +351,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         };
 
 
-        String whereClause = FormsTable.COLUMN_studyid + "=?";
-        String[] whereArgs = new String[]{studyID};
+        String whereClause = FormsTable.COLUMN_studyid + "=? and " + FormsTable.COLUMN_SYNCED + "!=? and " + FormsTable.COLUMN_ISTATUS + "=?";
+        String[] whereArgs = new String[]{studyID, "1", "1"};
         String groupBy = null;
         String having = null;
 
@@ -408,8 +409,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 singleOPD.COLUMN_F4,
         };
 
-        String whereClause = singleOPD.COLUMN_CRA01 + "=?";
-        String[] whereArgs = new String[]{studyID};
+        String whereClause = singleOPD.COLUMN_CRA01 + "=? and " + singleOPD.COLUMN_F2 + "=?";
+        String[] whereArgs = new String[]{studyID, "1"};
 
 
         String groupBy = null;
@@ -444,7 +445,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
-    public Collection<OPDContract> getAllForms() {
+    public Collection<OPDContract> getAllForms(String f1, String f2) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = null;
         String[] columns = {
@@ -468,11 +469,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 singleOPD.COLUMN_F4,
         };
 
-        String whereClause = null;
-        String[] whereArgs = null;
+        String whereClause = singleOPD.COLUMN_F3 + "=? and " + singleOPD.COLUMN_F4 + "=?";
+        String[] whereArgs = new String[]{f1, f2};
         String groupBy = null;
         String having = null;
-        String orderBy = singleOPD._ID + " ASC";
+        String orderBy = singleOPD._ID + " desc";
 
         Collection<OPDContract> allFC = new ArrayList<>();
         try {
@@ -541,13 +542,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         };
 
 
-        String whereClause = " f_Type='CRFA' and " + FormsTable.COLUMN_crfcstatus + "=?";
-        String[] whereArgs = new String[]{crfstatus};
+        String whereClause = " f_Type='CRFA' and " + FormsTable.COLUMN_crfcstatus + "=? AND " + FormsTable.COLUMN_SYNCED + "!=? and " + FormsTable.COLUMN_ISTATUS + "=?";
+        String[] whereArgs = new String[]{crfstatus, "1", "1"};
         String groupBy = null;
         String having = null;
 
         String orderBy =
-                FormsTable._ID + " ASC";
+                FormsTable._ID + " desc";
 
         try {
             c = db.query(

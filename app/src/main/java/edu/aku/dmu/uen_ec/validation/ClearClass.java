@@ -1,6 +1,5 @@
 package edu.aku.dmu.uen_ec.validation;
 
-import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -8,6 +7,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import androidx.cardview.widget.CardView;
 
 /**
  * Created by ali.azaz on 03/19/18.

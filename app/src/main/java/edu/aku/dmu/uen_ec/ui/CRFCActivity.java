@@ -1,10 +1,12 @@
 package edu.aku.dmu.uen_ec.ui;
 
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -15,6 +17,7 @@ import java.util.concurrent.ExecutionException;
 
 import edu.aku.dmu.uen_ec.AsyncCS;
 import edu.aku.dmu.uen_ec.JSONModels.JSONModelCRFA;
+import edu.aku.dmu.uen_ec.JsonUtils.JSONUtils;
 import edu.aku.dmu.uen_ec.R;
 import edu.aku.dmu.uen_ec.contracts.FormsContract;
 import edu.aku.dmu.uen_ec.contracts.OPDContract;
@@ -43,7 +46,7 @@ public class CRFCActivity extends AppCompatActivity {
 
         days_21 = true;
 
-        get_data_recylceview("0");
+        //get_data_recylceview("0");
 
 
     }
@@ -60,13 +63,51 @@ public class CRFCActivity extends AppCompatActivity {
 
     public void get_data_recylceview(String crfstatus) {
         // list here
-        List<JSONModelCRFA> list = getdata(crfstatus);
+        List<JSONModelCRFA> list = new ArrayList<JSONModelCRFA>();
 
         if (crfstatus.equals("0")) {
+
+
+            Collection<FormsContract> fm = db.getsFormContractCRFC(crfstatus);
+            for (FormsContract fc : fm) {
+                JSONModelCRFA crfa = JSONUtils.getModelFromJSON(fc.getCRFA(), JSONModelCRFA.class);
+                Log.d(crfa.getCra01(), "doInBackground: " + crfa.getCra12());
+                if ((crfa.getCra12().equals("1") || crfa.getCra12().equals("2") || crfa.getCra12().equals("3"))) {
+                    list.add(crfa);
+                }
+            }
+
+            Collection<OPDContract> opd = db.getAllForms("1", "0");
+            for (OPDContract fc : opd) {
+                Log.d(fc.getcra01(), "doInBackground: " + fc.getcra12());
+                if ((fc.getcra12().equals("1") || fc.getcra12().equals("2") || fc.getcra12().equals("3"))) {
+                    list.add(new JSONModelCRFA(fc));
+                }
+            }
+
+
             bi.btn21.setText("21 Days Notification" + " (" + list.size() + ")");
             bi.btn21.setBackgroundColor(getResources().getColor(R.color.colorPrimaryAlpha));
             bi.btn48.setBackgroundColor(getResources().getColor(R.color.colorPrimaryAlpha2));
         } else {
+
+            Collection<FormsContract> fm = db.getsFormContractCRFC(crfstatus);
+            for (FormsContract fc : fm) {
+                JSONModelCRFA crfa = JSONUtils.getModelFromJSON(fc.getCRFA(), JSONModelCRFA.class);
+                Log.d(crfa.getCra01(), "doInBackground: " + crfa.getCra12());
+                if ((crfa.getCra12().equals("1") || crfa.getCra12().equals("2") || crfa.getCra12().equals("3"))) {
+                    list.add(crfa);
+                }
+            }
+
+            Collection<OPDContract> opd = db.getAllForms("0", "1");
+            for (OPDContract fc : opd) {
+                Log.d(fc.getcra01(), "doInBackground: " + fc.getcra12());
+                if ((fc.getcra12().equals("1") || fc.getcra12().equals("2") || fc.getcra12().equals("3"))) {
+                    list.add(new JSONModelCRFA(fc));
+                }
+            }
+
             bi.btn48.setText("28 Days Follow-Up" + " (" + list.size() + ")");
             bi.btn21.setBackgroundColor(getResources().getColor(R.color.colorPrimaryAlpha2));
             bi.btn48.setBackgroundColor(getResources().getColor(R.color.colorPrimaryAlpha));
@@ -95,8 +136,12 @@ public class CRFCActivity extends AppCompatActivity {
                 }
             }
         }*/
-
-        Collection<OPDContract> opd = db.getAllForms();
+        Collection<OPDContract> opd = null;
+        if (crfstatus.equals("0")) {
+            opd = db.getAllForms("1", "0");
+        } else {
+            opd = db.getAllForms("0", "1");
+        }
         try {
             if (lst.size() > 0)
                 lst_string.addAll(new AsyncCS(this, lst, true, crfstatus.equals("0") ? 25 : 30).execute().get());

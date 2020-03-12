@@ -2,12 +2,13 @@ package edu.aku.dmu.uen_ec.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.v7.app.AlertDialog;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 
 import com.edittextpicker.aliazaz.EditTextPicker;
 

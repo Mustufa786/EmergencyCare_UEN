@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.v7.widget.RecyclerView;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +13,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,12 +37,16 @@ import static edu.aku.dmu.uen_ec.core.MainApp.fc;
 
 class SurveyCompletedCustomAdapter extends RecyclerView.Adapter {
 
+    private static final String TAG = "CustomAdapter";
+    private final int mSize;
     Context mContext;
     List<JSONModelCRFA> mList;
 
     public SurveyCompletedCustomAdapter(Context context, List<JSONModelCRFA> list) {
         mContext = context;
         mList = list;
+        mSize = list.size();
+
     }
 
     @Override
@@ -64,20 +69,18 @@ class SurveyCompletedCustomAdapter extends RecyclerView.Adapter {
 
         JSONModelCRFA crf = mList.get(position);
 
-        vh.studyid.setText(crf.getCra01());
+        vh.studyid.setText(crf.getCra01().toUpperCase());
 
-        vh.opdnum.setText(crf.getCra02());
-
-        vh.name.setText(crf.getCra04());
-        vh.fname.setText(crf.getCra05());
-        vh.district.setText(crf.getCra06a());
-        vh.tehsil.setText(crf.getCra06e());
-        vh.uc.setText(crf.getCra06b());
-        vh.village.setText(crf.getCra06c());
-        vh.address.setText(crf.getCra06d());
+        vh.opdnum.setText(crf.getCra02().equals("") ? "n/a" : crf.getCra02());
+        vh.name.setText(crf.getCra04().equals("") ? "n/a" : crf.getCra04().toUpperCase());
+        vh.fname.setText(crf.getCra05().equals("") ? "n/a" : crf.getCra05().toUpperCase());
+        vh.district.setText(crf.getCra06a().equals("") ? "n/a" : crf.getCra06a().toUpperCase());
+        vh.tehsil.setText(crf.getCra06e().equals("") ? "n/a" : crf.getCra06e().toUpperCase());
+        vh.uc.setText(crf.getCra06b().equals("") ? "n/a" : crf.getCra06b().toUpperCase());
+        vh.village.setText(crf.getCra06c().equals("") ? "n/a" : crf.getCra06c().toUpperCase());
+        vh.address.setText(crf.getCra06d().equals("") ? "n/a" : crf.getCra06d().toUpperCase());
 
         vh.serial.setText(String.valueOf(position + 1));
-
         String Pdate = crf.getCra03a() + "/" + crf.getCra03b() + "/" + crf.getCra03c();
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");

@@ -1,183 +1,136 @@
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/cardView"
-
-    android:layout_marginRight="50dp"
-    android:layout_marginBottom="0dp"
-
-    >
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="50dp"
+    android:paddingBottom="12dp">
 
     <LinearLayout
-
-        style="@style/linearlayout_view_wt_bound">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
 
 
         <TextView
 
             android:id="@+id/serial"
-            style="@style/i_q_textview"
-
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             android:layout_marginBottom="0dp"
-
-
-            android:text="Num" />
+            android:background="@color/colorPrimary"
+            android:elevation="1dp"
+            android:gravity="center"
+            android:radius="20dp"
+            android:text="Num"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
         <!-- studyid-->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-
+            android:layout_weight="3"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="0dp"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:weightSum="100">
 
-            <TextView
-                style="@style/i_textview"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="70"
-                android:gravity="right"
-                android:text="study ID"
-
-                android:textSize="18dp"
-                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/studyid"
-                style="@style/i_textview"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="study ID"
+                android:padding="0dp"
+
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="0dp"
+
+                android:text="Name"
                 android:textColor="@color/black_overlay"
                 android:textSize="18dp"
                 android:textStyle="normal" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="0dp"
+                    android:text=" | "
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+
+                    />
+            <TextView
+                android:id="@+id/opdn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="0dp"
+                android:textColor="@color/black_overlay"
+                android:textSize="18dp"
+                android:text="OPD Number"
+
+                android:textStyle="normal" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/fname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:padding="0dp"
+                    android:text="F.Name"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18dp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/district"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="0dp"
+                    android:text="District"
+
+                    android:textColor="@color/black_overlay"
+                    android:textSize="18dp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
         </LinearLayout>
 
         <!-- OPD Number-->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:orientation="horizontal"
-            android:weightSum="100">
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-            <TextView
-                style="@style/i_textview"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="70"
-                android:gravity="right"
-                android:text="OPD Number"
-
-                android:textSize="18dp"
-                android:textStyle="normal" />
-
-
-            <TextView
-                android:id="@+id/opdn"
-                style="@style/i_textview"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="3dp"
-
-                android:layout_weight="30"
-                android:text="OPD Number"
-                android:textColor="@color/black_overlay"
-                android:textSize="18dp"
-                android:textStyle="normal" />
-
-        </LinearLayout>
-
-        <!--Name -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:orientation="horizontal"
-            android:weightSum="100">
-
-            <TextView
-                style="@style/i_textview"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="70"
-                android:gravity="right"
-                android:text="Name"
-
-                android:textSize="18dp"
-                android:textStyle="normal" />
-
-            <TextView
-                android:id="@+id/name"
-                style="@style/i_textview"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="30"
-                android:text="Name"
-                android:textColor="@color/black_overlay"
-                android:textSize="18dp"
-                android:textStyle="normal" />
-
-        </LinearLayout>
-
-
-        <!--F.Name -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:orientation="horizontal"
-            android:weightSum="100">
-
-            <TextView
-                style="@style/i_textview"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="70"
-                android:gravity="right"
-                android:text="F.Name"
-
-                android:textSize="18dp"
-                android:textStyle="normal" />
-
-            <TextView
-                android:id="@+id/fname"
-                style="@style/i_textview"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="30"
-                android:text="F.Name"
-                android:textColor="@color/black_overlay"
-                android:textSize="18dp"
-                android:textStyle="normal" />
-
-        </LinearLayout>
-
-        <!--Date -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal"
-            android:weightSum="100">
-
-            <TextView
-                android:id="@+id/txtdate"
-                style="@style/i_textview"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="70"
-                android:gravity="right"
-
-                android:text="Date"
-                android:textSize="18dp"
-                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/date"
-                style="@style/i_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:layout_marginBottom="3dp"
                 android:layout_weight="30"
@@ -186,173 +139,84 @@
                 android:textSize="18dp"
                 android:textStyle="normal" />
 
-        </LinearLayout>
-
-
-        <!--Date -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal"
-            android:weightSum="100">
 
             <TextView
-                android:id="@+id/txtdistrict"
-                style="@style/i_textview"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="70"
-                android:gravity="right"
-                android:text="District"
-                android:textSize="18dp"
-                android:textStyle="normal" />
-
-            <TextView
-                android:id="@+id/district"
-                style="@style/i_textview"
+                android:id="@+id/txtdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:layout_marginBottom="3dp"
                 android:layout_weight="30"
-                android:text="District"
+                android:text="Date"
                 android:textColor="@color/black_overlay"
                 android:textSize="18dp"
                 android:textStyle="normal" />
 
-        </LinearLayout>
-        <!--Date -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal"
-            android:weightSum="100">
 
-            <TextView
-                android:id="@+id/txttehsil"
-                style="@style/i_textview"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="70"
-                android:gravity="right"
 
-                android:text="Tehsil"
-                android:textSize="18dp"
-                android:textStyle="normal" />
+
+
 
             <TextView
                 android:id="@+id/tehsil"
-                style="@style/i_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:layout_marginBottom="3dp"
                 android:layout_weight="30"
                 android:text="Tehsil"
                 android:textColor="@color/black_overlay"
                 android:textSize="18dp"
-                android:textStyle="normal" />
+                android:textStyle="normal"
+                android:visibility="gone" />
 
-        </LinearLayout>
-        <!--Date -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal"
-            android:weightSum="100">
-
-            <TextView
-                android:id="@+id/txtuc"
-                style="@style/i_textview"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="70"
-                android:gravity="right"
-
-                android:text="Union Council"
-                android:textSize="18dp"
-                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/uc"
-                style="@style/i_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:layout_marginBottom="3dp"
                 android:layout_weight="30"
                 android:text="Union Council"
                 android:textColor="@color/black_overlay"
                 android:textSize="18dp"
-                android:textStyle="normal" />
+                android:textStyle="normal"
+                android:visibility="gone" />
 
-        </LinearLayout>
-        <!--Date -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal"
-            android:weightSum="100">
 
-            <TextView
-                android:id="@+id/txtvillage"
-                style="@style/i_textview"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="70"
-                android:gravity="right"
-
-                android:text="Village"
-                android:textSize="18dp"
-                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/village"
-                style="@style/i_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:layout_marginBottom="3dp"
                 android:layout_weight="30"
                 android:text="Village"
                 android:textColor="@color/black_overlay"
                 android:textSize="18dp"
-                android:textStyle="normal" />
+                android:textStyle="normal"
+                android:visibility="gone" />
 
-        </LinearLayout> <!--Date -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal"
-            android:weightSum="100">
 
-            <TextView
-                android:id="@+id/txtaddress"
-                style="@style/i_textview"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="3dp"
-                android:layout_weight="70"
-                android:gravity="right"
-
-                android:text="Address"
-                android:textSize="18dp"
-                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/address"
-                style="@style/i_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
                 android:layout_marginBottom="3dp"
                 android:layout_weight="30"
                 android:text="Address"
                 android:textColor="@color/black_overlay"
                 android:textSize="18dp"
-                android:textStyle="normal" />
+                android:textStyle="normal"
+                android:visibility="gone" />
+
 
         </LinearLayout>
 
 
     </LinearLayout>
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>

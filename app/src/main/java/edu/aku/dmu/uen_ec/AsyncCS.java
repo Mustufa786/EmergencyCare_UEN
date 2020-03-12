@@ -3,10 +3,10 @@ package edu.aku.dmu.uen_ec;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Handler;
-import android.support.design.widget.Snackbar;
-import android.view.View;
+import android.util.Log;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -33,11 +33,11 @@ public class AsyncCS extends AsyncTask<Void, Void, List<JSONModelCRFA>> {
         this.daysValue = daysValue;
         lst_string = new ArrayList<>();
         final ViewGroup viewGroup = (ViewGroup) ((ViewGroup) activity.findViewById(android.R.id.content)).getChildAt(0);
-        snackbar = Snackbar.make(viewGroup, "Loading data..", Snackbar.LENGTH_SHORT);
-        View snackBarView = snackbar.getView();
-        snackBarView.setBackgroundColor(activity.getResources().getColor(R.color.colorPrimaryAlpha));
-        TextView textView = snackBarView.findViewById(android.support.design.R.id.snackbar_text);
-        textView.setTextColor(activity.getResources().getColor(R.color.white));
+        //snackbar = Snackbar.make(viewGroup, "Loading data..", Snackbar.LENGTH_SHORT);
+        //View snackBarView = snackbar.getView();
+        //snackBarView.setBackgroundColor(activity.getResources().getColor(R.color.colorPrimaryAlpha));
+        //TextView textView = snackBarView.findViewById(android.support.design.R.id.snackbar_text);
+        //textView.setTextColor(activity.getResources().getColor(R.color.white));
     }
 
     @Override
@@ -53,14 +53,16 @@ public class AsyncCS extends AsyncTask<Void, Void, List<JSONModelCRFA>> {
             Collection<FormsContract> fm = (Collection<FormsContract>) lst;
             for (FormsContract fc : fm) {
                 JSONModelCRFA crfa = JSONUtils.getModelFromJSON(fc.getCRFA(), JSONModelCRFA.class);
-                if ((crfa.getCra12().equals("1") || crfa.getCra12().equals("2") || crfa.getCra12().equals("3")) && daysCheck(crfa, daysValue)) {
+                Log.d(crfa.getCra01(), "doInBackground: " + crfa.getCra12());
+                if ((crfa.getCra12().equals("1") || crfa.getCra12().equals("2") || crfa.getCra12().equals("3"))) {
                     lst_string.add(crfa);
                 }
             }
         } else {
             Collection<OPDContract> fm = (Collection<OPDContract>) lst;
             for (OPDContract fc : fm) {
-                if ((fc.getcra12().equals("1") || fc.getcra12().equals("2") || fc.getcra12().equals("3")) && daysCheck(fc, daysValue)) {
+                Log.d(fc.getcra01(), "doInBackground: " + fc.getcra12());
+                if ((fc.getcra12().equals("1") || fc.getcra12().equals("2") || fc.getcra12().equals("3"))) {
                     lst_string.add(new JSONModelCRFA(fc));
                 }
             }
@@ -77,7 +79,7 @@ public class AsyncCS extends AsyncTask<Void, Void, List<JSONModelCRFA>> {
             public void run() {
                 snackbar.dismiss();
             }
-        }, 2000);
+        }, 1600);
     }
 
     private boolean daysCheck(JSONModelCRFA crfa, int daysValue) {

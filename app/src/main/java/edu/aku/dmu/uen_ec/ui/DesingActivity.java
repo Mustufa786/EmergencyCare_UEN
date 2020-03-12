@@ -1,14 +1,14 @@
 package edu.aku.dmu.uen_ec.ui;
 
 import android.content.SharedPreferences;
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
 import edu.aku.dmu.uen_ec.R;
-import edu.aku.dmu.uen_ec.databinding.ActivityABinding;
 import edu.aku.dmu.uen_ec.databinding.ActivityUiSettingBinding;
 
 public class DesingActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {

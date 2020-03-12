@@ -137,7 +137,6 @@ public class JSONModelCRFA {
     public void setCra06d(String cra06d) {
         this.cra06d = cra06d;
     }
-
     public void setCra06e(String cra06e) {
         this.cra06e = cra06e;
     }
