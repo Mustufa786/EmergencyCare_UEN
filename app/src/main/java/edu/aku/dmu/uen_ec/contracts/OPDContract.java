@@ -24,6 +24,9 @@ public class OPDContract {
     private String cra03b;
     private String cra03c;
     private String cra12;
+    private String f2;
+    private String f3;
+    private String f4;
 
 
     public OPDContract() {
@@ -45,6 +48,9 @@ public class OPDContract {
         this.cra03b = jsonObject.getString(singleOPD.COLUMN_CRA03b);
         this.cra03c = jsonObject.getString(singleOPD.COLUMN_CRA03c);
         this.cra12 = jsonObject.getString(singleOPD.COLUMN_CRA12);
+        this.f2 = jsonObject.getString(singleOPD.COLUMN_F2);
+        this.f3 = jsonObject.getString(singleOPD.COLUMN_F3);
+        this.f4 = jsonObject.getString(singleOPD.COLUMN_F4);
 
         return this;
     }
@@ -65,6 +71,9 @@ public class OPDContract {
         this.cra03b = cursor.getString(cursor.getColumnIndex(singleOPD.COLUMN_CRA03b));
         this.cra03c = cursor.getString(cursor.getColumnIndex(singleOPD.COLUMN_CRA03c));
         this.cra12 = cursor.getString(cursor.getColumnIndex(singleOPD.COLUMN_CRA12));
+        this.f2 = cursor.getString(cursor.getColumnIndex(singleOPD.COLUMN_F2));
+        this.f3 = cursor.getString(cursor.getColumnIndex(singleOPD.COLUMN_F3));
+        this.f4 = cursor.getString(cursor.getColumnIndex(singleOPD.COLUMN_F4));
 
 
         return this;
@@ -182,6 +191,30 @@ public class OPDContract {
         this.cra12 = cra12;
     }
 
+    public String getF2() {
+        return f2;
+    }
+
+    public void setF2(String f2) {
+        this.f2 = f2;
+    }
+
+    public String getF3() {
+        return f3;
+    }
+
+    public void setF3(String f3) {
+        this.f3 = f3;
+    }
+
+    public String getF4() {
+        return f4;
+    }
+
+    public void setF4(String f4) {
+        this.f4 = f4;
+    }
+
     public static abstract class singleOPD implements BaseColumns {
 
         public static final String TABLE_NAME = "OPD_table";
@@ -201,6 +234,9 @@ public class OPDContract {
         public static final String COLUMN_CRA03b = "cra03b";
         public static final String COLUMN_CRA03c = "cra03c";
         public static final String COLUMN_CRA12 = "cra12";
+        public static final String COLUMN_F2 = "f2";
+        public static final String COLUMN_F3 = "f3";
+        public static final String COLUMN_F4 = "f4";
 
         public static final String _URI = "getforms.php";
     }

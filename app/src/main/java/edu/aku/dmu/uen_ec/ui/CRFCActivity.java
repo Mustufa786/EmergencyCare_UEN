@@ -8,7 +8,9 @@ import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
 
 import edu.aku.dmu.uen_ec.AsyncCS;
@@ -111,7 +113,9 @@ public class CRFCActivity extends AppCompatActivity {
                 }
             }
         }*/
-
+        Set<JSONModelCRFA> set_string = new HashSet<>(lst_string);
+        lst_string.clear();
+        lst_string.addAll(set_string);
         return lst_string;
     }
 

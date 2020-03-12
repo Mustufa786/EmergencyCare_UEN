@@ -43,7 +43,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "CRF.db";
     public static final String PROJECT_NAME = "CRF";
-    private static final int DATABASE_VERSION = 3;
+    public static final String SQL_CREATE_OPD = "CREATE TABLE " + singleOPD.TABLE_NAME + "("
+            + singleOPD._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + singleOPD.COLUMN_CRA01 + " TEXT,"
+            + singleOPD.COLUMN_CRA02 + " TEXT,"
+            + singleOPD.COLUMN_CRA04 + " TEXT,"
+            + singleOPD.COLUMN_CRA05 + " TEXT,"
+            + singleOPD.COLUMN_CRA06A + " TEXT,"
+            + singleOPD.COLUMN_CRA06B + " TEXT,"
+            + singleOPD.COLUMN_CRA06C + " TEXT,"
+            + singleOPD.COLUMN_CRA06D + " TEXT,"
+            + singleOPD.COLUMN_CRA06E + " TEXT,"
+            + singleOPD.COLUMN_CRA07 + " TEXT,"
+            + singleOPD.COLUMN_CRA03a + " TEXT,"
+            + singleOPD.COLUMN_CRA03b + " TEXT,"
+            + singleOPD.COLUMN_CRA03c + " TEXT,"
+            + singleOPD.COLUMN_CRA12 + " TEXT,"
+            + singleOPD.COLUMN_F2 + " TEXT,"
+            + singleOPD.COLUMN_F3 + " TEXT,"
+            + singleOPD.COLUMN_F4 + " TEXT"
+            + " ) ;";
     public static final String DB_NAME = DATABASE_NAME.replace(".", "_" + MainApp.versionName + "_" + DATABASE_VERSION + "_copy.");
 
 
@@ -69,24 +88,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleTaluka.COLUMN_TALUKA_NAME + " TEXT,"
             + singleTaluka.COLUMN_TALUKA_CODE + " TEXT"
             + " ) ;";
-
-    public static final String SQL_CREATE_OPD = "CREATE TABLE " + singleOPD.TABLE_NAME + "("
-            + singleOPD._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + singleOPD.COLUMN_CRA01 + " TEXT,"
-            + singleOPD.COLUMN_CRA02 + " TEXT,"
-            + singleOPD.COLUMN_CRA04 + " TEXT,"
-            + singleOPD.COLUMN_CRA05 + " TEXT,"
-            + singleOPD.COLUMN_CRA06A + " TEXT,"
-            + singleOPD.COLUMN_CRA06B + " TEXT,"
-            + singleOPD.COLUMN_CRA06C + " TEXT,"
-            + singleOPD.COLUMN_CRA06D + " TEXT,"
-            + singleOPD.COLUMN_CRA06E + " TEXT,"
-            + singleOPD.COLUMN_CRA07 + " TEXT,"
-            + singleOPD.COLUMN_CRA03a + " TEXT,"
-            + singleOPD.COLUMN_CRA03b + " TEXT,"
-            + singleOPD.COLUMN_CRA03c + " TEXT,"
-            + singleOPD.COLUMN_CRA12 + " TEXT"
-            + " ) ;";
+    private static final int DATABASE_VERSION = 4;
 
 
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
@@ -146,6 +148,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             VersionAppContract.VersionAppTable.COLUMN_VERSION_NAME + " TEXT, " +
             VersionAppContract.VersionAppTable.COLUMN_PATH_NAME + " TEXT " +
             ");";
+    private final String SQL_ALTER_OPD = "ALTER TABLE " + OPDContract.singleOPD.TABLE_NAME + " ADD " +
+            singleOPD.COLUMN_F2 + " TEXT, ADD " +
+            singleOPD.COLUMN_F2 + " TEXT, ADD " +
+            singleOPD.COLUMN_F2 + " TEXT " +
+            ";";
 
 
     private static final String SQL_DELETE_FORMS = "DROP TABLE IF EXISTS " + FormsTable.TABLE_NAME;
@@ -192,6 +199,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 db.execSQL(SQL_CREATE_OPD);
             case 2:
                 db.execSQL(SQL_CREATE_VERSIONAPP);
+            case 3:
+                db.execSQL("alter table " + singleOPD.TABLE_NAME + " add column " + singleOPD.COLUMN_F2 + " text;");
+                db.execSQL("alter table " + singleOPD.TABLE_NAME + " add column " + singleOPD.COLUMN_F3 + " text;");
+                db.execSQL("alter table " + singleOPD.TABLE_NAME + " add column " + singleOPD.COLUMN_F4 + " text;");
 
         }
 
@@ -392,6 +403,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 singleOPD.COLUMN_CRA03b,
                 singleOPD.COLUMN_CRA03c,
                 singleOPD.COLUMN_CRA12,
+                singleOPD.COLUMN_F2,
+                singleOPD.COLUMN_F3,
+                singleOPD.COLUMN_F4,
         };
 
         String whereClause = singleOPD.COLUMN_CRA01 + "=?";
@@ -449,6 +463,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 singleOPD.COLUMN_CRA03b,
                 singleOPD.COLUMN_CRA03c,
                 singleOPD.COLUMN_CRA12,
+                singleOPD.COLUMN_F2,
+                singleOPD.COLUMN_F3,
+                singleOPD.COLUMN_F4,
         };
 
         String whereClause = null;
@@ -907,7 +924,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_ISTATUS88x,
                 FormsTable.COLUMN_END_TIME,
-                //  FormsTable.COLUMN_F1,
+                //  FormsTable.COLUMN_F2,
                 FormsTable.COLUMN_CRFA,
                 FormsTable.COLUMN_studyid,
                 FormsTable.COLUMN_crfcstatus,
@@ -981,7 +998,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_ISTATUS88x,
                 FormsTable.COLUMN_END_TIME,
-                //    FormsTable.COLUMN_F1,
+                //    FormsTable.COLUMN_F2,
                 FormsTable.COLUMN_CRFA,
                 FormsTable.COLUMN_studyid,
                 //   FormsTable.COLUMN_crfcstatus,
@@ -1055,7 +1072,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_ISTATUS88x,
                 FormsTable.COLUMN_END_TIME,
-                //  FormsTable.COLUMN_F1,
+                //  FormsTable.COLUMN_F2,
                 //  FormsTable.COLUMN_CRFA,
                 FormsTable.COLUMN_studyid,
                 //   FormsTable.COLUMN_crfcstatus,
@@ -1565,24 +1582,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 OPDContract user = new OPDContract();
                 user.sync(jsonObjectUser);
-                ContentValues values = new ContentValues();
+                if (user.getF2() == "1" || user.getF3() == "1" || user.getF4() == "1") {
+                    ContentValues values = new ContentValues();
 
-                values.put(singleOPD.COLUMN_CRA01, user.getcra01());
-                values.put(singleOPD.COLUMN_CRA02, user.getcra02());
-                values.put(singleOPD.COLUMN_CRA04, user.getcra04());
-                values.put(singleOPD.COLUMN_CRA05, user.getcra05());
-                values.put(singleOPD.COLUMN_CRA06A, user.getcra06a());
-                values.put(singleOPD.COLUMN_CRA06B, user.getcra06b());
-                values.put(singleOPD.COLUMN_CRA06C, user.getcra06c());
-                values.put(singleOPD.COLUMN_CRA06D, user.getcra06d());
-                values.put(singleOPD.COLUMN_CRA06E, user.getcra06e());
-                values.put(singleOPD.COLUMN_CRA07, user.getcra07());
-                values.put(singleOPD.COLUMN_CRA03a, user.getcra03a());
-                values.put(singleOPD.COLUMN_CRA03b, user.getcra03b());
-                values.put(singleOPD.COLUMN_CRA03c, user.getcra03c());
-                values.put(singleOPD.COLUMN_CRA12, user.getcra12());
+                    values.put(singleOPD.COLUMN_CRA01, user.getcra01());
+                    values.put(singleOPD.COLUMN_CRA02, user.getcra02());
+                    values.put(singleOPD.COLUMN_CRA04, user.getcra04());
+                    values.put(singleOPD.COLUMN_CRA05, user.getcra05());
+                    values.put(singleOPD.COLUMN_CRA06A, user.getcra06a());
+                    values.put(singleOPD.COLUMN_CRA06B, user.getcra06b());
+                    values.put(singleOPD.COLUMN_CRA06C, user.getcra06c());
+                    values.put(singleOPD.COLUMN_CRA06D, user.getcra06d());
+                    values.put(singleOPD.COLUMN_CRA06E, user.getcra06e());
+                    values.put(singleOPD.COLUMN_CRA07, user.getcra07());
+                    values.put(singleOPD.COLUMN_CRA03a, user.getcra03a());
+                    values.put(singleOPD.COLUMN_CRA03b, user.getcra03b());
+                    values.put(singleOPD.COLUMN_CRA03c, user.getcra03c());
+                    values.put(singleOPD.COLUMN_CRA12, user.getcra12());
+                    values.put(singleOPD.COLUMN_F2, user.getF2());
+                    values.put(singleOPD.COLUMN_F3, user.getF3());
+                    values.put(singleOPD.COLUMN_F4, user.getF4());
 
-                db.insert(singleOPD.TABLE_NAME, null, values);
+                    db.insert(singleOPD.TABLE_NAME, null, values);
+                }
             }
 
 

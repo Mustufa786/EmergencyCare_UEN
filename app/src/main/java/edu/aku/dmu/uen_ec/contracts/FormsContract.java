@@ -140,7 +140,7 @@ public class FormsContract {
         this.istatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS));
         this.istatus88x = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS88x));
         this.gpsElev = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSELEV));
-       // this.f1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F1));
+        // this.f1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F2));
 
         this.CRFA = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_CRFA));
         this.studyid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_studyid));
@@ -148,8 +148,8 @@ public class FormsContract {
      //   this.crfc21 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_crfc21));
        // this.crfc28 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_crfc28));
 
-     //   this.f2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F2));
-      //  this.f3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F3));
+        //   this.f2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F3));
+        //  this.f3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F4));
         this.formType = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_FORMTYPE));
         this.talukdaCode = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_TALUKA_CODE));
         this.endtime = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_END_TIME));
@@ -180,7 +180,7 @@ public class FormsContract {
         this.istatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS));
         this.istatus88x = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS88x));
         this.gpsElev = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSELEV));
-       // this.f1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F1));
+        // this.f1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F2));
 
         //this.CRFA = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_CRFA));
         this.studyid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_studyid));
@@ -188,8 +188,8 @@ public class FormsContract {
        // this.crfc21 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_crfc21));
        //  this.crfc28 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_crfc28));
 
-//        this.f2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F2));
-  //      this.f3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F3));
+//        this.f2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F3));
+        //      this.f3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F4));
         this.formType = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_FORMTYPE));
         this.talukdaCode = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_TALUKA_CODE));
         this.endtime = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_END_TIME));
@@ -220,7 +220,7 @@ public class FormsContract {
         this.istatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS));
         this.istatus88x = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS88x));
         this.gpsElev = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSELEV));
- //       this.f1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F1));
+        //       this.f1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F2));
 
         //this.CRFA = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_CRFA));
         this.studyid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_studyid));
@@ -228,8 +228,8 @@ public class FormsContract {
        // this.crfc21 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_crfc21));
          this.crfc28 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_crfc28));
 
-      //  this.f2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F2));
-       // this.f3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F3));
+        //  this.f2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F3));
+        // this.f3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F4));
         this.formType = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_FORMTYPE));
         this.talukdaCode = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_TALUKA_CODE));
         this.endtime = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_END_TIME));
@@ -260,7 +260,7 @@ public class FormsContract {
         this.istatus = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS));
         this.istatus88x = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_ISTATUS88x));
         this.gpsElev = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSELEV));
-      //  this.f1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F1));
+        //  this.f1 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F2));
 
         this.CRFA = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_CRFA));
         this.studyid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_studyid));
@@ -268,8 +268,8 @@ public class FormsContract {
 //        this.crfc21 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_crfc21));
 //        this.crfc28 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_crfc28));
 
-      //  this.f2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F2));
-       // this.f3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F3));
+        //  this.f2 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F3));
+        // this.f3 = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_F4));
         this.formType = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_FORMTYPE));
         this.talukdaCode = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_TALUKA_CODE));
         this.endtime = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_END_TIME));
