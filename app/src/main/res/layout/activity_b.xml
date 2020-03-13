@@ -45,7 +45,6 @@
 
                     <TextView
                         style="@style/i_q_textview"
-                        android:fontFamily="@font/roboto"
                         android:text="crb01" />
 
                     <TextView

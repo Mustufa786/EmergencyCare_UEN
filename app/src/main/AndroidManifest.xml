@@ -35,16 +35,29 @@
 
         <activity
             android:name=".ui.LoginActivity"
-            android:theme="@style/AppTheme1"></activity>
-        <activity android:name=".ui.SyncActivity" />
-        <activity android:name=".ui.CRFBActivity" />
-        <activity android:name=".ui.CRFAActivity" />
-        <activity android:name=".ui.CRFCActivity" />
-        <activity android:name=".ui.DesingActivity" />
+            android:theme="@style/AppTheme1"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name=".ui.SyncActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.CRFBActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.CRFAActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.CRFCActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.DesingActivity"
+            android:windowSoftInputMode="adjustResize" />
 
 
         <activity android:name=".core.AndroidDatabaseManager" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="adjustResize">
 
         </activity>
 
