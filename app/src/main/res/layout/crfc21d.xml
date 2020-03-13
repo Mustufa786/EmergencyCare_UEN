@@ -8,7 +8,7 @@
         style="@style/linearlayout_view_wt_bound">
 
         <TextView
-            style="@style/i_q_textview"
+            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_gravity="left"
             android:layout_marginBottom="10dp"
@@ -28,14 +28,14 @@
                 android:layout_marginTop="0dp"
                 android:gravity="right"
                 android:textSize="18dp"
-                style="@style/i_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="LHS Code"
                 android:layout_weight="70"
                 android:textStyle="normal" />
 
             <com.edittextpicker.aliazaz.EditTextPicker
                 android:id="@+id/lhscode"
-                style="@style/i_textview"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="3dp"
@@ -47,6 +47,7 @@
                 android:textStyle="normal"
                 app:maxValue="9999"
                 app:minValue="1"
+                android:layout_width="0dp"
                 app:type="range" />
 
         </LinearLayout>
@@ -65,7 +66,8 @@
             android:layout_marginTop="0dp"
             android:gravity="right"
             android:textSize="18dp"
-            style="@style/i_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Date"
             android:layout_weight="70"
             android:textStyle="normal" />
@@ -76,7 +78,8 @@
                 android:textSize="18dp"
                 android:id="@+id/day21"
                 android:textStyle="normal"
-                style="@style/i_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="30"
                 android:textColor="@color/black_overlay"
                 android:hint="Date"
@@ -101,7 +104,8 @@
                 android:layout_marginTop="0dp"
                 android:gravity="right"
                 android:textSize="18dp"
-                style="@style/i_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Month"
                 android:layout_weight="70"
                 android:textStyle="normal" />
@@ -112,7 +116,8 @@
                 android:textSize="18dp"
                 android:id="@+id/month21"
                 android:textStyle="normal"
-                style="@style/i_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="30"
                 android:textColor="@color/black_overlay"
                 android:hint="Month"
@@ -137,7 +142,8 @@
                 android:layout_marginTop="0dp"
                 android:gravity="right"
                 android:textSize="18dp"
-                style="@style/i_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Year"
                 android:layout_weight="70"
                 android:textStyle="normal" />
@@ -148,7 +154,8 @@
                 android:textSize="18dp"
                 android:id="@+id/year21"
                 android:textStyle="normal"
-                style="@style/i_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="30"
                 android:textColor="@color/black_overlay"
                 android:hint="Year"
@@ -170,14 +177,16 @@
 
             <Button
                 android:id="@+id/btn_End"
-                style="@style/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:background="@color/brown"
                 android:text="Cancel" />
 
             <Button
                 android:id="@+id/btn_Continue"
-                style="@style/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="@color/colorPrimaryAlpha"
                 android:text="OK" />
 

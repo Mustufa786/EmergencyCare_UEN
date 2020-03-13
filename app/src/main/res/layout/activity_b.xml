@@ -30,7 +30,8 @@
                 <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                     <TextView
-                        style="@style/i_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="CRF-B: Inpatient Care Registry" />
 
                 </LinearLayout>
@@ -48,12 +49,12 @@
                         android:text="crb01" />
 
                     <TextView
-                        style="@style/i_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="@string/crb01" />
 
                     <EditText
                         android:id="@+id/crb01"
-                        style="@style/textInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:digits="0123456789-"
@@ -89,12 +90,12 @@
                             android:text="crb02" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/crb02" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/crb02"
-                            style="@style/textInput"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:enabled="false"
@@ -116,12 +117,12 @@
                             android:text="crb03" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/crb03" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/crb03"
-                            style="@style/textInput"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/crb03"
@@ -145,12 +146,12 @@
                             android:text="crb04" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/crb04" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/crb04a"
-                            style="@style/textInput"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/crb04a"
@@ -162,7 +163,6 @@
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/crb04b"
-                            style="@style/textInput"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/crb04b"
@@ -174,7 +174,6 @@
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/crb04c"
-                            style="@style/textInput"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/crb04c"
@@ -198,7 +197,8 @@
                             android:text="crb05" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/crb05" />
 
                         <EditText
@@ -222,12 +222,14 @@
                             android:text="crb06" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/crb06" />
 
                         <EditText
                             android:id="@+id/crb06"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:hint="@string/crb06"
                             android:inputType="textPersonName" />
@@ -246,38 +248,44 @@
                             android:text="crb07" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/crb07" />
 
                         <EditText
                             android:id="@+id/crb07a"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:hint="@string/crb07a"
                             android:inputType="textPersonName" />
 
                         <EditText
                             android:id="@+id/crb07e"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:hint="@string/crb07e"
                             android:inputType="textPersonName" />
 
                         <EditText
                             android:id="@+id/crb07b"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:hint="@string/crb07b"
                             android:inputType="textPersonName" />
 
                         <EditText
                             android:id="@+id/crb07c"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:hint="@string/crb07c"
                             android:inputType="textPersonName" />
 
                         <EditText
                             android:id="@+id/crb07d"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:hint="@string/crb07d"
                             android:inputType="textPersonName" />
 
@@ -295,12 +303,14 @@
                             android:text="crb08" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/crb08" />
 
                         <EditText
                             android:id="@+id/crb08"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:hint="@string/crb08"
                             android:inputType="number" />
 
@@ -318,12 +328,12 @@
                             android:text="crb09" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/crb09" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/crb09c"
-                            style="@style/textInput"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/crb09c"
@@ -335,7 +345,6 @@
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/crb09b"
-                            style="@style/textInput"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/crb09b"
@@ -371,21 +380,25 @@
                             android:text="crb10" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/crb10" />
 
                         <RadioGroup
-                            android:id="@+id/crb10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             style="@style/radiogroup">
 
                             <RadioButton
                                 android:id="@+id/crb10a"
-                                style="@style/radiobutton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="@string/crb10a" />
 
                             <RadioButton
                                 android:id="@+id/crb10b"
-                                style="@style/radiobutton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="@string/crb10b" />
 
                         </RadioGroup>
@@ -404,12 +417,14 @@
                             android:text="crb11" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/crb11" />
 
                         <EditText
                             android:id="@+id/crb11"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:hint="@string/crb11"
                             android:inputType="textPersonName" />
@@ -428,12 +443,14 @@
                             android:text="crb12" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/crb12" />
 
                         <androidx.appcompat.widget.AppCompatAutoCompleteTextView
                             android:id="@+id/crb12"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:hint="@string/crb12"
                             android:inputType="textPersonName" />
 
@@ -453,12 +470,14 @@
                             android:text="crb12b" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/crb12" />
 
                         <androidx.appcompat.widget.AppCompatAutoCompleteTextView
                             android:id="@+id/crb12b"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:hint="@string/crb12"
                             android:inputType="textPersonName" />
 
@@ -476,31 +495,37 @@
                             android:text="crb13" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/crb13" />
 
                         <RadioGroup
-                            android:id="@+id/crb13"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             style="@style/radiogroup">
 
                             <RadioButton
                                 android:id="@+id/crb13a"
-                                style="@style/radiobutton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="@string/crb13a" />
 
                             <RadioButton
                                 android:id="@+id/crb13b"
-                                style="@style/radiobutton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="@string/crb13b" />
 
                             <RadioButton
                                 android:id="@+id/crb13c"
-                                style="@style/radiobutton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="@string/crb13c" />
 
                             <RadioButton
                                 android:id="@+id/crb13d"
-                                style="@style/radiobutton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="@string/crb13d" />
 
                         </RadioGroup>
@@ -519,12 +544,12 @@
                             android:text="crb14" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/crb14" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/crb14a"
-                            style="@style/textInput"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/crb14a"
@@ -536,7 +561,6 @@
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/crb14b"
-                            style="@style/textInput"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/crb14b"
@@ -572,14 +596,16 @@
 
                     <Button
                         android:id="@+id/btn_End"
-                        style="@style/button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
                         android:onClick="@{() -> callback.BtnEnd()}"
                         android:text="Cancel" />
 
                     <Button
                         android:id="@+id/btn_Continue"
-                        style="@style/button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:onClick="@{() -> callback.BtnContinue()}"
                         android:text="Save" />
 

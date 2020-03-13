@@ -35,7 +35,8 @@
                 <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                     <TextView
-                        style="@style/d_i_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="DESIGN YOUR APP"
 
 
@@ -68,9 +69,9 @@
 
                     <TextView
 
-                        style="@style/d_i_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="Question Label Size"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
 
 
                         />
@@ -78,29 +79,33 @@
 
                     <RadioGroup
 
-
-                        style="@style/radiogroup">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
 
                         <RadioButton
-                            style="@style/d_radiobutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/rb_small"
                             android:textSize="16sp"
                             android:text="small" />
                         <RadioButton
-                            style="@style/d_radiobutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/rb_normal"
                             android:checked="false"
                             android:text="Normal" />
 
                         <RadioButton
-                            style="@style/d_radiobutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/rb_larage"
                             android:textSize="22sp"
                             android:text="Large" />
 
                         <RadioButton
-                            style="@style/d_radiobutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/rb_xlarage"
                             android:textSize="26sp"
                             android:text="Extra Large" />
@@ -112,11 +117,11 @@
 
                     <TextView
 
-                        style="@style/d_i_textviev_exp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="Question Label Size Normal"
                         android:id="@+id/labqexp"
 
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
 
 
                         />
@@ -132,39 +137,42 @@
 
                     <TextView
 
-                        style="@style/d_i_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="RadioButton Label Size"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
 
 
                         />
 
 
                     <RadioGroup
-
-
-                        style="@style/radiogroup">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
 
                         <RadioButton
-                            style="@style/d_radiobutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/rb_rb_small"
                             android:textSize="16sp"
                             android:text="small" />
                         <RadioButton
-                            style="@style/d_radiobutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/rb_rb_normal"
                             android:checked="false"
                             android:text="Normal" />
 
                         <RadioButton
-                            style="@style/d_radiobutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/rb_rb_larage"
                             android:textSize="22sp"
                             android:text="Large" />
 
                         <RadioButton
-                            style="@style/d_radiobutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/rb_rb_xlarage"
                             android:textSize="26sp"
                             android:text="Extra Large" />
@@ -175,14 +183,14 @@
 
 
                     <RadioButton
-                        style="@style/d_radiobutton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:gravity="left"
                         android:layout_marginLeft="20dp"
 
 
                         android:text="Radiobutton Label Size Normal"
                         android:id="@+id/rbexp"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
 
 
                         />
@@ -198,39 +206,45 @@
 
                     <TextView
 
-                        style="@style/d_i_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="Checkbox Label Size"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
 
 
                         />
 
 
                     <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
 
 
-                        style="@style/radiogroup">
+                        >
 
 
                         <RadioButton
-                            style="@style/d_radiobutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/rb_cb_small"
                             android:textSize="16sp"
                             android:text="small" />
                         <RadioButton
-                            style="@style/d_radiobutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/rb_cb_normal"
                             android:checked="false"
                             android:text="Normal" />
 
                         <RadioButton
-                            style="@style/d_radiobutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/rb_cb_larage"
                             android:textSize="22sp"
                             android:text="Large" />
 
                         <RadioButton
-                            style="@style/d_radiobutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/rb_cb_xlarage"
                             android:textSize="26sp"
                             android:text="Extra Large" />
@@ -241,7 +255,9 @@
 
 
                     <CheckBox
-                        style="@style/checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
                         android:gravity="left"
                         android:layout_marginLeft="20dp"
 
@@ -265,7 +281,8 @@
 
                     <TextView
 
-                        style="@style/d_i_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="Input Text  Size"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
 
@@ -275,29 +292,33 @@
 
                     <RadioGroup
 
-
-                        style="@style/radiogroup">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
 
                         <RadioButton
-                            style="@style/d_radiobutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/rb_ed_small"
                             android:textSize="16sp"
                             android:text="small" />
                         <RadioButton
-                            style="@style/d_radiobutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/rb_ed_normal"
                             android:checked="false"
                             android:text="Normal" />
 
                         <RadioButton
-                            style="@style/d_radiobutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/rb_ed_larage"
                             android:textSize="22sp"
                             android:text="Large" />
 
                         <RadioButton
-                            style="@style/d_radiobutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/rb_ed_xlarage"
                             android:textSize="26sp"
                             android:text="Extra Large" />
@@ -308,7 +329,8 @@
 
 
                     <EditText
-                        style="@style/textInputName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:gravity="left"
                         android:layout_marginLeft="20dp"
 
@@ -332,7 +354,8 @@
 
                     <TextView
 
-                        style="@style/d_i_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="Text Type "
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
 
@@ -341,18 +364,19 @@
 
 
                     <RadioGroup
-
-
-                        style="@style/radiogroup">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
 
                         <RadioButton
-                            style="@style/d_radiobutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/rb_english"
                             android:textSize="16sp"
                             android:text="English" />
                         <RadioButton
-                            style="@style/d_radiobutton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/rb_urdu"
                             android:checked="false"
                             android:text="Urdu" />
@@ -376,7 +400,8 @@
 
                     <Button
 
-                        style="@style/d_i_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="OK"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:onClick="@{() -> callback.btnclic()}"

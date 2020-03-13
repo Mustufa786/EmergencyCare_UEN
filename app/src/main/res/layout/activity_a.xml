@@ -23,12 +23,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
             <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                     <TextView
-                        style="@style/i_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="CRF-A: Out Patient Department Registry" />
 
                 </LinearLayout>
@@ -53,16 +55,17 @@
 
                     <TextView
                         style="@style/i_q_textview"
+
                         android:text="cra01" />
 
                     <TextView
-                        style="@style/i_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="@string/cra01"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
                     <com.edittextpicker.aliazaz.EditTextPicker
                         android:id="@+id/cra01"
-                        style="@style/textInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:enabled="false"
@@ -84,11 +87,11 @@
 
                     <TextView
                         style="@style/i_q_textview"
+
                         android:text="cra13" />
 
                     <CheckBox
                         android:id="@+id/cra13"
-                        style="@style/i_textview"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:tag="-1"
@@ -105,10 +108,12 @@
 
                     <TextView
                         style="@style/i_q_textview"
+
                         android:text="cra03" />
 
                     <TextView
-                        style="@style/i_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="@string/cra03" />
 
                     <com.edittextpicker.aliazaz.EditTextPicker
@@ -165,10 +170,12 @@
 
                         <TextView
                             style="@style/i_q_textview"
+
                             android:text="cra02" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:fontFamily="serif"
                             android:text="@string/cra02" />
 
@@ -195,15 +202,18 @@
 
                         <TextView
                             style="@style/i_q_textview"
+
                             android:text="cra04" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/cra04" />
 
                         <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:id="@+id/cra04"
-                            style="@style/textInput"
                             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:hint="@string/cra04" />
 
@@ -218,15 +228,18 @@
 
                         <TextView
                             style="@style/i_q_textview"
+
                             android:text="cra05" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/cra05" />
 
                         <EditText
                             android:id="@+id/cra05"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:hint="@string/cra05"
                             android:inputType="textPersonName" />
@@ -242,43 +255,50 @@
 
                         <TextView
                             style="@style/i_q_textview"
+
                             android:text="cra06" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/cra06" />
 
                         <EditText
                             android:id="@+id/cra06a"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:hint="@string/cra06a"
                             android:inputType="textPersonName" />
 
                         <EditText
                             android:id="@+id/cra06e"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:hint="@string/cra06e"
                             android:inputType="textPersonName" />
 
                         <EditText
                             android:id="@+id/cra06b"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,/-,1234567890"
                             android:hint="@string/cra06b"
                             android:inputType="textPersonName" />
 
                         <EditText
                             android:id="@+id/cra06c"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,/-"
                             android:hint="@string/cra06c"
                             android:inputType="textPersonName" />
 
                         <EditText
                             android:id="@+id/cra06d"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,/-,,1234567890"
                             android:hint="@string/cra06d"
                             android:inputType="textPersonName" />
@@ -294,15 +314,18 @@
 
                         <TextView
                             style="@style/i_q_textview"
+
                             android:text="cra07" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/cra07" />
 
                         <EditText
                             android:id="@+id/cra07"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:hint="@string/cra07"
                             android:inputType="number"
                             android:maxLength="11" />
@@ -318,39 +341,47 @@
 
                         <TextView
                             style="@style/i_q_textview"
+
                             android:text="cra08" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/cra08" />
 
                         <RadioGroup
                             android:id="@+id/cra08"
-                            style="@style/radiogroup">
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
                             <RadioButton
                                 android:id="@+id/cra08a"
-                                style="@style/radiobutton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="@string/cra08a" />
 
                             <RadioButton
                                 android:id="@+id/cra08b"
-                                style="@style/radiobutton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="@string/cra08b" />
 
                             <RadioButton
                                 android:id="@+id/cra08c"
-                                style="@style/radiobutton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="@string/cra08c" />
 
                             <RadioButton
                                 android:id="@+id/cra08d"
-                                style="@style/radiobutton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="@string/cra08d" />
 
                             <RadioButton
                                 android:id="@+id/cra08e"
-                                style="@style/radiobutton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="@string/cra08e" />
 
                         </RadioGroup>
@@ -366,24 +397,29 @@
 
                         <TextView
                             style="@style/i_q_textview"
+
                             android:text="cra09" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/cra09" />
 
                         <RadioGroup
                             android:id="@+id/cra9"
-                            style="@style/radiogroup">
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
                             <RadioButton
                                 android:id="@+id/cra09a"
-                                style="@style/radiobutton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="@string/cra09a" />
 
                             <RadioButton
                                 android:id="@+id/cra09b"
-                                style="@style/radiobutton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="@string/cra09b" />
 
                         </RadioGroup>
@@ -399,15 +435,18 @@
 
                         <TextView
                             style="@style/i_q_textview"
+
                             android:text="cra10" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/cra10" />
 
                         <EditText
                             android:id="@+id/cra10"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:hint="@string/cra10"
                             android:inputType="textPersonName" />
@@ -423,15 +462,18 @@
 
                         <TextView
                             style="@style/i_q_textview"
+
                             android:text="cra11" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/cra11" />
 
                         <androidx.appcompat.widget.AppCompatAutoCompleteTextView
                             android:id="@+id/cra11"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:hint="@string/cra11"
                             android:inputType="textPersonName" />
 
@@ -448,15 +490,18 @@
 
                         <TextView
                             style="@style/i_q_textview"
+
                             android:text="cra11b" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/cra11" />
 
                         <androidx.appcompat.widget.AppCompatAutoCompleteTextView
                             android:id="@+id/cra11b"
-                            style="@style/textInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:hint="@string/cra11"
                             android:inputType="textPersonName" />
 
@@ -471,19 +516,23 @@
 
                         <TextView
                             style="@style/i_q_textview"
+
                             android:text="cra12" />
 
                         <TextView
-                            style="@style/i_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:text="@string/cra12" />
 
                         <RadioGroup
                             android:id="@+id/cra12"
-                            style="@style/radiogroup">
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
                             <RadioButton
                                 android:id="@+id/cra12a"
-                                style="@style/radiobutton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="@string/cra12a" />
 
                             <RadioButton
@@ -493,17 +542,20 @@
 
                             <RadioButton
                                 android:id="@+id/cra12c"
-                                style="@style/radiobutton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="@string/cra12c" />
 
                             <RadioButton
                                 android:id="@+id/cra12d"
-                                style="@style/radiobutton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="@string/cra12d" />
 
                             <RadioButton
                                 android:id="@+id/cra12e"
-                                style="@style/radiobutton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:text="@string/cra12e" />
 
                         </RadioGroup>
@@ -524,14 +576,16 @@
 
                 <Button
                     android:id="@+id/btn_End"
-                    style="@style/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
                     android:onClick="@{() -> callback.BtnEnd()}"
                     android:text="Cancel" />
 
                 <Button
                     android:id="@+id/btn_Continue"
-                    style="@style/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:onClick="@{() -> callback.BtnContinue()}"
                     android:text="Save" />
 

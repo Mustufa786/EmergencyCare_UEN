@@ -8,7 +8,7 @@
         style="@style/linearlayout_view_wt_bound">
 
         <TextView
-            style="@style/i_q_textview"
+            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_gravity="left"
             android:layout_marginBottom="10dp"
@@ -26,32 +26,42 @@
             android:layout_marginBottom="3dp"
             android:layout_marginTop="0dp"
             android:textSize="18dp"
-            style="@style/i_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Disposition After Discharge from DHQ"
             android:textStyle="normal"/>
 
             <RadioGroup
                 android:id="@+id/crfc12"
-                style="@style/radiogroup">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <RadioButton
                     android:id="@+id/crfc12a"
-                    style="@style/radiobutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
                     android:text="home" />
 
                 <RadioButton
                     android:id="@+id/crfc12b"
-                    style="@style/radiobutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
                     android:text="Returned to THQ/DHQ Facility" />
 
                 <RadioButton
                     android:id="@+id/crfc12c"
-                    style="@style/radiobutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
                     android:text="Presented to a Tertiary Care Hospital" />
 
                 <RadioButton
                     android:id="@+id/crfc12d"
-                    style="@style/radiobutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
                     android:text="Still Admited" />
 
             </RadioGroup>
@@ -70,22 +80,28 @@
                 android:layout_marginBottom="3dp"
                 android:layout_marginTop="0dp"
                 android:textSize="18dp"
-                style="@style/i_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Child Alive at 28 Days"
                 android:textStyle="normal"/>
 
             <RadioGroup
                 android:id="@+id/crfc13"
-                style="@style/radiogroup">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <RadioButton
                     android:id="@+id/crfc13a"
-                    style="@style/radiobutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
                     android:text="Yes" />
 
                 <RadioButton
                     android:id="@+id/crfc13b"
-                    style="@style/radiobutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
                     android:text="No" />
 
             </RadioGroup>
@@ -102,14 +118,17 @@
 
             <Button
                 android:id="@+id/btn_End"
-                style="@style/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
                 android:layout_marginRight="10dp"
                 android:background="@color/brown"
                 android:text="Cancel" />
 
             <Button
                 android:id="@+id/btn_Continue"
-                style="@style/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="@color/colorPrimaryAlpha"
                 android:text="OK" />
 

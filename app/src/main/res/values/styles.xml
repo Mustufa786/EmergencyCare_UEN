@@ -2,15 +2,12 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
         <item name="android:scrollViewStyle">@style/BackgroundStyle</item>
         <item name="android:textViewStyle">@style/labels</item>
-        <item name="android:editTextStyle">@style/textInput</item>
-        <!--    <item name="android:checkboxStyle">@style/checkbox</item>
-            <item name="android:radioButtonStyle">@style/radiobutton</item>
-            <item name="android:spinnerStyle">@style/spinnerStyle</item>-->
+        <item name="editTextStyle">@style/textInput</item>
+        <item name="android:checkboxStyle">@style/checkbox</item>
+        <!--      <item name="android:radioButtonStyle">@style/radiobutton</item>
+             <item name="android:spinnerStyle">@style/spinnerStyle</item>-->
         <item name="android:typeface">sans</item>
 
     </style>
@@ -438,27 +435,20 @@
     </style>
 
 
-
-    <style name="textInput">
+    <style name="textInput" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:textSize">18sp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:fontFamily">@font/roboto</item>
-
-
         <item name="android:layout_marginRight">16dp</item>
         <item name="android:layout_marginTop">12dp</item>
         <item name="android:layout_marginBottom">12dp</item>
         <item name="android:layout_marginLeft">16dp</item>
-
         <item name="android:textColorHint">@color/grayOverlay</item>
         <item name="android:padding">5dp</item>
         <item name="android:radius">2dp</item>
         <item name="android:background">@drawable/et_style</item>
         <!--<item name="android:drawableStart">@drawable/ic_password</item>
         <item name="android:drawablePadding">10dp</item>-->
-        <item name="android:hint">Password</item>
-        <item name="android:inputType">textPassword</item>
 
 
     </style>
@@ -536,7 +526,7 @@
         <!--<item name="android:background">@color/colorPrimary</item>-->
         <item name="android:drawable">@drawable/textview_background_grad</item>
         <item name="android:padding">5dp</item>
-        <item name="android:textColor">@color/primaryTextColor2</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textSize">24sp</item>
         <item name="android:typeface">sans</item>
         <item name="android:paddingTop">16dp</item>
@@ -567,7 +557,7 @@
     </style>
 
     <!-- Irfan Scrollview  -->
-    <style name="i_scrollview">
+    <style name="_i_scrollview">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">5sp</item>
@@ -597,14 +587,14 @@
 
 
     <!-- Irfan RadioGroup  -->
-    <style name="i_radiogroup">
+    <style name="_radiogroup">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">vertical</item>
     </style>
 
     <!-- Irfan RadioButton  -->
-    <style name="i_radiobutton">
+    <style name="_i_radiobutton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">1dp</item>
@@ -744,7 +734,7 @@
 
     <!-- new Design -->
 
-    <style name="i_textview">
+    <style name="_i_textview">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/itextview</item>
@@ -766,7 +756,7 @@
     <!-- Design Thing -->
 
 
-    <style name="d_q_textview">
+    <style name="_d_q_textview">
 
         <item name="android:textAllCaps">true</item>
         <item name="android:layout_width">wrap_content</item>
@@ -785,7 +775,7 @@
     </style>
 
 
-    <style name="d_i_textview">
+    <style name="_d_i_textview">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">20sp</item>
@@ -806,7 +796,7 @@
     </style>
 
 
-    <style name="d_radiobutton">
+    <style name="_d_radiobutton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:fontFamily">@font/roboto</item>
@@ -825,8 +815,7 @@
     </style>
 
 
-
-    <style name="d_i_textviev_exp">
+    <style name="_d_i_textviev_exp">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/itextview</item>
