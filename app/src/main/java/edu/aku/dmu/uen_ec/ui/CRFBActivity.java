@@ -13,6 +13,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Clear;
+import com.validatorcrawler.aliazaz.Validator;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,7 +36,6 @@ import edu.aku.dmu.uen_ec.databinding.ActivityBBinding;
 import edu.aku.dmu.uen_ec.other.DiseaseCode;
 import edu.aku.dmu.uen_ec.util.Util;
 import edu.aku.dmu.uen_ec.validation.UIirfan;
-import edu.aku.dmu.uen_ec.validation.ValidatorClass;
 
 import static edu.aku.dmu.uen_ec.core.MainApp.fc;
 
@@ -80,10 +82,8 @@ public class CRFBActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                if (s.toString().equals("")) {
-                    bi.checkDataLayout.setVisibility(View.GONE);
-                }
+                bi.checkDataLayout.setVisibility(View.GONE);
+                Clear.clearAllFields(bi.checkDataLayout);
 
             }
 
@@ -295,10 +295,7 @@ public class CRFBActivity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-
-        return ValidatorClass.EmptyCheckingContainer(this, bi.GrpCRFB);
-
-
+        return Validator.emptyCheckingContainer(this, bi.GrpCRFB);
     }
 
 

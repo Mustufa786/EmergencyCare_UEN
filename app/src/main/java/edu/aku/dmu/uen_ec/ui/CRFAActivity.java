@@ -14,6 +14,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.validatorcrawler.aliazaz.Validator;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,7 +35,6 @@ import edu.aku.dmu.uen_ec.other.DiseaseCode;
 import edu.aku.dmu.uen_ec.util.Util;
 import edu.aku.dmu.uen_ec.validation.ClearClass;
 import edu.aku.dmu.uen_ec.validation.UIirfan;
-import edu.aku.dmu.uen_ec.validation.ValidatorClass;
 
 import static edu.aku.dmu.uen_ec.core.MainApp.fc;
 
@@ -298,10 +299,7 @@ public class CRFAActivity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-
-        return ValidatorClass.EmptyCheckingContainer(this, bi.GrpCRFA);
-
-
+        return Validator.emptyCheckingContainer(this, bi.GrpCRFA);
     }
 
     private void setDesing() {

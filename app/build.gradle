@@ -59,6 +59,7 @@ dependencies {
     implementation 'com.github.javiersantos:AppUpdater:2.6.5'
     //Edittext library
     implementation 'com.github.AliAzaz:Edittext-Library:2.0.0'
+    implementation 'com.github.AliAzaz:AndroidValidatorCrawler:1.0.1'
 
     // Showcase
     implementation 'com.github.amlcurran.showcaseview:library:5.4.3'
