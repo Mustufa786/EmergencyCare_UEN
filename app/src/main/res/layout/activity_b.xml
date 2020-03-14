@@ -25,18 +25,21 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.cardview.widget.CardView style="@style/cardView">
 
                 <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                     <TextView
+                        style="null"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="34sp"
                         android:text="CRF-B: Inpatient Care Registry" />
 
-                </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+
 
             <!--crb1-->
             <androidx.cardview.widget.CardView style="@style/cardView">
@@ -52,20 +55,29 @@
                         android:layout_height="wrap_content"
                         android:text="@string/crb01" />
 
-                    <EditText
-                        android:id="@+id/crb01"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:digits="0123456789-"
-                        android:hint="@string/crb01"
-                        android:maxLength="10" />
+                        android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/btn_search"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:text="Search" />
+                        <EditText
+                            android:id="@+id/crb01"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:digits="0123456789-"
+                            android:hint="@string/crb01"
+                            android:maxLength="10" />
+
+                        <Button
+                            android:id="@+id/btn_search"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="12dp"
+                            android:includeFontPadding="false"
+                            android:text="Search" />
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -464,6 +476,7 @@
                             android:text="@string/crb12" />
 
                         <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            style="@style/autoTextInput"
                             android:id="@+id/crb12"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -491,6 +504,8 @@
                             android:text="@string/crb12" />
 
                         <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            style="@style/autoTextInput"
+
                             android:id="@+id/crb12b"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -638,7 +653,7 @@
             </LinearLayout>
 
         </LinearLayout>
-
+        </LinearLayout>
     </ScrollView>
 </layout>
 

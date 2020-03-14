@@ -27,10 +27,13 @@
                 <LinearLayout style="@style/linearlayout_view_wt_bound">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        style="null"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:background="@color/colorPrimary"
                         android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="34sp"
                         android:text="CRF-C: Follow -Up of Referred/Admitted Patients" />
 
                     <Button

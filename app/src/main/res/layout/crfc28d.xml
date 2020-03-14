@@ -1,35 +1,26 @@
 <androidx.cardview.widget.CardView style="@style/cardView"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_marginBottom="0dp"
-    android:layout_marginRight="50dp">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
-        android:id="@+id/GrpCRFC21"
         style="@style/linearlayout_view_wt_bound">
 
         <TextView
+            style="null"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="24dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="34sp"
             android:text="28 Days Follow Up"/>
 
-        <!-- CRF28-->
-        <LinearLayout
-            android:layout_marginTop="0dp"
-            android:layout_marginLeft="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+
 
         <TextView
-            android:layout_marginBottom="3dp"
-            android:layout_marginTop="0dp"
-            android:textSize="18dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Disposition After Discharge from DHQ"
-            android:textStyle="normal"/>
+            android:text="Disposition After Discharge from DHQ" />
 
             <RadioGroup
                 android:id="@+id/crfc12"
@@ -41,7 +32,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="home" />
+                    android:text="Home" />
 
                 <RadioButton
                     android:id="@+id/crfc12b"
@@ -66,75 +57,66 @@
 
             </RadioGroup>
 
-        </LinearLayout>
-
-        <!-- CRF13-->
-        <LinearLayout
-            android:layout_marginTop="0dp"
-            android:layout_marginLeft="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
             <TextView
-                android:layout_marginBottom="3dp"
-                android:layout_marginTop="0dp"
-                android:textSize="18dp"
+                android:layout_marginTop="24dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Child Alive at 28 Days"
-                android:textStyle="normal"/>
+                android:text="Child Alive at 28 Days" />
 
             <RadioGroup
                 android:id="@+id/crfc13"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/crfc13a"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
 
                     android:text="Yes" />
 
                 <RadioButton
+                    android:layout_width="0dp"
                     android:id="@+id/crfc13b"
-                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
 
                     android:text="No" />
 
             </RadioGroup>
 
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="20dp"
-            android:padding="10dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="10dp">
 
             <Button
                 android:id="@+id/btn_End"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:layout_marginRight="10dp"
-                android:background="@color/brown"
+                android:minWidth="128dp"
                 android:text="Cancel" />
 
             <Button
                 android:id="@+id/btn_Continue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryAlpha"
+                android:minWidth="128dp"
                 android:text="OK" />
 
             <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
         </LinearLayout>
+            <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
+        </LinearLayout>
 
-    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

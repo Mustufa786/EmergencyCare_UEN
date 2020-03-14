@@ -455,7 +455,7 @@
     </style>
 
     <style name="autoTextInput" parent="Widget.AppCompat.AutoCompleteTextView">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColorHint">@color/grayOverlay</item>
@@ -512,17 +512,17 @@
         <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
     </style>
 
-    <style name="buttons" parent="Widget.MaterialComponents.Button.TextButton">
+    <style name="buttons">
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">140sp</item>
         <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_margin">12dp</item>
         <item name="android:paddingStart">16dp</item>
         <item name="android:radius">2dp</item>
         <item name="android:minWidth">64dp</item>
         <item name="android:elevation">1dp</item>
-        <item name="android:background">@drawable/background_grad</item>
     </style>
 
     <style name="BackgroundStyle">
