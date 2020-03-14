@@ -34,7 +34,6 @@ import edu.aku.dmu.uen_ec.other.CheckingIDCC;
 import edu.aku.dmu.uen_ec.other.DiseaseCode;
 import edu.aku.dmu.uen_ec.util.Util;
 import edu.aku.dmu.uen_ec.validation.ClearClass;
-import edu.aku.dmu.uen_ec.validation.UIirfan;
 
 import static edu.aku.dmu.uen_ec.core.MainApp.fc;
 
@@ -68,7 +67,13 @@ public class CRFAActivity extends AppCompatActivity {
 
         setupViews();
 
-        setDesing();
+        bi.cra13.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b)
+                    ClearClass.ClearAllFields(bi.fldGrpCra12, null);
+            }
+        });
         bi.cra11.addTextChangedListener(new TextWatcher() {
             CharSequence s = "";
 
@@ -131,6 +136,9 @@ public class CRFAActivity extends AppCompatActivity {
             }
         });
 
+
+
+        
         /*int study_id = Integer.parseInt(db.getsFormcount());
         study_id = study_id + 1;
         if (study_id < 10) {
@@ -302,18 +310,12 @@ public class CRFAActivity extends AppCompatActivity {
         return Validator.emptyCheckingContainer(this, bi.GrpCRFA);
     }
 
-    private void setDesing() {
-
-        UIirfan.findViews(bi.GrpCRFA, this);
-
-        bi.cra13.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b)
-                    ClearClass.ClearAllFields(bi.fldGrpCra12, null);
-            }
-        });
-    }
+//    private void setDesing() {
+//
+//        UIirfan.findViews(bi.GrpCRFA, this);
+//
+//
+//    }
 
 
     public void BtnEnd() {

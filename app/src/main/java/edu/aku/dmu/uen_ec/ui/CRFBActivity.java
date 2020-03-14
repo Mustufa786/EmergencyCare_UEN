@@ -7,6 +7,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -35,7 +36,6 @@ import edu.aku.dmu.uen_ec.core.MainApp;
 import edu.aku.dmu.uen_ec.databinding.ActivityBBinding;
 import edu.aku.dmu.uen_ec.other.DiseaseCode;
 import edu.aku.dmu.uen_ec.util.Util;
-import edu.aku.dmu.uen_ec.validation.UIirfan;
 
 import static edu.aku.dmu.uen_ec.core.MainApp.fc;
 
@@ -44,6 +44,8 @@ public class CRFBActivity extends AppCompatActivity {
     private static final String TAG = "CRFBActivity";
     ActivityBBinding bi;
     DatabaseHelper db;
+    boolean crb12Flag = false;
+    boolean crb12bFlag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,8 +70,70 @@ public class CRFBActivity extends AppCompatActivity {
 
 
         setupViews();
+        //UIirfan.findViews(bi.GrpCRFB, this);
 
-        UIirfan.findViews(bi.GrpCRFB, this);
+        bi.crb12.addTextChangedListener(new TextWatcher() {
+            CharSequence s = "";
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                if (crb12Flag) {
+                    this.s = s;
+                    crb12Flag = false;
+                    bi.crb12.setText(null);
+                }
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+        bi.crb12.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+                crb12Flag = true;
+            }
+        });
+
+        bi.crb12b.addTextChangedListener(new TextWatcher() {
+            CharSequence s = "";
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                if (crb12bFlag) {
+                    this.s = s;
+                    crb12bFlag = false;
+                    bi.crb12b.setText(null);
+                }
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+        bi.crb12b.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+                crb12bFlag = true;
+            }
+        });
+
     }
 
     private void setupViews() {

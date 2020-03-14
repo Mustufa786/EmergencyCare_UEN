@@ -65,23 +65,27 @@
 
                         android:text="cra01" />
 
-                    <TextView
-
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/cra01" />
+                        android:orientation="horizontal">
 
-                    <com.edittextpicker.aliazaz.EditTextPicker
-                        android:id="@+id/cra01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:enabled="false"
-                        android:hint="@string/cra01"
-                        android:inputType="number"
-                        app:maxValue="99999"
-                        app:minValue="1"
-                        app:type="range" />
+                        <TextView
 
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cra01" />
+
+                        <TextView
+                            android:id="@+id/cra01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingStart="16dp"
+                            android:text="0000-0000"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="24sp" />
+                    </LinearLayout>
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -224,9 +228,9 @@
                             android:text="@string/cra04" />
 
                         <EditText
+                            android:id="@+id/cra04"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/cra04"
                             android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:hint="@string/cra04" />
 
@@ -381,6 +385,7 @@
                                 android:id="@+id/cra08b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
                                 android:text="@string/cra08b" />
 
                             <RadioButton
@@ -488,8 +493,8 @@
                             android:text="@string/cra11" />
 
                         <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-                            style="@style/autoTextInput"
                             android:id="@+id/cra11"
+                            style="@style/autoTextInput"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/cra11"
@@ -517,9 +522,9 @@
                             android:text="@string/cra11" />
 
                         <androidx.appcompat.widget.AppCompatAutoCompleteTextView
-                            style="@style/autoTextInput"
-
                             android:id="@+id/cra11b"
+
+                            style="@style/autoTextInput"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/cra11"
