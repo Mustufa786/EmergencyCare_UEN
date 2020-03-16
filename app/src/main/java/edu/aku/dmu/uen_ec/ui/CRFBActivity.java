@@ -338,7 +338,7 @@ public class CRFBActivity extends AppCompatActivity {
         CRFA.put("crb12", bi.crb12.getText().toString());
 
         //CRFA.put("crb12b", DiseaseCode.HmDiseaseCode.get(bi.crb12b.getText().toString()));
-        CRFA.put("crb12", bi.crb12b.getText().toString());
+        CRFA.put("crb12b", bi.crb12b.getText().toString());
 
 
         CRFA.put("crb13",
