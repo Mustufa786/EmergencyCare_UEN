@@ -68,6 +68,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/list_survey_completed"
+                tools:listitem="@layout/crfcitems"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:scrollbars="vertical"
